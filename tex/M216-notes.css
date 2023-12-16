@@ -5,15 +5,15 @@ Thanks to https://people.bath.ac.uk/feb/lwarp/lwarp-intro.html for this CSS file
 */
 
 div.sidetoccontainer{
-   position: fixed;
+   /* position: fixed; */
    z-index: 1;
    /* font-size: 1.5em; */
-   overflow-y: auto;
+   overflow-y: auto ;
    top: 42px;
    width: 15%;
    /* bottom: 0; */
    /* font-size: 90%; */
-   display: none;		/**/
+   /* display: none; */
 }
 
 div.bodycontainer{
@@ -113,4 +113,9 @@ div.titlepage span.textcolor{
 
 div.minipage p{
     text-align: left;
+}
+
+main.bodycontainer {
+    float: right ;
+    width: 80% ;
 }
