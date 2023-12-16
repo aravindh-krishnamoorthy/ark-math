@@ -10,3 +10,4 @@ blog:
 	lwarpmk print
 	lwarpmk htmlindex
 	lwarpmk html
+	lwarpmk clean

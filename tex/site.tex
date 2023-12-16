@@ -1,16 +1,17 @@
-\documentclass{book}
+\documentclass[a4paper,dvipsnames]{report}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[
+	HomeHTMLFilename=index,
+	HTMLFilename={node-},
 	mathjax
 	]{lwarp}
 \setcounter{FileDepth}{1}
 \setcounter{tocdepth}{1}
-\setcounter{SideTOCDepth}{1}
+\setcounter{SideTOCDepth}{-1}
 \boolfalse{FileSectionNames}
-\begin{warpHTML}
-	\renewcommand{\abstractname}{Preface}
-\end{warpHTML}
+\boolfalse{CombineHigherDepths}
+\CSSFilename{M216-notes.css}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{amsmath}
@@ -18,12 +19,20 @@
 \usepackage{amsthm}
 \usepackage{graphics}
 \usepackage{graphicx}
+\usepackage{fullpage}
 \usepackage{hyperref}
 \usepackage{mathtools}
 \usepackage{subcaption}
 \captionsetup{justification=centering}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://people.bath.ac.uk/feb/lwarp/M216-notes.tex
+%% I hate indented paras
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+%% Compact lists slightly less compact
+% \setlength{\plitemsep}{3pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{./figs/}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,6 +51,10 @@
 % ================================================================================
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+	Hello.
+\end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
