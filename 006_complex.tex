@@ -1,0 +1,59 @@
+\section{Complex-valued Durbin Algorithm with MATLAB code}
+
+This post is a rehash of my earlier post [1] where the complex-valued Durbin's algorithm was used indirectly for matrix inversion. Here, the algorithm is written down separately as it may be useful for some to have it "out of the box."
+
+The complex-valued versions of Durbin's and Levinson's algorithms may be arrived upon by straightforward application of description in [2] sec. 4.7.2 "Solving the Yule-Walker Equations", and 4.7.3 "The General Right Hand Side Problem".
+
+Let $r_0 = 1, r_1, r_2, \cdots, r_n \in \mathbb{C}$ and $T \in \mathbb{C}^{\text{N}\times\text{N}}$ be a positive definite Hermitian symmetric Toeplitz matrix constructed with the scalars $r_0, r_1, \cdots, r_{n-1}$ [see example below], Durbin's algorithm solves the system $Ty=-(r_1, r_2, \cdots, r_n)$. The algorithm is as follows.
+
+$z(1) = -r_1^*; \beta=1; \alpha=-r_1^*$
+$\text{for}~ k = 1:n-1$
+$\beta = (1-|\alpha|^2)\beta$
+$\alpha = - (r^*(k+1) - r(k:-1:1)^H z(1:k))/\beta$
+$z(1:k) = z(1:k) + \alpha z^*(k:-1:1)$
+$z(k+1) = \alpha$
+$\text{end}$
+$y = z^*$
+
+MATLAB code:
+
+\begin{verbatim}
+>> r = complex(rand(10,1),rand(10,1)) ;
+>> r(1) = 1 ;
+>> T = toeplitz(r(1:9),conj(r(1:9))) ;
+>> k = r(2:end) ;
+>> y1 = inv(T)*-k ;
+>> norm(y1-durbin(r))
+ans = 1.0709e-10
+
+function Y = durbin(R)
+% Y = durbin(R)
+% where R is a vector with r0, r1, r2, ..., rn.
+% Solves RY = -K, where R is the NxN symmetric Toeplitz matrix 
+% with elements r0, ..., r(n-1) and K is a vector with elements
+% r1, ..., rn.
+%
+
+R = R/R(1,1) ;
+N = length(R)-1 ;
+R = R(2:end) ;
+Z = zeros(N,1) ;
+
+Z(1) = -conj(R(1)) ;
+A = -conj(R(1)) ;
+B = 1 ;
+
+for k=1:N-1
+B = (1-abs(A)^2)*B ;
+A = -(conj(R(k+1)) + R(k:-1:1)'*Z(1:k))/B ;
+Z(1:k) = Z(1:k) + A*conj(Z(k:-1:1)) ;
+Z(k+1) = A ;
+end
+Y = conj(Z) ;
+\end{verbatim}
+
+References:
+[1] Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions, Applied Mathematics and Engineering Blog, September 2015.
+[2] Gene H. Golub, Charles F. Van Loan, Matrix Computations, Third Edition.
+
+\emph{First published: 30th Jan. 2016 on aravindhk-math.blogspot.com}

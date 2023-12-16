@@ -1,0 +1,68 @@
+\section{Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices}
+
+Diagonalization of a Toeplitz matrix (or the related Henkel matrix) is well known for about 100 years due to Carathéodory. Recently, the methods and techniques were formalized and were shown to be related to non-uniform discrete Fourier transformation (DFT). In this post, we look at a straightforward extension to non-uniform discrete cosine transformation (DCT) for real-valued Toeplitz matrices.
+
+Introduction
+
+Let $\boldsymbol{T}$ be an $N\times N$ real, symmetric, Toeplitz matrix with simple eigenvalues. The matrix admits a Vandermonde decomposition [2], [3] given by \[\boldsymbol{T} = \boldsymbol{V}^\text{H} \boldsymbol{D} \boldsymbol{V}\] where $\boldsymbol{V}$ is an $N\times N$ complex-valued Vandermonde matrix with powers of roots of unity, $\nu_0, \dots, \nu_{N-1},$ hereafter referred to as modes, along the columns (shown below), and $\boldsymbol{D}$ is an $N\times N$ non-negative diagonal matrix.
+
+\[
+\boldsymbol{V} = \begin{bmatrix} 1 & \nu_0 & \nu_0^2 & \cdots & \nu_0^{N-1} \\
+	1 & \nu_1 & \nu_1^2 & \cdots & \nu_1^{N-1} \\
+	1 & \vdots &  \vdots & \ddots & \vdots \\
+	1 & \nu_{N-1} & \nu_{N-1}^2 & \cdots & \nu_{N-1}^{N-1}
+\end{bmatrix}
+\]
+Absence of a Non-Uniform Cosine Decomposition
+
+Theorem 2.1. (Absence of a general NUCD). There exists no uniform cosine decomposition \[\boldsymbol{T} = \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C}\] for the matrix $\boldsymbol{T}$ for $N > 2.$
+
+Note: $\boldsymbol{C}$ is an $N\times N$ real, cosine matrix and $\boldsymbol{D}$ an $N\times N$ positive diagonal matrix. The elements of $\boldsymbol{C}$ are given by  \[ [\boldsymbol{C}]_{mn} = \cos(n \theta_m), \]
+where $m, n = 0,\dots, N - 1,$ and $\theta_m \in (-\pi,\pi].$
+
+Proof. Let $\tau_{m,n}$ and $\delta_{ m,n}$ denote the $(m,n)$ terms of the matrices $\boldsymbol{T}$ and $\boldsymbol{D},$ respectively. Expanding $\boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C}$ and equating the diagonal elements we have \[ \tau_{n,n} = \sum_{m=0}^{N-1} \delta_{m,m} \cos^2 (n \theta_m),\]
+where $n = 0,\dots,N-1.$ Therefore, the first element $\tau_{0,0}$ is \[\tau_{0,0} = \sum_{m=0}^{N-1} \delta_{m,m}.\] Due to the Toeplitz structure of $\boldsymbol{T}$, we have equality of the diagonal elements, i.e., $\tau_{0,0} = \tau_{1,1} = \cdots = \tau_{N-1,N-1}.$ However, since for any $\theta \in (-\pi,\pi]$ we have $0 \leq \cos^2 (\theta ) \leq 1$ with upper-bound equality only for $\theta = \{0,\pi\},$ no angles beyond $\{0,\pi\}$ can satisfy the equality of the diagonal elements. Hence, such a decomposition does not exist. $\blacksquare$
+
+
+Result of the above theorem motivates us to explore offset non-uniform cosine decomposition where the decomposition is scaled as $\boldsymbol{T} = \gamma^2 \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C}$ for some  $\gamma > 1,$ wherefore equality of the diagonal elements may be met.
+
+Offset Non-Uniform Cosine Decomposition
+
+Lemma 3.1. The modes $\nu_1, \dots, \nu_{N-1},$ are either real or appear in complex conjugate pairs using the algorithm given in [2] with a real initial value $\nu_0.$
+
+Note: The only admissible real initial values are $\nu_0 = \pm 1.$
+
+Proof. Modes are the polynomial roots of $A(z) = \sum_{k=0}^{N-1} \alpha_k z^k,$ where $\alpha_ k$ is the $k$-th element of the vector $\boldsymbol{a}$ given by solving $\boldsymbol{Ta} = \boldsymbol{v}$ [2]. Here, $\boldsymbol{v}$ is the initial value vector given by $\boldsymbol{v} = [1, \nu_0, \nu_0^2,\dots,\nu_0^{N-1}].$
+
+For real initial value vectors, the coeffcients $\alpha_k$ of the polynomial $A(z)$ are real. Therefore, the roots of the polynomial are either real or appear in complex conjugate pairs. $\blacksquare$
+
+Now we present the main result of this post.
+
+Theorem 3.2 (O-NUCD). For real initial values, there exists an offset non-uniform cosine decomposition $\boldsymbol{T} = 2 \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C}$ for the matrix $\boldsymbol{T}.$
+
+Note: $\boldsymbol{C}$ is an $N\times N$ real, cosine matrix and $\boldsymbol{D}$ an $N\times N$ positive diagonal matrix. The elements of the matrix $\boldsymbol{C}$ are given by \[
+[\boldsymbol{C}]_{m,n} = \cos\left(\mp \frac{\pi}{4} + n \theta_m\right),\] where $m,n = 0,\dots,N-1,$  and $\theta_m = \angle \nu_m.$
+
+Proof. Let $\boldsymbol{V}_R$ and $\boldsymbol{V}_I$ denote the real and imaginary parts of the Vandermonde matrix $\boldsymbol{V}.$ As the initial values are real, from Lemma 3.1, the roots are either real or have complex conjugate symmetry. Therefore, we have the following orthogonality properties: \[\boldsymbol{V}_R^\text{T} \boldsymbol{V}_I = \boldsymbol{V}_R^\text{T} \boldsymbol{D} \boldsymbol{V}_I = \boldsymbol{V}_I^\text{T} \boldsymbol{V}_R = \boldsymbol{V}_I^\text{T} \boldsymbol{D} \boldsymbol{V}_R =\boldsymbol{0}.\] Using these properties (twice), we have \[\boldsymbol{T} =  \boldsymbol{V}_R^\text{T} \boldsymbol{D} \boldsymbol{V}_R +  \boldsymbol{V}_I^\text{T} \boldsymbol{D} \boldsymbol{V}_I = (\boldsymbol{V}_R \pm \boldsymbol{V}_I)^\text{T} \boldsymbol{D} (\boldsymbol{V}_R \pm \boldsymbol{V}_I) = 2 \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C},\] with the elements of the matrix $\boldsymbol{C}$ as shown above. $\blacksquare$
+
+O-NUCD in MATLAB using the Vandermonde Tools [1]
+As an example, O-NUCD ($-\frac{\pi}{4}$) may be found using the Vandermonde Tools from AudioLabs [1] as follows:
+
+\begin{verbatim}
+>> [v,d] = find_vand('xcorr', T) ;
+>> V = vandermonde_fast(v) ;
+>> D = diag(d) ;
+>> norm(V'*D*V - T)
+ans = 2.5403e-15
+
+>> C = cos(-pi/4 + angle(v)*(0:N-1)) ;
+>> norm(2*C'*D*C - T)
+ans = 2.0304e-15
+\end{verbatim}
+
+References
+[1] T. Backstrom, Vandermonde tools. http://www.audiolabs-erlangen.de/resources/vandermonde-tools. Accessed: 13th March 2015.
+[2] T. Backstrom, Vandermonde factorization of toeplitz matrices and applications in filtering and warping, Signal Processing, IEEE Transactions on, 61 (2013), pp. 6257-6263.
+[3] D. L. Boley, F. T. Luk, and D. Vandevoorde, Vandermonde factorization of a Hankel matrix, (1998).
+
+\emph{First published: 14th May 2019 on aravindhk-math.blogspot.com}

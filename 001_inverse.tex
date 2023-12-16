@@ -1,0 +1,35 @@
+\section{Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions}
+
+Let $T \in \mathbb{C}^{n \times n}$ be a positive-definite Hermitian symmetric Toeplitz matrix defined with elements $t_{ij} = r_{i-j}$ for a set of scalars $r_{-n+1}, \cdots, r_0, \cdots, r_{n-1}$, where $r_{-t} = r_t^*$. Without loss of generality, assume $r_0 = 1$.
+
+We have the Cholesky factor $R$ of the matrix $T$ such that $R^H R = T$. The inverse Cholesky factor is then given by $R^{-1}$. A closely related decomposition known as the LDL decomposition is given as follows: $\Lambda = \text{diag}(R)$, $L = R^H \Lambda^{-1}$, and therefore, $T = L \Lambda^2 L^H = L D L^H$. Matrix $L$ has ones along the principal diagonal. Let $\Sigma = LD$.
+
+We have $T L^{-H} = \Sigma$, where $L^{-H}$ is the Hermitian transpose of the inverse with ones along the diagonal. As $\Sigma$ is lower triangular, we can solve for the strictly upper triangular parts of $L^{-H}$ as the R.H.S. is known to be zero.
+
+For the $k$-th column of $L^{-H}$ we have the first $k-1$ elements $z_{k-1}$, upon simplification, as:
+$$T_{k-1} z_{k-1} = - \begin{bmatrix} r_{k+1} \\ \vdots \\ r_1 \end{bmatrix}$$
+
+For Hermitian symmetric Toeplitz matrix $T$ we have $T = E_n T^* E_n$, where $T^*$ is complex conjugate of the matrix and $E_n$ is the $n \times n$ exchange matrix. Using this property, and setting $y_{k-1} = E_k z^*_{k-1}$ we have:
+
+$$T_{k-1} y_{k-1} = - \begin{bmatrix} r^*_1 \\ \vdots \\ r^*_{k+1} \end{bmatrix}$$,
+
+which may be solved efficiently using the Durbin iterations [1]. The algorithm for finding $W = R^{-1} = [w_{i,j}]$ is given as follows:
+
+$y_1 = -r^*_1; \enspace \alpha = -r^*_1; \enspace W = I_n$
+$\beta = 1 - |\alpha|^2$
+
+$w_{1,2} = y^*_1$
+$w_{:,2} = w_{:,2}/\sqrt\beta$
+$\text{for}~ k = 1:n-2$
+$\quad \alpha = -(r^*_{k+1} + r^H_{k:-1:1} y_{1:k}) /\beta$
+$\quad y_{1:k} = y_{1:k} + \alpha y^*_{k:-1:1}; \enspace y_{k+1} = \alpha$
+$\quad \beta = (1 - |\alpha|^2) \beta$
+$\quad w_{1:k+1,k+2} = y^*_{k+1:-1:1}$
+$\quad w_{:,k+2} = w_{:,k+2}/\sqrt\beta$
+$\text{end}$
+
+The algorithm requires $2n^2$ flops \cite[Algorithm 4.7.1]{Golub2012} for the Durbin iterations, $n^2/2$ flops for scaling with $1/\sqrt\beta$ and $n$ inverse square root computations; and may be easily adapted to find $L^{-1}$ and $D$ of the $LDL$ decomposition.
+
+A MATLAB reference code is available in \cite{KrishnamoorthyMathWorks2015}.
+
+\emph{First published: 4th Sep. 2015 on aravindhk-math.blogspot.com}

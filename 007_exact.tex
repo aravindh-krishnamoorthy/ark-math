@@ -1,0 +1,32 @@
+\section{Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables}
+
+It is well known that the distribution of sums of random variables converges to Gaussian. In this post, we look look at the convergence of Fourier transform of uniformly distributed random variables.
+
+Exact and analytical formulas for convergence are interesting as they help develop an intuition about the asymptotic convergence phenomenon and understand the convergence error for finite number  of samples. Under the scanner today is the convergence behaviour of Fourier transform of uniformly distributed random variables (URVs). 
+
+Let $u_1, u_2, \cdots, u_N$ denote complex-valued zero mean i.i.d URVs with finite support $[-q_n, q_n]\times [-q_n, q_n]$ for $n = 1\cdots N$. Their Fourier transform is given by
+\begin{align}U_k = \frac{1}{\sqrt{N}} \sum_{n = 1}^{N} u_n W^{kn} = \frac{1}{\sqrt{N}} \sum_{n = 1}^{N} v_n,\end{align}
+where $W^{kn}$ are the roots of unity, and $v_n = u_n W^{kn}$.
+
+Let $U^r_k = \mathfrak{Re}(U_k)$, and $v^r_n = \mathfrak{Re}(v_n)$. Variable $v^r_n$ preserves the distribution of $\mathfrak{Re}(u_n)$. Therefore, we have the characteristic function of the real part of the Fourier transformed variable as
+\begin{align}\text{E}(e^{itU_k^r}) &= \prod_{n = 1}^{N} \text{E}(e^{\frac{1}{\sqrt{N}}it v^r_n})\nonumber \\ &= \prod_{n = 1}^{N} \int_{-q_n}^{q_n} \frac{1}{2q_n} e^{\frac{1}{\sqrt{N}}it v^r_n} dv^r_n \nonumber\\ &= \prod_{n = 1}^{N} \frac{e^{\frac{1}{\sqrt{N}}itq_n} - e^{-\frac{1}{\sqrt{N}}itq_n}}{\frac{2}{\sqrt{N}}itq_n} \nonumber\\ &= \exp\left( \sum_{n = 1}^{N} \log \frac{\sin\left(\frac{1}{\sqrt{N}}tq_n\right)}{\frac{1}{\sqrt{N}}tq_n}\right).\end{align}
+
+Interestingly, for $f(t) = \log \frac{\sin(t\alpha)}{t\alpha}$, the limits of the derivatives $\lim_{t\to 0} \frac{\text{d}^n f(t)}{\text{d}t^n}$, for $n = 1, 2, \cdots$, exist! Therefore, the Taylor expansion of $f(t)$ around $t=0$ is given by
+\begin{align}f(t) = -\frac{t^2\alpha^2}{6} - \frac{t^4\alpha^4}{180} - \frac{t^6\alpha^6}{2835} + \cdots.\end{align}
+The Taylor series expansion given above may be easily verified using symbolic solvers like Wolfram Alpha Online.
+
+Substituting the Taylor series expansion in the characteristic function above, we have (only the first two terms of the Taylor series are shown)
+\begin{align}\text{E}(e^{itU_k^r}) = \exp\left(-\frac{1}{6} \frac{t^2 \sum_{n = 1}^{N} q^2_n}{N} - \frac{1}{180}\frac{t^4 \sum_{n = 1}^{N} q^4_n}{N^2} + \cdots\right). \label{eqn:cg}\end{align}
+
+Therefore, as $N\to \infty$, 
+\begin{align}\lim_{N\to \infty} \text{E}(e^{itU_k^r}) = \exp\left(-\frac{t^2}{2} \frac{\bar{q}^2}{3}\right), \label{eqn:acg} \end{align}
+where
+\begin{align}\bar{q}^2 = \lim_{N\to \infty} \frac{1}{N}\sum_{n = 1}^{N} q_n^2.\end{align}
+
+The right hand side expression in (\ref{eqn:acg}) showing the asymptotic convergence of the characteristic function of $U^r_k$ is readily identified as the characteristic function of Gaussian distribution with zero mean and variance $\bar{q}^2/3$. A similar expression may also be found for $\lim_{N\to \infty} \text{E}(e^{itU_k^i})$ in a straightforward manner.
+
+Therefore, the exact convergence formula for the Fourier transform of URVs is as shown in (\ref{eqn:cg})!
+
+ARK
+
+\emph{First published: 25th Jun. 2016 on aravindhk-math.blogspot.com}

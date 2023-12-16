@@ -1,0 +1,66 @@
+\section{Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition}
+
+Simultaneous triangularization (ST) of an arbitrary number of matrices that satisfy certain algebraic properties is well known, see, e.g., [1]. However, for arbitrary wide matrices with the same number of columns, directly applying QR decomposition leads to a "pseudo-triangular" structure, i.e., there are more non-zero columns than the number of rows. However, for just two arbitrary wide matrices, a "true" ST scheme can be obtained exploiting their null spaces. In [2], this technique was presented and used in non-orthogonal multiple access (NOMA) downlink communication systems for interference mitigation. In the following post, an overview of the ST scheme is presented. A MATLAB example is provided.
+
+The statement of the theorem is as follows.
+
+[2, Theorem 2] Let $\boldsymbol{A} \in \mathbb{C}^{m_1\times n}$ and $\boldsymbol{B} \in \mathbb{C}^{m_2\times n},$ $m_1,m_2 \leq n,$ be complex-valued matrices of sizes $m_1\times n$ and $m_2\times n$ and have full row rank. Then, there exist unitary matrices $\boldsymbol{U}_1 \in \mathbb{C}^{m_1\times m_1}, \boldsymbol{U}_2 \in \mathbb{C}^{m_2\times m_2},$ and an invertible matrix $\boldsymbol{X} \in \mathbb{C}^{n\times n}$ such that
+
+\begin{align}\boldsymbol{U}_1\boldsymbol{A}\boldsymbol{X} &= \begin{bmatrix}\boldsymbol{R}_1 & \boldsymbol{0}\end{bmatrix}, \label{eqn:std1}\\\boldsymbol{U}_2\boldsymbol{B}\boldsymbol{X} &= \begin{bmatrix}\boldsymbol{R}_2' & \boldsymbol{0} & \boldsymbol{R}_2''\end{bmatrix}, \label{eqn:std2}\end{align}
+
+where $\boldsymbol{R}_1 \in \mathbb{C}^{m_1\times m_1}$ and $\boldsymbol{R}_2 = \begin{bmatrix}\boldsymbol{R}_2'& \boldsymbol{R}_2''\end{bmatrix} \in \mathbb{C}^{m_2\times m_2}$ are upper-triangular matrices with real-valued entries on their main diagonals.
+
+As seen from the theorem, the ST scheme additionally requires the invertible matrix $\boldsymbol{X}$ apart from the unitary matrices $\boldsymbol{U}_1$ and $\boldsymbol{U}_2.$ Moreover, for $\boldsymbol{B},$ triangularization includes $n-m_2$ columns of zeros in the middle, which may be ignored to construct the matrix $\boldsymbol{R}_2.$ See [2] for generalizations of the theorem.
+
+Below is the proof of the theorem.
+
+Let  $\bar{\boldsymbol{A}} \in \mathbb{C}^{n\times (n-m_1)}$ and $\bar{\boldsymbol{B}} \in \mathbb{C}^{n\times (n-m_2)}$ be matrices that contain a basis for the null space of $\boldsymbol{A}$ and $\boldsymbol{B},$ respectively. Let $\boldsymbol{K} \in \mathbb{C}^{n\times \max(0,m_1+m_2-n)}$ denote the matrix containing a basis for the null space of $\begin{bmatrix} \bar{\boldsymbol{A}} & \bar{\boldsymbol{B}}\end{bmatrix}^\mathrm{H}.$ Let, by QR decomposition,
+
+\begin{align}\boldsymbol{\mathcal{U}}_1 \boldsymbol{R}_1 &= \boldsymbol{A} \begin{bmatrix}\boldsymbol{K} & \bar{\boldsymbol{B}}\end{bmatrix}, \label{eqn:qr1}\\ \boldsymbol{\mathcal{U}}_2 \boldsymbol{R}_2 &= \boldsymbol{B} \begin{bmatrix}\boldsymbol{K} & \bar{\boldsymbol{A}}\end{bmatrix}.\label{eqn:qr2}\end{align}
+
+Then, (\ref{eqn:std1}) and (\ref{eqn:std2}) are satisfied by setting $\boldsymbol{X}$ to
+
+\begin{align}\boldsymbol{X} = \begin{bmatrix}\boldsymbol{K} & \bar{\boldsymbol{B}} & \bar{\boldsymbol{A}}\end{bmatrix}, \label{eqn:x}\end{align}
+
+and choosing $\boldsymbol{U}_1 = \boldsymbol{\mathcal{U}}_1^\mathrm{H}$ and $\boldsymbol{U}_2 = \boldsymbol{\mathcal{U}}_2^\mathrm{H}$ from (\ref{eqn:qr1}) and (\ref{eqn:qr2}) above, to obtain
+
+\begin{align}\boldsymbol{U}_1\boldsymbol{A}\boldsymbol{X} = \begin{bmatrix}\underbrace{\boldsymbol{\mathcal{U}}_1^\mathrm{H} \boldsymbol{A} \begin{bmatrix}\boldsymbol{K} & \bar{\boldsymbol{B}}\end{bmatrix}}_{\boldsymbol{R}_1} &  \underbrace{\boldsymbol{\mathcal{U}}_1^\mathrm{H} \boldsymbol{A} \bar{\boldsymbol{A}}}_{\boldsymbol{0}}\end{bmatrix}, \\ \boldsymbol{U}_2\boldsymbol{B}\boldsymbol{X} \overset{(a)}{=} \begin{bmatrix} \underbrace{\boldsymbol{\mathcal{U}}_2^\mathrm{H} \boldsymbol{B} \boldsymbol{K}}_{\boldsymbol{R}_2'} & \underbrace{\boldsymbol{\mathcal{U}}_2^\mathrm{H} \boldsymbol{B} \bar{\boldsymbol{B}}}_{\boldsymbol{0}} &  \underbrace{\boldsymbol{\mathcal{U}}_2^\mathrm{H} \boldsymbol{B} \bar{\boldsymbol{A}}}_{\boldsymbol{R}_2''}\end{bmatrix},\end{align}
+
+where (a) holds because the QR decomposition in (\ref{eqn:qr2}) is unaffected by the zero columns introduced in the middle. QED.
+
+Next, a MATLAB-based example is provided.
+
+\begin{verbatim}
+A = complex(randn(3,4),randn(3,4)) ;
+B = complex(randn(3,4),randn(3,4)) ;
+A_bar = null(A) ;
+B_bar = null(B) ;
+K = null([A_bar, B_bar]') ;
+X = [K, B_bar, A_bar] ;
+[U_cal1, ~] = qr(A*X) ;
+[U_cal2, ~] = qr(B*X) ;
+U1 = U_cal1' ;
+U2 = U_cal2' ;
+
+U1*A*X =
+
+-2.0667 + 0.0000i -1.4910 + 1.2510i  0.1708 - 0.4198i  0.0000 + 0.0000i
+0.0000 - 0.0000i -1.0789 + 0.0000i  0.4117 - 0.4322i  0.0000 - 0.0000i
+0.0000 - 0.0000i  0.0000 + 0.0000i -1.5056 - 0.0000i -0.0000 + 0.0000i
+
+U2*B*X =
+
+-2.0667 + 0.0000i -1.1795 + 1.0534i -0.0000 + 0.0000i -0.7368 - 0.0662i
+-0.0000 - 0.0000i -2.5202 - 0.0000i  0.0000 - 0.0000i  0.9798 - 1.9193i
+-0.0000 + 0.0000i  0.0000 + 0.0000i  0.0000 + 0.0000i  0.8765 + 1.6384i
+\end{verbatim}
+
+See also the example provided here: https://gitlab.com/aravindh.krishnamoorthy/mimo-noma
+
+ark
+
+References
+[1] Heydar Radjavi and Peter Rosenthal. Simultaneous triangularization. Springer, 2012.
+[2] Krishnamoorthy, Aravindh, and Robert Schober. "Uplink and downlink MIMO-NOMA with simultaneous triangularization." IEEE Transactions on Wireless Communications 20.6 (2021): 3381-3396. IEEE Xplore, arXiv
+
+\emph{First published: 13th Aug. 2022 on aravindhk-math.blogspot.com}
