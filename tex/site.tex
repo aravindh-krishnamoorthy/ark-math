@@ -1,5 +1,17 @@
 \documentclass{book}
-\usepackage[mathjax]{lwarp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+	mathjax
+	]{lwarp}
+\setcounter{FileDepth}{1}
+\setcounter{tocdepth}{1}
+\setcounter{SideTOCDepth}{1}
+\boolfalse{FileSectionNames}
+\begin{warpHTML}
+	\renewcommand{\abstractname}{Preface}
+\end{warpHTML}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -9,7 +21,7 @@
 \usepackage{hyperref}
 \usepackage{mathtools}
 \usepackage{subcaption}
-\usepackage[justification=centering]{caption}
+\captionsetup{justification=centering}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,7 +43,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{tocdepth}{1}
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

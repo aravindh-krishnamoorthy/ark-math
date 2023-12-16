@@ -11,31 +11,31 @@ Theorem
 
 \begin{theorem}
 	\label{thm:qk}
-	Let $\bo{X}$ and $\bo{Y}$ be independent $m\times l$ and $l\times q$ random matrices, respectively, $q \leq m \leq l,$ with identical and independently distributed elements $[\bo{X}]_{ij}, \sim \mathcal{CN}(0,1), i=1,\dots,m,j=1,\dots,l,$ and $[\bo{Y}]_{ij}, \sim \mathcal{CN}(0,1), i=1,\dots,l,j=1,\dots,q,$ respectively. Let $x_1 \geq \dots \geq x_q$ denote the squared singular values of the product $\bo{X}\bo{Y}.$ The pdf of the $k$-th squared singular value of $\bo{X}\bo{Y},$ denoted by $q_k(x_k; m, l, q),$ is given by
+	Let $\boldsymbol{X}$ and $\boldsymbol{Y}$ be independent $m\times l$ and $l\times q$ random matrices, respectively, $q \leq m \leq l,$ with identical and independently distributed elements $[\boldsymbol{X}]_{ij}, \sim \mathcal{CN}(0,1), i=1,\dots,m,j=1,\dots,l,$ and $[\boldsymbol{Y}]_{ij}, \sim \mathcal{CN}(0,1), i=1,\dots,l,j=1,\dots,q,$ respectively. Let $x_1 \geq \dots \geq x_q$ denote the squared singular values of the product $\boldsymbol{X}\boldsymbol{Y}.$ The pdf of the $k$-th squared singular value of $\boldsymbol{X}\boldsymbol{Y},$ denoted by $q_k(x_k; m, l, q),$ is given by
 	\begin{align}
 		q_k(x_k; m, q) = K_{q_k} h^{[k,(),()]}_k(x_k; m, l, q),
 	\end{align}
-	where $K_{q_k}$ is a constant ensuring that the integral over the pdf is equal to one, and function $h^{[d,\bo{n},\bo{m}]}_k(x_k; m, q)$ is given by the recurrence relation
+	where $K_{q_k}$ is a constant ensuring that the integral over the pdf is equal to one, and function $h^{[d,\boldsymbol{n},\boldsymbol{m}]}_k(x_k; m, q)$ is given by the recurrence relation
 	\begin{align}
-		\sum_{i = 1}^{|{\mathcal{I}}^{[d,\bo{n}]}|} \sum_{j = 1}^{|{\mathcal{I}}^{[d,\bo{m}]}|} h^{[d-1,\bo{n}',\bo{m}']}_k(x_k; m,l,q), \label{eqn:qkrec}
+		\sum_{i = 1}^{|{\mathcal{I}}^{[d,\boldsymbol{n}]}|} \sum_{j = 1}^{|{\mathcal{I}}^{[d,\boldsymbol{m}]}|} h^{[d-1,\boldsymbol{n}',\boldsymbol{m}']}_k(x_k; m,l,q), \label{eqn:qkrec}
 	\end{align}
-	$[l,(),()]$ denotes the initial value of $[d,\bo{n},\bo{m}],$ and ``()'' denotes the empty tuple. Tuples $\bo{n}$ and $\bo{m}$ are updated as $\bo{n}' \coloneqq \bo{n} \cup \{(i,[{\mathcal{I}}^{[d,\bo{n}]}]_i)\}$ and $\bo{m}' \coloneqq \bo{m} \cup \{(j,[{\mathcal{I}}^{[d,\bo{m}]}]_j)\},$ where $i$ and $j$ are the summation indices in (\ref{eqn:qkrec}), and $[{\mathcal{I}}^{[d,\bo{n}]}]_i$ and $[{\mathcal{I}}^{[d,\bo{m}]}]_j$ are the $i$-th and $j$-th elements of sets ${\mathcal{I}}^{[d, \bo{n}]}$ and ${\mathcal{I}}^{[d, \bo{m}]},$ respectively, defined as ${\mathcal{I}}^{[d,\bo{n}]} \coloneqq \{1,2,\dots,q\} \setminus \pi_2(\bo{n})$ and ${\mathcal{I}}^{[d,\bo{m}]} \coloneqq \{1,2,\dots,q\} \setminus \pi_2(\bo{m}).$ Next, the termination step is given in (\ref{eqn:qkf2term}) on top of this page,
+	$[l,(),()]$ denotes the initial value of $[d,\boldsymbol{n},\boldsymbol{m}],$ and ``()'' denotes the empty tuple. Tuples $\boldsymbol{n}$ and $\boldsymbol{m}$ are updated as $\boldsymbol{n}' \coloneqq \boldsymbol{n} \cup \{(i,[{\mathcal{I}}^{[d,\boldsymbol{n}]}]_i)\}$ and $\boldsymbol{m}' \coloneqq \boldsymbol{m} \cup \{(j,[{\mathcal{I}}^{[d,\boldsymbol{m}]}]_j)\},$ where $i$ and $j$ are the summation indices in (\ref{eqn:qkrec}), and $[{\mathcal{I}}^{[d,\boldsymbol{n}]}]_i$ and $[{\mathcal{I}}^{[d,\boldsymbol{m}]}]_j$ are the $i$-th and $j$-th elements of sets ${\mathcal{I}}^{[d, \boldsymbol{n}]}$ and ${\mathcal{I}}^{[d, \boldsymbol{m}]},$ respectively, defined as ${\mathcal{I}}^{[d,\boldsymbol{n}]} \coloneqq \{1,2,\dots,q\} \setminus \pi_2(\boldsymbol{n})$ and ${\mathcal{I}}^{[d,\boldsymbol{m}]} \coloneqq \{1,2,\dots,q\} \setminus \pi_2(\boldsymbol{m}).$ Next, the termination step is given in (\ref{eqn:qkf2term}) on top of this page,
 	\begin{figure*}
 		\begin{align}
-			h^{[1,\bo{n},\bo{m}]}_k(x_k; m, q) &= \sum_{i = 1}^{|{\mathcal{I}}^{[d,\bo{n}]}|} \sum_{j = 1}^{|{\mathcal{I}}^{[d,\bo{m}]}|} s\left(\bo{n}',\bo{m}'\right)
+			h^{[1,\boldsymbol{n},\boldsymbol{m}]}_k(x_k; m, q) &= \sum_{i = 1}^{|{\mathcal{I}}^{[d,\boldsymbol{n}]}|} \sum_{j = 1}^{|{\mathcal{I}}^{[d,\boldsymbol{m}]}|} s\left(\boldsymbol{n}',\boldsymbol{m}'\right)
 			\G{2}{0}{0}{2}{-}{v_2+n-1, m+n+v_1-2}{x_k} \nonumber\\
-			&\qquad \times \det{\bo{\Xi}\left(k, m, q, {\mathcal{I}}^{[d+1,\bo{n}']},{\mathcal{I}}^{[d+1,\bo{m}']}\right)} \nonumber\\
-			&\qquad \times \prod_{p = 1}^{k-1} \G{3}{0}{1}{3}{1}{0, v_2+[{\mathcal{I}}^{[d,\bo{n}]}]_p, [{\mathcal{I}}^{[d,\bo{m}]}]_p + [{\mathcal{I}}^{[d,\bo{n}]}]_p+v_1 - 1}{x_k}\label{eqn:qkf2term}
+			&\qquad \times \det{\boldsymbol{\Xi}\left(k, m, q, {\mathcal{I}}^{[d+1,\boldsymbol{n}']},{\mathcal{I}}^{[d+1,\boldsymbol{m}']}\right)} \nonumber\\
+			&\qquad \times \prod_{p = 1}^{k-1} \G{3}{0}{1}{3}{1}{0, v_2+[{\mathcal{I}}^{[d,\boldsymbol{n}]}]_p, [{\mathcal{I}}^{[d,\boldsymbol{m}]}]_p + [{\mathcal{I}}^{[d,\boldsymbol{n}]}]_p+v_1 - 1}{x_k}\label{eqn:qkf2term}
 		\end{align}
 		\hrulefill
 	\end{figure*}
-	where $v_1=l-q, v_2=m-q,$ $G$ is the Meijer G function \cite{Olver2010}, $\bo{\Xi}\left(k, m, q, {\mathcal{I}}^{[d+1,\bo{n}']},{\mathcal{I}}^{[d+1,\bo{m}']}\right)$ is a $(q-l)\times (q-l)$ matrix with elements 
+	where $v_1=l-q, v_2=m-q,$ $G$ is the Meijer G function \cite{Olver2010}, $\boldsymbol{\Xi}\left(k, m, q, {\mathcal{I}}^{[d+1,\boldsymbol{n}']},{\mathcal{I}}^{[d+1,\boldsymbol{m}']}\right)$ is a $(q-l)\times (q-l)$ matrix with elements 
 	\begin{equation}
 		\left[\G{2}{1}{1}{3}{1}{v_2+n,m+n+v_1-1,0}{x_k}\right]_{ij}, \label{eqn:qkf2mat}
 	\end{equation}
 	and $i,j=1,\dots,q-l,$
 	\begin{align}
-		s\left(\bo{n}',\bo{m}'\right) &= (-1)^{\sum_{i=1}^{|\bo{n}'|} [\pi_1(\bo{n}')]_i + [\pi_1(\bo{m}')]_i},
+		s\left(\boldsymbol{n}',\boldsymbol{m}'\right) &= (-1)^{\sum_{i=1}^{|\boldsymbol{n}'|} [\pi_1(\boldsymbol{n}')]_i + [\pi_1(\boldsymbol{m}')]_i},
 	\end{align}
 	and $\gamma(\cdot,\cdot)$ denotes the lower incomplete Gamma function.
 \end{theorem}
@@ -47,11 +47,11 @@ Proof
 Below, a sketch of the proof for completeness.
 
 \begin{proof}
-	The joint pdf of the squares of the singular values of $\bo{X}\bo{Y}$ is given in \cite[(18)]{Akemann2013},\cite{Ipsen2015} as
+	The joint pdf of the squares of the singular values of $\boldsymbol{X}\boldsymbol{Y}$ is given in \cite[(18)]{Akemann2013},\cite{Ipsen2015} as
 	\begin{align}
-		K_q \prod_{1\leq i < j \leq q} (x_j-x_i) \det{\bo{\Delta}},
+		K_q \prod_{1\leq i < j \leq q} (x_j-x_i) \det{\boldsymbol{\Delta}},
 	\end{align}
-	where $\bo{\Delta}$ is a $q \times q$ matrix with elements
+	where $\boldsymbol{\Delta}$ is a $q \times q$ matrix with elements
 	\begin{equation}
 		\left[\G{2}{0}{0}{2}{-}{v2,v1+j-1}{x_i}\right]_{ij},
 	\end{equation}
