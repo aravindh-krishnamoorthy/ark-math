@@ -1,53 +1,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% https://tex.stackexchange.com/questions/102460/underbraces-in-matrix-divided-in-blocks
-%\newcommand\undermat[2]{%
-%	\makebox[0pt][l]{$\smash{\underbrace{\phantom{%
-%					\begin{matrix}#2\end{matrix}}}_{\text{$#1$}}}$}#2}
+% https://tex.stackexchange.com/questions/102460/underbraces-in-matrix-divided-in-blocks
+\newcommand\undermat[2]{%
+	\makebox[0pt][l]{$\smash{\underbrace{\phantom{%
+					\begin{matrix}#2\end{matrix}}}_{\text{$#1$}}}$}#2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Short hand for words
 \newcommand{\Frechet}{Fr\'{e}chet\xspace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Scaling for math
-%\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
-%\newcommand{\bo}[1]{\boldsymbol{#1}}
-%\newcommand{\ur}[1]{\mathrm{#1}}
-%% No clue whtat the old \H command is!!
-%\renewcommand{\H}{\ur{H}}
-%\newcommand{\T}{\ur{T}}
-%\renewcommand{\d}{\ur{d}}
-%\newcommand{\btr}[1]{\ur{tr}\negmed\left(#1\right)}
-%\newcommand{\bdet}[1]{\ur{det}\negmed\left(#1\right)}
-%\newcommand{\bexp}[1]{\ur{exp}\negmed\left(#1\right)}
-%\newcommand{\bmin}[1]{\ur{min}\negmed\left\{#1\right\}}
-%\newcommand{\bmax}[1]{\ur{max}\negmed\left\{#1\right\}}
-%\newcommand{\bnorm}[1]{\left\lVert#1\right\rVert}
-%\newcommand{\rank}[1]{\ur{rank}\negmed\left(#1\right)}
-%\newcommand{\blog}[1]{\log_2\negmed\left(#1\right)}
-%\newcommand{\blogdet}[1]{\ur{log}_\ur{e}\ur{\,det}\negmed\left(#1\right)}
-%\newcommand{\bloggdet}[1]{\ur{log}_2\ur{\,det}\negmed\left(#1\right)}
-%\newcommand{\E}[1]{\ur{E}\negmed\left[#1\right]}
-%\newcommand{\babs}[1]{\left\negmed|#1\right|}
-%% No clue whtat the old \Pr command is!!
-%\newcommand{\bPr}[1]{\ur{Pr}\negmed\left\{#1\right\}}
-%\newcommand{\bdiag}[1]{\ur{diag}\negmed\left(#1\right)}
-%\newcommand{\bcolspace}[1]{\ur{col}\negmed\big(#1\big)}
-%\newcommand{\bnullspace}[1]{\ur{null}\negmed\left(#1\right)}
-%\newcommand{\bO}[1]{\mathcal{O}\negmed\left(#1\right)}
-%\DeclareMathOperator*{\argmin}{\arg\!\min}
-%\newcommand{\card}[1]{\ur{card}\negmed\left(#1\right)}
-%
-%% Negative spaces for math mode
-%\def\negstrip#1 #2\relax{-#1}
-%\newcommand*{\negmed}{\mkern-\thinmuskip}
-%\newcommand*{\negthick}{\mkern-\thickmuskip}
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+\newcommand{\bo}[1]{\boldsymbol{#1}}
+\newcommand{\ur}[1]{\mathrm{#1}}
+% No clue whtat the old \H command is!!
+\renewcommand{\H}{\ur{H}}
+\newcommand{\T}{\ur{T}}
+\renewcommand{\d}{\ur{d}}
+\newcommand{\btr}[1]{\ur{tr}\negmed\left(#1\right)}
+\newcommand{\bdet}[1]{\ur{det}\negmed\left(#1\right)}
+\newcommand{\bexp}[1]{\ur{exp}\negmed\left(#1\right)}
+\newcommand{\bmin}[1]{\ur{min}\negmed\left\{#1\right\}}
+\newcommand{\bmax}[1]{\ur{max}\negmed\left\{#1\right\}}
+\newcommand{\bnorm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\rank}[1]{\ur{rank}\negmed\left(#1\right)}
+\newcommand{\blog}[1]{\log_2\negmed\left(#1\right)}
+\newcommand{\blogdet}[1]{\ur{log}_\ur{e}\ur{\,det}\negmed\left(#1\right)}
+\newcommand{\bloggdet}[1]{\ur{log}_2\ur{\,det}\negmed\left(#1\right)}
+\newcommand{\E}[1]{\ur{E}\negmed\left[#1\right]}
+\newcommand{\babs}[1]{\left\negmed|#1\right|}
+% No clue whtat the old \Pr command is!!
+\newcommand{\bPr}[1]{\ur{Pr}\negmed\left\{#1\right\}}
+\newcommand{\bdiag}[1]{\ur{diag}\negmed\left(#1\right)}
+\newcommand{\bcolspace}[1]{\ur{col}\negmed\big(#1\big)}
+\newcommand{\bnullspace}[1]{\ur{null}\negmed\left(#1\right)}
+\newcommand{\bO}[1]{\mathcal{O}\negmed\left(#1\right)}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\newcommand{\card}[1]{\ur{card}\negmed\left(#1\right)}
+\newcommand{\G}[7]{\ur{G}^{\tiny\begin{bmatrix}
+	#1&#2\\#3&#4
+	\end{bmatrix}}\left(\begin{matrix}
+	#5 \\ #6
+	\end{matrix}\;\middle|\;#7\right)}
+% Negative spaces for math mode
+\def\negstrip#1 #2\relax{-#1}
+\newcommand*{\negmed}{\mkern-\thinmuskip}
+\newcommand*{\negthick}{\mkern-\thickmuskip}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Theorem styles
-%\theoremstyle{general} \newtheorem{theorem}{Theorem}
-%\theoremstyle{general} \newtheorem{lemma}[theorem]{Lemma}
-%\theoremstyle{general} \newtheorem{corollary}{Corollary}[theorem]
-%\theoremstyle{general} \newtheorem{proposition}{Proposition}
-%\theoremstyle{general} \newtheorem{p-corollary}{Corollary}[proposition]
-%\theoremstyle{general} \newtheorem{definition}{Definition}
-%\theoremstyle{general} \newtheorem{conjecture}{Conjecture}
-%\theoremstyle{remark}  \newtheorem{remark}{Remark}
+\theoremstyle{general} \newtheorem{theorem}{Theorem}
+\theoremstyle{general} \newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{general} \newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{general} \newtheorem{proposition}{Proposition}
+\theoremstyle{general} \newtheorem{p-corollary}{Corollary}[proposition]
+\theoremstyle{general} \newtheorem{definition}{Definition}
+\theoremstyle{general} \newtheorem{conjecture}{Conjecture}
+\theoremstyle{remark}  \newtheorem{remark}{Remark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
