@@ -1,4 +1,4 @@
 site:
 	rm -rf ../site/
 	mkdir ../site/
-	latexmlc --splitat=section site.tex --dest=../site/index.html
+	latexmlc --splitat=section index.tex --dest=../site/index.html
