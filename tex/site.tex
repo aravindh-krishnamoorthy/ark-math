@@ -21,9 +21,12 @@
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{fullpage}
+\usepackage{listings}
 \usepackage{hyperref}
+\usepackage{algorithm}
 \usepackage{mathtools}
 \usepackage{subcaption}
+\usepackage{algpseudocode}
 \captionsetup{justification=centering}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -38,6 +41,20 @@
 \graphicspath{{./figs/}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{shortcuts.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset {
+	frame=tb,
+	tabsize=4,
+	showstringspaces=false,
+	numbers=left,
+	upquote=true,
+	commentstyle=\color{LimeGreen},
+	keywordstyle=\color{Purple},
+	stringstyle=\color{Red},
+	basicstyle=\small\ttfamily,
+	emphstyle={\color{Blue}},
+	keywordstyle=\color{YellowOrange}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

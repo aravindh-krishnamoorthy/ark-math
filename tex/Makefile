@@ -1,11 +1,10 @@
 # latexmlc --splitat=section site.tex --dest=../site/site.html
 
-blog:
-	pdflatex site.tex
+site:
+	pdflatex --shell-escape site
+	bibtex site
+	pdflatex --shell-escape site
+	pdflatex --shell-escape site
 	lwarpmk html
-	lwarpmk again
-	lwarpmk html
-	lwarpmk print
 	lwarpmk htmlindex
 	lwarpmk html
-	lwarpmk clean
