@@ -2,9 +2,8 @@
 
 site:
 	pdflatex --shell-escape site
-	bibtex site
-	pdflatex --shell-escape site
-	pdflatex --shell-escape site
 	lwarpmk html
+	bibtex site_html
 	lwarpmk htmlindex
-	lwarpmk html
+	lwarpmk htmlglossary
+	lwarpmk html1

@@ -28,8 +28,12 @@
 \usepackage{subcaption}
 \usepackage{algpseudocode}
 \captionsetup{justification=centering}
+\usepackage[backend=bibtex, style=ieee]{biblatex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{IEEEabrv.bib}
+\addbibresource{references.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % https://people.bath.ac.uk/feb/lwarp/M216-notes.tex
 %% I hate indented paras
@@ -105,7 +109,9 @@
 % ================================================================================
 % Bibliography
 % ================================================================================
-\bibliographystyle{unsrt}
-\bibliography{IEEEabrv,references}
+% \bibliographystyle{unsrt}
+% \bibliography{IEEEabrv,references}
+\chapter{Bibliography}
+\printbibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
