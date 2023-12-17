@@ -1,21 +1,18 @@
 \section{Determinant Form for KummerU Function of a Matrix Argument}
 
-KummerU function is the confluent hypergeometric function of the second kind. In this post, a straightforward method of expressing the KummerU function of a matrix argument in terms of the determinant of a matrix of scalar KummerU functions is presented.
+\emph{KummerU function is the confluent hypergeometric function of the second kind. In this post, a straightforward method of expressing the KummerU function of a matrix argument in terms of the determinant of a matrix of scalar KummerU functions is presented.}
 
-KummerU function of a matrix argument [1, Definition 1.3.6] given by $$\mathfrak{U}(a,b;\boldsymbol{Z}) = \frac{1}{\Gamma_p(a)}\int_{\boldsymbol{X} \succ 0} \text{etr}(-\boldsymbol{Z}\boldsymbol{X}) \det(\boldsymbol{X})^{a-n} \det(\boldsymbol{I} + \boldsymbol{X})^{b-a-n} \text{d}\boldsymbol{X},$$ where $\boldsymbol{Z}, \boldsymbol{X}$ are $n\times n$ complex-valued symmetric positive-definite matrices, $\text{Re}(a) \geq n$, and $\Gamma_p(a)$ is the multivariate Gamma function [2]. The definition of function $\mathfrak{U}(a,b;\boldsymbol{Z})$ closely corresponds to the definition of the scalar KummerU function $U(a,b;z)$ [3, Eqn. 3] given by $$U(a,b;z) = \frac{1}{\Gamma(a)} \int_{0}^{+\infty} e^{-zx} x^{a-1} (1+x)^{b-a-1} \text{d}x.$$
+KummerU function of a matrix argument \cite[Definition 1.3.6]{Gupta1999} given by $$\mathfrak{U}(a,b;\boldsymbol{Z}) = \frac{1}{\Gamma_p(a)}\int_{\boldsymbol{X} \succ 0} \text{etr}(-\boldsymbol{Z}\boldsymbol{X}) \det(\boldsymbol{X})^{a-n} \det(\boldsymbol{I} + \boldsymbol{X})^{b-a-n} \text{d}\boldsymbol{X},$$ where $\boldsymbol{Z}, \boldsymbol{X}$ are $n\times n$ complex-valued symmetric positive-definite matrices, $\text{Re}(a) \geq n$, and $\Gamma_p(a)$ is the multivariate Gamma function \cite{Olver2010}. The definition of function $\mathfrak{U}(a,b;\boldsymbol{Z})$ closely corresponds to the definition of the scalar \href{https://mathworld.wolfram.com/ConfluentHypergeometricFunctionoftheSecondKind.html}{KummerU function} $U(a,b;z)$ given by $$U(a,b;z) = \frac{1}{\Gamma(a)} \int_{0}^{+\infty} e^{-zx} x^{a-1} (1+x)^{b-a-1} \text{d}x.$$
 
-We begin by noting that the determinant form for generalized hypergeometric functions are known due to Orlov [4, Eqn. 34]. Hence, KummerU function of a matrix argument may be expressed in its determinant form in a straightforward manner using the relation [1, Definition 1.3.6]: $$\lim_{c\to +\infty} {}_2\mathfrak{F}_{1}(a,b;c;\boldsymbol{I}-c\boldsymbol{Z}^{-1}) = \det(\boldsymbol{Z})^b \mathfrak{U}(b,b-a+n; \boldsymbol{Z}),$$ where ${}_2\mathfrak{F}_{1}$ is the Gaussian hypergeometric function of a matrix argument [5]. A corresponding relation for scalar KummerU function is given in [3, Eqn. 2].
+We begin by noting that the determinant form for generalized hypergeometric functions are known due to \cite[Eqn. 34]{Orlov2003}. Hence, KummerU function of a matrix argument may be expressed in its determinant form in a straightforward manner using the relation \cite[Definition 1.3.6]{Gupta1999}: $$\lim_{c\to +\infty} {}_2\mathfrak{F}_{1}(a,b;c;\boldsymbol{I}-c\boldsymbol{Z}^{-1}) = \det(\boldsymbol{Z})^b \mathfrak{U}(b,b-a+n; \boldsymbol{Z}),$$ where ${}_2\mathfrak{F}_{1}$ is the \href{https://en.wikipedia.org/wiki/Hypergeometric_function_of_a_matrix_argument}{Gaussian hypergeometric function of a matrix argument}. A corresponding relation for scalar KummerU function is given in \href{https://mathworld.wolfram.com/ConfluentHypergeometricFunctionoftheSecondKind.html}{KummerU function}.
 
-Using the relation above and [4, Eqn.34], the determinant form for KummerU function of a matrix argument can be simplified to $$\mathfrak{U}(a,b;\boldsymbol{Z}) = \frac{1}{\prod_{1\leq i \leq j \leq n}(\lambda_i-\lambda_j)}\det(\boldsymbol{\Omega}),$$ where $\lambda_i,i=1,\dots,n$, are the non-repeating eigenvalues of $\boldsymbol{Z}$, and $\boldsymbol{\Omega}$ is an $n\times n$ matrix whose $(i,j)$-th element is given by $$[\boldsymbol{\Omega}]_{ij} = U(a-j+1,a-b+1;\lambda_i),$$ and $U(a,b;z)$ is the scalar KummerU function as mentioned earlier.
+Using the relation above and \cite[Eqn. 34]{Orlov2003}, the determinant form for KummerU function of a matrix argument can be simplified to $$\mathfrak{U}(a,b;\boldsymbol{Z}) = \frac{1}{\prod_{1\leq i \leq j \leq n}(\lambda_i-\lambda_j)}\det(\boldsymbol{\Omega}),$$ where $\lambda_i,i=1,\dots,n$, are the non-repeating eigenvalues of $\boldsymbol{Z}$, and $\boldsymbol{\Omega}$ is an $n\times n$ matrix whose $(i,j)$-th element is given by $$[\boldsymbol{\Omega}]_{ij} = U(a-j+1,a-b+1;\lambda_i),$$ and $U(a,b;z)$ is the scalar KummerU function as mentioned earlier.
 
-While the above formula allows us to express $\mathfrak{U}(a,b;\boldsymbol{Z})$ in an elegant way in terms of determinant of matrix of $U(a,b;z)$, computing $\mathfrak{U}(a,b;\boldsymbol{Z})$ in terms of Zonal polynomials [6] may be more efficient. For an example of using Zonal polynomials to evaluate generalized hypergeometric functions in MATLAB, see [7]. 
+While the above formula allows us to express $\mathfrak{U}(a,b;\boldsymbol{Z})$ in an elegant way in terms of determinant of matrix of $U(a,b;z)$, computing $\mathfrak{U}(a,b;\boldsymbol{Z})$ in terms of \href{https://en.wikipedia.org/wiki/Zonal_polynomial}{Zonal polynomials} may be more efficient. For an example of using Zonal polynomials to evaluate generalized hypergeometric functions in MATLAB, see \cite{Koev2018}. 
 
-[1] Gupta, Arjun K., and Daya K. Nagar. Matrix variate distributions. Chapman and Hall/CRC, 2018.
-[2] Multivariate gamma function, web: Wikipedia.
-[3] KummerU function, web: Wolfram Mathworld.
-[4] Yu. Orlov, A. New solvable matrix integrals. International Journal of Modern Physics A 19.supp02 (2004): 276-293, web: https://arxiv.org/abs/nlin/0209063.
-[5] Hypergeometric function of a matrix argument, web: Wikipedia.
-[6] Zonal polynomials, web: Wikipedia.
-[7] Koev, Plamen, MHG for MATLAB, web: https://math.mit.edu/~plamen/software/mhgref.html.
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 14th Dec. 2018 on aravindhk-math.blogspot.com}
+	\item \emph{Modified: 16th Dec. 2023 -- Style updates for \LaTeX}
+\end{enumerate}
 
-\emph{First published: 14th Dec. 2018 on aravindhk-math.blogspot.com}
