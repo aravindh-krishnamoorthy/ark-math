@@ -1,6 +1,7 @@
 \section{Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions}
+\label{sec:004_entropy}
 
-\emph{This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in \cite{Cover2012}. This post is in continuation to the previous post in (\ref{sec:003_entropy}).}
+\emph{This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in \cite{Cover2012}. This post is in continuation to the previous post in Section \ref{sec:003_entropy}.}
 
 Let $x \in \mathbb{R}$ be a continuous stochastic variable with $\text{Laplace}(0, b)$ distribution and let $\hat{x} \in \hat{X}$ such that $\hat{X} \subset \mathbb{R}$ and $0 \in \hat{X}$ be its uniformly quantized version with step size $\Delta$. We would like to find the entropy of the discrete stochastic variable $\hat{x}$, denoted by $H_{\hat{x}}$, which provides us an estimate of the average number of bits required to encode $\hat{x}$.
 
@@ -16,7 +17,7 @@ The half-Laplace cumulative distribution function of $y$, denoted by $\breve{\Ph
 
 \begin{align} \breve{\Phi}(y) &= \begin{cases} 0 & \text{if $y = 0$} \\ \Phi(y) - \Phi(-y) & \text{if $y > 0$}\end{cases} \\ &= 1 - e^{-\frac{y}{b}} \label{eqn:le} \end{align}
 
-The expression in equation (\ref{eqn:le}) may be directly recognized as the cumulative distribution function of $\text{Exponential}(1/b)$. Therefore, the entropy of half-Laplace distribution may be found according to the expressions in (\ref{sec:003_entropy}) with $\lambda = 1/b$. 
+The expression in equation (\ref{eqn:le}) may be directly recognized as the cumulative distribution function of $\text{Exponential}(1/b)$. Therefore, the entropy of half-Laplace distribution may be found according to the expressions in Section \ref{sec:003_entropy} with $\lambda = 1/b$. 
 
 \subsection{Laplace Distribution}
 
@@ -46,7 +47,7 @@ Where $h_x$ is the differential entropy. Upon simplification, we obtain the foll
 
 Where $c_1 = log\left(\frac{1}{2b}\right) - 1 + \frac{\Delta}{2b}e^{-\frac{\Delta}{2b}}$.
 
-We see that the expressions are quite similar to the ones obtained for Exponential distribution in (\ref{sec:003_entropy}). This is expected as Laplace and Exponential distributions are very closely related.
+We see that the expressions are quite similar to the ones obtained for Exponential distribution in Section \ref{sec:003_entropy}. This is expected as Laplace and Exponential distributions are very closely related.
 
 \subsection{Version History}
 \begin{enumerate}

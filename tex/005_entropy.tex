@@ -1,8 +1,8 @@
 \section{Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables}
 
-This is the third post in series discussing uniform quantization of Laplacian stochastic variables and is about entropy of separately coding sign and magnitude of uniformly quantized Laplacian variables.
+\emph{This is the third post in series discussing uniform quantization of Laplacian stochastic variables and is about entropy of separately coding sign and magnitude of uniformly quantized Laplacian variables.}
 
-We begin by showing that the distribution of the magnitude of uniformly quantised Laplacian variable is the same as the distribution of uniformly quantised magnitude of the Laplacian variable which is shown in [1] to be equivalent to the distribution of a corresponding uniformly quantised Exponential variable.
+We begin by showing that the distribution of the magnitude of uniformly quantized Laplacian variable is the same as the distribution of uniformly quantized magnitude of the Laplacian variable which is shown in  Section \ref{sec:004_entropy} to be equivalent to the distribution of a corresponding uniformly quantized Exponential variable.
 
 Let $\hat{x}$ be the uniformly quantized version, with step size $\Delta$, of a Laplacian variable $x$ with $\text{Laplace}(0,b)$ distribution and let $\hat{m}$ and $\hat{s}$ be the variables denoting magnitude and sign of $\hat{x}$ respectively. We have $\hat{m} = |\hat{x}| \in \{0, \mathbb{Z}^+\}$ and $\hat{s} = \text{sign}(\hat{x}) \in \{-1, 0, +1\}$.
 
@@ -18,32 +18,30 @@ where $\hat{m}_{+1} = \hat{m} + \Delta$ denotes the quantization point immediate
 
 \begin{align}\Phi_{\hat{m}}(\hat{m}) &= 1 - e^{-\frac{\hat{m}}{b}} e^{-\frac{\Delta}{2b}}\end{align},
 
-which can be readily seen as the cumulative distribution function of a uniformly quantized Exponential variable $\text{Exponential}(1/b)$ quantized with step size $\Delta$. Therefore, the entropy of $\hat{m}$, denoted by $H_{\hat{m}}$, is as given in [2]. Note that a generic version of the above equivalence may be proven for distributions symmetric around zero.
+which can be readily seen as the cumulative distribution function of a uniformly quantized Exponential variable $\text{Exponential}(1/b)$ quantized with step size $\Delta$. Therefore, the entropy of $\hat{m}$, denoted by $H_{\hat{m}}$, is as given in Section \ref{sec:003_entropy} . Note that a generic version of the above equivalence may be proven for distributions symmetric around zero.
 
 Next, we find the entropy of the stochastic variable denoting the sign $\hat{s}$ which takes values from the set $\hat{S} = \{+1, 0, -1\}$. Let $f_{\hat{s}}(\hat{s})$ denote the probability mass function of the discrete variable $\hat{s}$. It is given as follows.
 
-\begin{align}f_{\hat{s}}(\hat{s}) = \begin{cases}1 - e^{-\frac{\Delta}{2b}} & \text{if $\hat{s} = 0$}\\ \frac{1}{2} e^{-\frac{\Delta}{2b}} & \text{if $\hat{s} = \pm 1$}\end{cases}\end{align}.
+\begin{align}f_{\hat{s}}(\hat{s}) = \begin{cases}1 - e^{-\frac{\Delta}{2b}} & \text{if $\hat{s} = 0$}\\ \frac{1}{2} e^{-\frac{\Delta}{2b}} & \text{if $\hat{s} = \pm 1.$}\end{cases}\end{align}
 
 Encoding $\hat{s} = 0$ carries no more information than what is contained in $\hat{m}$ as $\hat{s} = 0$ if and only if $\hat{m} = 0$. Therefore, we only need to encode the non-zero signs. The entropy of the reduced size alphabet may be computed using the theorem for general case given below.
 
-Let $A = \{\chi_0, \chi_1, \cdots, \chi_n\}$ be a finite size coding alphabet with corresponding probabilities $P = \{p_0, p_1, \cdots, p_n\}$. Now let $D = \{d_0, d_1, \cdots, d_n\}$ be the probabilities that symbols from $A$ are coded. That is, if $d_i = 1$ then the i-th symbol is always coded, if $d_i = 0.5$ then it is coded 50% of the times, and the other 50% of the times it is inferred correctly at the decoder. There are no errors in the decoding process due to the reduced alphabet size. Let $H_{A^{-}}$ denote the entropy of the reduced size coding alphabet. Then $H_{A^{-}}$ may be given by the straighforward theorem below.
-
-Theorem 1. Entropy
-
+Let $A = \{\chi_0, \chi_1, \cdots, \chi_n\}$ be a finite size coding alphabet with corresponding probabilities $P = \{p_0, p_1, \cdots, p_n\}$. Now let $D = \{d_0, d_1, \cdots, d_n\}$ be the probabilities that symbols from $A$ are coded. That is, if $d_i = 1$ then the i-th symbol is always coded, if $d_i = 0.5$ then it is coded 50\% of the times, and the other 50\% of the times it is inferred correctly at the decoder. There are no errors in the decoding process due to the reduced alphabet size. Let 
 \begin{align}H_{A^{-}} = -\sum_{i = 1}^{n} p_i d_i \log \left( \frac{p_i d_i}{\sum_{j} p_j d_j} \right)\end{align}
+denote the entropy of the reduced size coding alphabet. Then $H_{A^{-}}$ may be given by the straightforward result below.
 
 For the case above for $\hat{s}$, we set $D = \{1, 0, 1\}$, that is, we would not encode the symbol '0' but infer it correctly based on the value of $\hat{m}$. We have entropy of coding $\hat{s}$ using this scheme, denoted by $H_{\hat{S}^-}$, given as follows.
 
 \begin{align}H_{\hat{S}^-} &= -2\frac{1}{2} e^{-\frac{\Delta}{2b}} \log \frac{1}{2}\nonumber\\ &= e^{-\frac{\Delta}{2b}} \log 2\end{align}
 
-Finally, using the values of entropy $H_{\hat{x}}$ and $H_{\hat{m}}$ from [1] and [2] and $H_{\hat{S}^-}$ from above, we have the following upon simplification.
+Finally, using the values of entropy $H_{\hat{x}}$ and $H_{\hat{m}}$ from Sections \ref{sec:004_entropy} and \ref{sec:003_entropy} and $H_{\hat{S}^-}$ from above, we have the following upon simplification.
 
 \begin{align}H_{\hat{x}} = H_{\hat{m}} + H_{\hat{S}^-}\end{align}
 
 Therefore, encoding the magnitude and the reduced sign has the same entropy as encoding the uniformly quantized Laplacian variable.
 
-References:
-[1] Aravindh Krishnamoorthy, Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions, Applied Mathematics and Engineering Blog, October 2015.
-[2] Aravindh Krishnamoorthy, Entropy of Uniformly Quantized Exponential Distribution, Applied Mathematics and Engineering Blog, October 2015.
-
-\emph{First published: 29th Oct. 2015 on aravindhk-math.blogspot.com}
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 29th Oct. 2015 on aravindhk-math.blogspot.com}
+	\item \emph{Modified: 17th Dec. 2023 -- Style updates for \LaTeX}
+\end{enumerate}
