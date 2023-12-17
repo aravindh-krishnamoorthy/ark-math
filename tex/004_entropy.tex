@@ -1,10 +1,10 @@
 \section{Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions}
 
-This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in [1]. This post is in continuation to the previous post in [2].
+\emph{This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in \cite{Cover2012}. This post is in continuation to the previous post in (\ref{sec:003_entropy}).}
 
 Let $x \in \mathbb{R}$ be a continuous stochastic variable with $\text{Laplace}(0, b)$ distribution and let $\hat{x} \in \hat{X}$ such that $\hat{X} \subset \mathbb{R}$ and $0 \in \hat{X}$ be its uniformly quantized version with step size $\Delta$. We would like to find the entropy of the discrete stochastic variable $\hat{x}$, denoted by $H_{\hat{x}}$, which provides us an estimate of the average number of bits required to encode $\hat{x}$.
 
-HALF-LAPLACE DISTRIBUTION
+\subsection{Half-Laplace Distribution}
 
 Half-Laplace distribution refers to the distribution obtained by folding the zero-mean distribution function along the center. The new distribution is equivalent to the distribution of the stochastic variable $y = |x|$, i.e. the absolute value of the original Laplace distributed variable.
 
@@ -16,9 +16,9 @@ The half-Laplace cumulative distribution function of $y$, denoted by $\breve{\Ph
 
 \begin{align} \breve{\Phi}(y) &= \begin{cases} 0 & \text{if $y = 0$} \\ \Phi(y) - \Phi(-y) & \text{if $y > 0$}\end{cases} \\ &= 1 - e^{-\frac{y}{b}} \label{eqn:le} \end{align}
 
-The expression in equation (\ref{eqn:le}) may be directly recognized as the cumulative distribution function of $\text{Exponential}(1/b)$. Therefore, the entropy of half-Laplace distribution may be found according to the expressions in [2] with $\lambda = 1/b$. 
+The expression in equation (\ref{eqn:le}) may be directly recognized as the cumulative distribution function of $\text{Exponential}(1/b)$. Therefore, the entropy of half-Laplace distribution may be found according to the expressions in (\ref{sec:003_entropy}) with $\lambda = 1/b$. 
 
-LAPLACE DISTRIBUTION
+\subsection{Laplace Distribution}
 
 Let $f(\hat{x})$ denote the probability mass function of the quantized variable $\hat{x}$. It is related to the probability density function $\varphi(x)$ as follows.
 \begin{align} f(\hat{x}) = \int_{\hat{x} - \frac{\Delta}{2}}^{\hat{x} - \frac{\Delta}{2}} \varphi(x) dx \label{eqn:lq} \end{align}
@@ -34,7 +34,7 @@ With the functions $v_{1,2}(b)$ given by:
 
 \begin{align} v_1(b) &= \sum_{\hat{x} \in \hat{X}{}^+} e^{-\frac{\hat{x}}{b}} \\ v_2(b) &= \sum_{\hat{x} \in \hat{X}{}^+} e^{-\frac{\hat{x}}{b}} \log e^{-\frac{\hat{x}}{b}} \end{align}
 
-EXACT RESULT
+\subsection{Exact Result}
 
 The analytical expressions for $v_{1,2}(b)$ may be computed starting from the following identities.
 
@@ -46,10 +46,12 @@ Where $h_x$ is the differential entropy. Upon simplification, we obtain the foll
 
 Where $c_1 = log\left(\frac{1}{2b}\right) - 1 + \frac{\Delta}{2b}e^{-\frac{\Delta}{2b}}$.
 
-We see that the expressions are quite similar to the ones obtained for Exponential distribution in [2]. This is expected as Laplace and Exponential distributions are very closely related.
+We see that the expressions are quite similar to the ones obtained for Exponential distribution in (\ref{sec:003_entropy}). This is expected as Laplace and Exponential distributions are very closely related.
 
-References:
-[1] Thomas M. Cover, Joy A. Thomas, Elements of Information Theory, Second Edition, Wiley 2006.
-[2] Aravindh Krishnamoorthy, Entropy of Uniformly Quantized Exponential Distribution, Applied Mathematics and Engineering Blog, October 2015.
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 5th Oct. 2015 on aravindhk-math.blogspot.com}
+	\item \emph{Modified: 16th Dec. 2023 -- Style updates for \LaTeX}
+\end{enumerate}
 
-\emph{First published: 5th Oct. 2015 on aravindhk-math.blogspot.com}
+

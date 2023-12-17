@@ -1,6 +1,7 @@
 \section{Entropy of Uniformly Quantized Exponential Distribution}
+\label{sec:003_entropy}
 
-This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in [1].
+\emph{This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in \cite{Cover2012}.}
 
 Let $x \in \{0\} \cup \mathbb{R}^+ $ be a continuous stochastic variable with $\text{Exponential}(\lambda)$ distribution and let $\hat{x} \in \{0\} \cup \hat{X}$ such that $\hat{X} \subset \mathbb{R}^+$ be its uniformly quantized version with step size $\Delta$. We would like to find the entropy of the discrete stochastic variable $\hat{x}$, denoted by $H_{\hat{x}}$, which provides us an estimate of the average number of bits required to encode $\hat{x}$.
 
@@ -36,7 +37,7 @@ The performance of the above approximation may be verified numerically. In the g
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{003_001_approx1.png}
+	\includegraphics[width=0.95\textwidth,keepaspectratio]{003_001_approx1.png}
 \end{figure}
 
 EXACT RESULT
@@ -51,7 +52,8 @@ As the derivation is lengthy, we directly present the simplified result below.
 
 Where $c_1 = log(\lambda) - 1 + \frac{\Delta}{2}\lambda e^{-\lambda\frac{\Delta}{2}}$. We see that even with a simple distribution function, the exact expressions quickly get out of hand and are unfortunately not short and elegant as one would have expected.
 
-References:
-[1] Thomas M. Cover, Joy A. Thomas, Elements of Information Theory, Second Edition, Wiley 2006.
-
-\emph{First published: 3rd Oct. 2015 on aravindhk-math.blogspot.com}
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 3rd Oct. 2015 on aravindhk-math.blogspot.com}
+	\item \emph{Modified: 16th Dec. 2023 -- Style updates for \LaTeX}
+\end{enumerate}
