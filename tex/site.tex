@@ -1,17 +1,4 @@
 \documentclass[a4paper,dvipsnames]{report}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[
-	HomeHTMLFilename=index,
-	HTMLFilename={node-},
-	mathjax
-	]{lwarp}
-\setcounter{FileDepth}{1}
-\setcounter{tocdepth}{1}
-\setcounter{SideTOCDepth}{1}
-\boolfalse{FileSectionNames}
-\booltrue{CombineHigherDepths}
-\CSSFilename{M216-notes.css}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{xcolor}
@@ -28,19 +15,13 @@
 \usepackage{subcaption}
 \usepackage{algpseudocode}
 \captionsetup{justification=centering}
-\usepackage[backend=bibtex, style=ieee]{biblatex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addbibresource{IEEEabrv.bib}
-\addbibresource{references.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % https://people.bath.ac.uk/feb/lwarp/M216-notes.tex
 %% I hate indented paras
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
-%% Compact lists slightly less compact
-% \setlength{\plitemsep}{3pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{./figs/}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,13 +33,11 @@
 	showstringspaces=false,
 	numbers=left,
 	upquote=true,
-	commentstyle=\color{LimeGreen},
-	keywordstyle=\color{Purple},
-	stringstyle=\color{Red},
+	commentstyle=\color{gray},
 	basicstyle=\small\ttfamily,
-	emphstyle={\color{Blue}},
-	keywordstyle=\color{YellowOrange}
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,9 +88,7 @@
 % ================================================================================
 % Bibliography
 % ================================================================================
-% \bibliographystyle{unsrt}
-% \bibliography{IEEEabrv,references}
-\chapter{Bibliography}
-\printbibliography
+\bibliographystyle{unsrt}
+\bibliography{IEEEabrv,references}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
