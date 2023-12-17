@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3.3 Stochastic Properties of Random Matrix Factors - 3 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch3.S2.html" title="3.2 Stochastic Properties of Random Matrix Factors - 2 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch3.S4.html" title="3.4 Ordered densities of squared singular values of a Gaussian matrix product ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S1.html" title="3.1 Stochastic Properties of Random Matrix Factors - 1 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S2.html" title="3.2 Stochastic Properties of Random Matrix Factors - 2 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S4.html" title="3.4 Ordered densities of squared singular values of a Gaussian matrix product ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch3.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Random Matrix Theory</span></a><a href="Ch3.S2.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Stochastic Properties of Random Matrix Factors - 2</span></a><a href="Ch3.S4.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Ordered densities of squared singular values of a Gaussian matrix product</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.3 </span>Stochastic Properties of Random Matrix Factors - 3</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">In this third post continuing QR and related Cholesky matrix decomposition techniques, we look at the probability density function (PDF) of a diagonal element of the QR decomposition of a complex-valued random matrix with circular Gaussian i.i.d elements.</p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p2.m1" class="ltx_Math" alttext="\mathbf{H}" display="inline"><mi>𝐇</mi></math> denote an <math id="p2.m2" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> matrix with circular Gaussian independent and identically distributed (i.i.d) elements with zero mean and variance two i.e. <math id="p2.m3" class="ltx_Math" alttext="\mathcal{CN}(0,2)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒞</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></math>. Furthermore let <math id="p2.m4" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> denote the upper-triangular matrix obtained after QR decomposition (<math id="p2.m5" class="ltx_Math" alttext="\mathbf{H}=\mathbf{Q}\mathbf{R}" display="inline"><mrow><mi>𝐇</mi><mo>=</mo><mi>𝐐𝐑</mi></mrow></math>) such that the diagonal elements of <math id="p2.m6" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> are non-negative. It is well-known that such a QR decomposition (QRP or QR with positive diagonal elements) of a matrix is unique. In case a QR decomposition algorithm results in negative diagonal elements, non-negativity may be arranged by multiplying those rows of <math id="p2.m7" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> and the corresponding columns of <math id="p2.m8" class="ltx_Math" alttext="\mathbf{Q}" display="inline"><mi>𝐐</mi></math> by -1.</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">It is well known that the diagonal elements of <math id="p3.m1" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> follow the distribution:</p>
+<table id="Ch3.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex6.m1" class="ltx_Math" alttext="\begin{bmatrix}\chi_{2N}&amp;\mathcal{CN}(0,2)&amp;\cdots&amp;\mathcal{CN}(0,2)\\
+&amp;\chi_{2(N-1)}&amp;\ddots&amp;\vdots\\
+&amp;&amp;\ddots&amp;\mathcal{CN}(0,2)\\
+&amp;&amp;&amp;\chi_{2}\end{bmatrix}," display="block"><mrow><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>χ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>N</mi></mrow></msub></mtd><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒞</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒞</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd></mtd><mtd><msub><mi>χ</mi><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></msub></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒞</mi><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd></mtd><mtd><msub><mi>χ</mi><mn>2</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p3.m2" class="ltx_Math" alttext="\chi_{k}" display="inline"><msub><mi>χ</mi><mi>k</mi></msub></math> denotes a Chi-distributed random variable with <math id="p3.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> degrees of freedom.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">From the above, it follows that the distribution of a diagonal element <math id="p4.m1" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> of the matrix <math id="p4.m2" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> may be given as the (equal) weighted sum of the pdfs of the diagonal elements as</p>
+<table id="Ch3.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex7.m1" class="ltx_Math" alttext="f_{r}(x)=\frac{1}{N}\sum_{n=1}^{N}\frac{2^{n}}{\Gamma(n)}x^{n-1}e^{-\frac{x}{2%
+}}," display="block"><mrow><mrow><mrow><msub><mi>f</mi><mi>r</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><mrow><mfrac><msup><mn>2</mn><mi>n</mi></msup><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>⁢</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi>x</mi><mn>2</mn></mfrac></mrow></msup></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p4.m3" class="ltx_Math" alttext="\Gamma(n)" display="inline"><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the Gamma function.</p>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">The following graph shows the results of a MATLAB simulation for <math id="p5.m1" class="ltx_Math" alttext="N=4" display="inline"><mrow><mi>N</mi><mo>=</mo><mn>4</mn></mrow></math> over 100000 iterations where the diagonal values of <math id="p5.m2" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> were collected. The blue graph shows the histogram of the diagonal values. The red graph shows the pdf as obtained using the equation above. We notice that the two correspond well.</p>
+</div>
+<figure id="fig1" class="ltx_figure"><img src="figs/010_001_frx.png" id="g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="426" alt="[Uncaptioned image]">
+</figure>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">ARK</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.3.1 </span>Version History</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 29th Dec. 2017 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 17th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch3.S2.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Stochastic Properties of Random Matrix Factors - 2</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch3.S4.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Ordered densities of squared singular values of a Gaussian matrix product</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

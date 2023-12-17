@@ -1,4 +1,4 @@
-site:
-	rm -rf ../site/
-	mkdir ../site/
-	latexmlc --splitat=section index.tex --dest=../site/index.html
+docs:
+	rm -rf ../docs/
+	mkdir ../docs/
+	latexmlc --splitat=section index.tex --dest=../docs/index.html

@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3.1 Stochastic Properties of Random Matrix Factors - 1 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch3.S2.html" title="3.2 Stochastic Properties of Random Matrix Factors - 2 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S2.html" title="3.2 Stochastic Properties of Random Matrix Factors - 2 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S3.html" title="3.3 Stochastic Properties of Random Matrix Factors - 3 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S4.html" title="3.4 Ordered densities of squared singular values of a Gaussian matrix product ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch3.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Random Matrix Theory</span></a><a href="Ch3.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Random Matrix Theory</span></a><a href="Ch3.S2.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Stochastic Properties of Random Matrix Factors - 2</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.1 </span>Stochastic Properties of Random Matrix Factors - 1</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">In this series of posts, we will be considering the stochastic properties of factors of random matrices. At first, we look at the simple case of Cholesky decomposition of <a href="https://en.wikipedia.org/wiki/Wishart_distribution" title="" class="ltx_ref ltx_href">Wishart matrices</a>. More below.</em></p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p2.m1" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> be a matrix whose elements are random variables, each with a given distribution. Now assume that we factorize <math id="p2.m2" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> using one of the matrix factorization techniques such as QR, Eigenvalue, or Cholesky decomposition. The elements of the matrix factor are also random variables… but what are their distributions?</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">This is exactly what we hope to answer.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">First and the obvious reason to find the distributions is to understand the characteristics of the matrix factor. For example, in a wireless communication MIMO channel, which is a zero-mean Gaussian random matrix, it helps us understand the stochastic properties of a ”partial” or ”inverse” channel.</p>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">The second reason is to speed up simulations. If we have a simulation that requires a random matrix factor which is computed numerically, the simulation may be sped up by generating the elements of the matrix factor directly with the given distributions.</p>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">Now we look at the stochastic properties of Cholesky decomposition of Wishart matrices.</p>
+</div>
+<div id="p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p7.m1" class="ltx_Math" alttext="G\in\mathbb{C}^{n\times n}" display="inline"><mrow><mi>G</mi><mo>∈</mo><msup><mi>ℂ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math> be a complex-valued matrix whose elements are Gaussian random variables i.e. <math id="p7.m2" class="ltx_Math" alttext="\mathcal{N}(0,1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math>. Let <math id="p7.m3" class="ltx_Math" alttext="H=G^{H}G" display="inline"><mrow><mi>H</mi><mo>=</mo><mrow><msup><mi>G</mi><mi>H</mi></msup><mo>⁢</mo><mi>G</mi></mrow></mrow></math>. <math id="p7.m4" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> (Wishart matrix) is now a Hermitian symmetric complex-valued matrix.</p>
+</div>
+<div id="p8" class="ltx_para ltx_noindent">
+<p class="ltx_p">It is well known that the Cholesky decomposition of <math id="p8.m1" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> is the upper triangular matrix from the QR decomposition of <math id="p8.m2" class="ltx_Math" alttext="G" display="inline"><mi>G</mi></math>, i.e. <math id="p8.m3" class="ltx_Math" alttext="H=R^{H}R" display="inline"><mrow><mi>H</mi><mo>=</mo><mrow><msup><mi>R</mi><mi>H</mi></msup><mo>⁢</mo><mi>R</mi></mrow></mrow></math> where <math id="p8.m4" class="ltx_Math" alttext="G=QR" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><mi>Q</mi><mo>⁢</mo><mi>R</mi></mrow></mrow></math> for a Unitary matrix <math id="p8.m5" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math> and an upper triangular matrix with positive diagonal elements <math id="p8.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+<div id="p9" class="ltx_para ltx_noindent">
+<p class="ltx_p">Therefore, the distribution of <math id="p9.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> is straightforward from <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib3" title="Random matrix theory" class="ltx_ref">6</a>]</cite> and is given as follows:</p>
+<table id="Ch3.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex1.m1" class="ltx_Math" alttext="\begin{bmatrix}\chi_{n}&amp;\mathcal{N}&amp;\cdots&amp;\mathcal{N}\\
+&amp;\chi_{n-1}&amp;\cdots&amp;\mathcal{N}\\
+&amp;&amp;\ddots&amp;\vdots\\
+&amp;&amp;&amp;\chi_{1}\end{bmatrix}," display="block"><mrow><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>χ</mi><mi>n</mi></msub></mtd><mtd><mi class="ltx_font_mathcaligraphic">𝒩</mi></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mi class="ltx_font_mathcaligraphic">𝒩</mi></mtd></mtr><mtr><mtd></mtd><mtd><msub><mi>χ</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mi class="ltx_font_mathcaligraphic">𝒩</mi></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd></mtd><mtd><msub><mi>χ</mi><mn>1</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p">where <math id="p10.m1" class="ltx_Math" alttext="\mathcal{N}" display="inline"><mi class="ltx_font_mathcaligraphic">𝒩</mi></math> denotes Gaussian distribution and <math id="p10.m2" class="ltx_Math" alttext="\chi_{k}" display="inline"><msub><mi>χ</mi><mi>k</mi></msub></math> the Chi distribution with <math id="p10.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> degrees of freedom.</p>
+</div>
+<div id="p11" class="ltx_para ltx_noindent">
+<p class="ltx_p">Stochastic properties of the matrix factors may also be verified numerically. Let <math id="p11.m1" class="ltx_Math" alttext="G\in\mathbb{R}^{2\times 2}" display="inline"><mrow><mi>G</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>2</mn></mrow></msup></mrow></math> be a real-valued matrix with elements distributed according to standard Gaussian distribution, i.e. <math id="p11.m2" class="ltx_Math" alttext="g_{ij}" display="inline"><msub><mi>g</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math>’s are <math id="p11.m3" class="ltx_Math" alttext="\mathcal{N}(0,1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math>. <math id="p11.m4" class="ltx_Math" alttext="G\leadsto R" display="inline"><mrow><mi>G</mi><mo stretchy="false">↝</mo><mi>R</mi></mrow></math> given by:</p>
+<table id="Ch3.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex2.m1" class="ltx_Math" alttext="\begin{bmatrix}\mathcal{N}(0,1)&amp;\mathcal{N}(0,1)\\
+\mathcal{N}(0,1)&amp;\mathcal{N}(0,1)\end{bmatrix}\leadsto\begin{bmatrix}\chi_{2}&amp;%
+\mathcal{N}(0,1)\\
+&amp;\chi_{1}\end{bmatrix}" display="block"><mrow><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr></mtable><mo>]</mo></mrow><mo stretchy="false">↝</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>χ</mi><mn>2</mn></msub></mtd><mtd><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd></mtd><mtd><msub><mi>χ</mi><mn>1</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p12" class="ltx_para ltx_noindent">
+<p class="ltx_p">Figure below illustrates the distributions of elements of <math id="p12.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> computed numerically using MATLAB. Normalized numerical quantities obtained over 100000 trials are plotted in the blue bar graph and the theoretical expectation is plotted in red. Numerical results closely match the theoretical expectation.</p>
+</div>
+<figure id="Ch3.F1" class="ltx_figure"><img src="figs/002_001_mfs1.png" id="Ch3.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="426" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 3.1</span>: </span><span class="ltx_text" style="font-size:90%;">Numerical vs theoretical distribution of elements of R.</span></figcaption>
+</figure>
+<div id="p13" class="ltx_para ltx_noindent">
+<p class="ltx_p">In the next blog posts on this topic, I hope to be able to provide more examples for stochastic properties of matrix factors especially the ones we come across in wireless communication.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.1 </span>Version History</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 22nd Sep. 2015 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 17th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch3.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Random Matrix Theory</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch3.S2.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Stochastic Properties of Random Matrix Factors - 2</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

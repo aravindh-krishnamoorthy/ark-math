@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch2.S2.html" title="2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S2.html" title="2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S3.html" title="2.3 Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S4.html" title="2.4 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S5.html" title="2.5 Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S6.html" title="2.6 Distribution of A Simple Function of Gamma Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S7.html" title="2.7 Distribution of the Determinant of a Complex-Valued Sample Correlation Matrix ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a><a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a><a href="Ch2.S2.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.1 </span>Entropy of Uniformly Quantized Exponential Distribution</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib16" title="Elements of information theory" class="ltx_ref">5</a>]</cite>.</em></p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p2.m1" class="ltx_Math" alttext="x\in\{0\}\cup\mathbb{R}^{+}" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><mo>∪</mo><msup><mi>ℝ</mi><mo>+</mo></msup></mrow></mrow></math> be a continuous stochastic variable with <math id="p2.m2" class="ltx_Math" alttext="\text{Exponential}(\lambda)" display="inline"><mrow><mtext>Exponential</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math> distribution and let <math id="p2.m3" class="ltx_Math" alttext="\hat{x}\in\{0\}\cup\hat{X}" display="inline"><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mrow><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><mo>∪</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></mrow></math> such that <math id="p2.m4" class="ltx_Math" alttext="\hat{X}\subset\mathbb{R}^{+}" display="inline"><mrow><mover accent="true"><mi>X</mi><mo>^</mo></mover><mo>⊂</mo><msup><mi>ℝ</mi><mo>+</mo></msup></mrow></math> be its uniformly quantized version with step size <math id="p2.m5" class="ltx_Math" alttext="\Delta" display="inline"><mi mathvariant="normal">Δ</mi></math>. We would like to find the entropy of the discrete stochastic variable <math id="p2.m6" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math>, denoted by <math id="p2.m7" class="ltx_Math" alttext="H_{\hat{x}}" display="inline"><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></math>, which provides us an estimate of the average number of bits required to encode <math id="p2.m8" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math>.</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">For the continuous stochastic variable <math id="p3.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, entropy is not generally defined. However, differential entropy, denoted by <math id="p3.m2" class="ltx_Math" alttext="h_{x}" display="inline"><msub><mi>h</mi><mi>x</mi></msub></math>, plays the same role as entropy for discrete stochastic variables. A well known approximation relating differential entropy of a variable and the entropy of its quantized version is given as follows.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E1.m1" class="ltx_Math" alttext="\displaystyle H_{\hat{x}}\approx h_{x}-\log\Delta" display="inline"><mrow><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>≈</mo><mrow><msub><mi>h</mi><mi>x</mi></msub><mo>−</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi mathvariant="normal">Δ</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.1)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">Unfortunately, this approximation is only valid for small values of <math id="p5.m1" class="ltx_Math" alttext="\Delta" display="inline"><mi mathvariant="normal">Δ</mi></math> and breaks down as <math id="p5.m2" class="ltx_Math" alttext="\Delta" display="inline"><mi mathvariant="normal">Δ</mi></math> increases. For example, for the common case of <math id="p5.m3" class="ltx_Math" alttext="\Delta=1" display="inline"><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mn>1</mn></mrow></math>, the approximation predicts the differential entropy and entropy of the quantized variable to be equal. This is generally not the case.</p>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">A common workaround is to use numerical simulations to calculate the <math id="p6.m1" class="ltx_Math" alttext="H_{\hat{x}}" display="inline"><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></math>. However, it would be satisfying to have an analytical expression notwithstanding its practical use. As we shall see below, the expression turns out to be quite cumbersome.</p>
+</div>
+<div id="p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p7.m1" class="ltx_Math" alttext="\varphi(x)" display="inline"><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p7.m2" class="ltx_Math" alttext="f(\hat{x})" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> denote the probability density and mass functions of <math id="p7.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> and <math id="p7.m4" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math> respectively. They are related as</p>
+<table id="Ch3.S4.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E2.m1" class="ltx_Math" alttext="\displaystyle f(\hat{x})=\int_{\hat{x}-[\hat{x}\neq 0]\frac{\Delta}{2}}^{\hat{%
+x}+\frac{\Delta}{2}}\varphi(x)dx" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mrow><mrow><mo stretchy="false">[</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>≠</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">.
+The indicator function <math id="p7.m5" class="ltx_Math" alttext="[\hat{x}\neq 0]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>≠</mo><mn>0</mn></mrow><mo stretchy="false">]</mo></mrow></math> is <math id="p7.m6" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> when <math id="p7.m7" class="ltx_Math" alttext="\hat{x}=0" display="inline"><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>=</mo><mn>0</mn></mrow></math> and <math id="p7.m8" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> otherwise, and serves to set the lower bound correctly.</p>
+</div>
+<div id="p8" class="ltx_para ltx_noindent">
+<p class="ltx_p">Now onto calculating the negative entropy <math id="p8.m1" class="ltx_Math" alttext="-H_{\hat{x}}" display="inline"><mrow><mo>−</mo><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></mrow></math> which is given (by definition) as follows. The motivation behind using negative entropy instead of entropy is to avoid (many) negative signs on the right hand side expression.</p>
+</div>
+<div id="p9" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E3.m1" class="ltx_Math" alttext="\displaystyle-H_{\hat{x}}" display="inline"><mrow><mo>−</mo><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E3.m2" class="ltx_Math" alttext="\displaystyle=\sum_{\hat{x}\in\{0\}\cup\hat{X}}f(\hat{x})\log f(\hat{x})" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mrow><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><mo>∪</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></mrow></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.3)</span></td>
+</tr></tbody>
+<tbody id="Ch2.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex1.m1" class="ltx_Math" alttext="\displaystyle=\left(\int_{0}^{\frac{\Delta}{2}}\varphi(x)dx\right)\log\left[%
+\int_{0}^{\frac{\Delta}{2}}\varphi(x)dx\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E4.m1" class="ltx_Math" alttext="\displaystyle\quad+\sum_{\hat{x}\in\hat{X}}\left(\int_{\hat{x}-\frac{\Delta}{2%
+}}^{\hat{x}+\frac{\Delta}{2}}\varphi(x)dx\right)\log\left[\int_{\hat{x}-\frac{%
+\Delta}{2}}^{\hat{x}+\frac{\Delta}{2}}\varphi(x)dx\right]" display="inline"><mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.4)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p">Using the definition of the continuous distribution function for Exponential distribution, <math id="p10.m1" class="ltx_Math" alttext="\varphi(x)=\lambda e^{-\lambda x}" display="inline"><mrow><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>λ</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></msup></mrow></mrow></math>, the above equation is simplified as follows.</p>
+</div>
+<div id="p11" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex2.m1" class="ltx_Math" alttext="\displaystyle-H_{\hat{x}}" display="inline"><mrow><mo>−</mo><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex2.m2" class="ltx_Math" alttext="\displaystyle=\left(1-e^{-\lambda\frac{\Delta}{2}}\right)\log\left[1-e^{-%
+\lambda\frac{\Delta}{2}}\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>[</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow><mo>]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.Ex3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex3.m1" class="ltx_Math" alttext="\displaystyle\quad+\left(e^{\lambda\frac{\Delta}{2}}-e^{-\lambda\frac{\Delta}{%
+2}}\right)\log\left[e^{\lambda\frac{\Delta}{2}}-e^{-\lambda\frac{\Delta}{2}}%
+\right]u_{1}(\lambda)" display="inline"><mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>[</mo><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow><mo>]</mo></mrow></mrow><mo>⁢</mo><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E5.m1" class="ltx_Math" alttext="\displaystyle\quad+\left(e^{\lambda\frac{\Delta}{2}}-e^{-\lambda\frac{\Delta}{%
+2}}\right)u_{2}(\lambda)" display="inline"><mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>u</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.5)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">With the functions <math id="p11.m1" class="ltx_Math" alttext="u_{1,2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math> given by:</p>
+<table id="Ch3.S4.EGx9" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E6.m1" class="ltx_Math" alttext="\displaystyle u_{1}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E6.m2" class="ltx_Math" alttext="\displaystyle=\sum_{\hat{x}\in\hat{X}}e^{-\lambda\hat{x}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover></mrow></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.6)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E7.m1" class="ltx_Math" alttext="\displaystyle u_{2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E7.m2" class="ltx_Math" alttext="\displaystyle=\sum_{\hat{x}\in\hat{X}}e^{-\lambda\hat{x}}\log e^{-\lambda\hat{%
+x}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover></mrow></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover></mrow></mrow></msup></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.7)</span></td>
+</tr></tbody>
+</table>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.1.1 </span>Approximate Result</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">The exact values of <math id="SS1.p1.m1" class="ltx_Math" alttext="u_{1,2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math>, as we shall see below, are cumbersome. Therefore, we first obtain an approximate result by plugging in the the approximations for <math id="SS1.p1.m2" class="ltx_Math" alttext="u_{1,2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math> given below into equation (<a href="#Ch2.E5" title="In 2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>).</p>
+</div>
+<div id="SS1.p2" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx10" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E8.m1" class="ltx_Math" alttext="\displaystyle u_{1}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E8.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\lambda}\sum_{\hat{x}\in\hat{X}}\lambda e^{-\lambda\hat%
+{x}}\approx\frac{1}{\lambda}\left[\int_{0}^{\infty}\varphi(x)dx-\varphi(0)%
+\right]=\frac{1}{\lambda}-1" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>λ</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><mi>λ</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover></mrow></mrow></msup></mrow></mrow></mrow><mo>≈</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>λ</mi></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>λ</mi></mfrac></mstyle><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.8)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E9.m1" class="ltx_Math" alttext="\displaystyle u_{2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E9.m2" class="ltx_Math" alttext="\displaystyle=\sum_{\hat{x}\in\hat{X}}e^{-\lambda\hat{x}}\log e^{-\lambda\hat{%
+x}}\approx-\frac{h_{x}}{\lambda}-\log(\lambda)-\log(\lambda)u_{1}(\lambda)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover></mrow></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover></mrow></mrow></msup></mrow></mrow></mrow><mo>≈</mo><mrow><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msub><mi>h</mi><mi>x</mi></msub><mi>λ</mi></mfrac></mstyle></mrow><mo>−</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.9)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">The performance of the above approximation may be verified numerically. In the graph below, we hold quantization step size constant at <math id="SS1.p3.m1" class="ltx_Math" alttext="\Delta=1" display="inline"><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mn>1</mn></mrow></math> and vary the parameter <math id="SS1.p3.m2" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>. We observe that the approximation is acceptable, i.e. bit difference ¡ 1, for the range <math id="SS1.p3.m3" class="ltx_Math" alttext="0&lt;\lambda\leq 1.5" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mi>λ</mi><mo>≤</mo><mn>1.5</mn></mrow></math>. For higher values of <math id="SS1.p3.m4" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>, the approximation fails.</p>
+</div>
+<figure id="SS1.fig1" class="ltx_figure"><img src="figs/003_001_approx1.png" id="SS1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="426" alt="[Uncaptioned image]">
+</figure>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.1.2 </span>Exact Result</h2>
+
+<div id="SS2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">The exact result, from the graph above, may be obtained by plugging in the exact values for <math id="SS2.p1.m1" class="ltx_Math" alttext="u_{1,2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math> into equation (<a href="#Ch2.E5" title="In 2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>). The exact values may be computed starting from the following identities.</p>
+</div>
+<div id="SS2.p2" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E10.m1" class="ltx_Math" alttext="\displaystyle 1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E10.m2" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\infty}\varphi(x)dx=\int_{0}^{\frac{\Delta}{2}}\varphi%
+(x)dx+\sum_{\hat{x}\in\hat{X}}\int_{\hat{x}-\frac{\Delta}{2}}^{\hat{x}+\frac{%
+\Delta}{2}}\varphi(x)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.10)</span></td>
+</tr></tbody>
+<tbody id="Ch2.Ex4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex4.m1" class="ltx_Math" alttext="\displaystyle-h_{x}" display="inline"><mrow><mo>−</mo><msub><mi>h</mi><mi>x</mi></msub></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex4.m2" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\infty}\varphi(x)\log\varphi(x)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>φ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E11.m1" class="ltx_Math" alttext="\displaystyle=\int_{0}^{\frac{\Delta}{2}}\varphi(x)\log\varphi(x)dx+\sum_{\hat%
+{x}\in\hat{X}}\int_{\hat{x}-\frac{\Delta}{2}}^{\hat{x}+\frac{\Delta}{2}}%
+\varphi(x)\log\varphi(x)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>φ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>φ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.11)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS2.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">As the derivation is lengthy, we directly present the simplified result below.</p>
+</div>
+<div id="SS2.p4" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E12"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E12.m1" class="ltx_Math" alttext="\displaystyle u_{1}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E12.m2" class="ltx_Math" alttext="\displaystyle=\frac{e^{-\lambda\frac{\Delta}{2}}}{e^{\lambda\frac{\Delta}{2}}-%
+e^{-\lambda\frac{\Delta}{2}}}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.12)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E13"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E13.m1" class="ltx_Math" alttext="\displaystyle u_{2}(\lambda)" display="inline"><mrow><msub><mi>u</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E13.m2" class="ltx_Math" alttext="\displaystyle=\frac{-h_{x}-c_{1}-\frac{\Delta}{2}\lambda\left[e^{\lambda\frac{%
+\Delta}{2}}+e^{-\lambda\frac{\Delta}{2}}\right]u_{1}(\lambda)}{e^{\lambda\frac%
+{\Delta}{2}}-e^{-\lambda\frac{\Delta}{2}}}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo>−</mo><msub><mi>h</mi><mi>x</mi></msub></mrow><mo>−</mo><msub><mi>c</mi><mn>1</mn></msub><mo>−</mo><mrow><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac><mo>⁢</mo><mi>λ</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow><mo>]</mo></mrow><mo>⁢</mo><msub><mi>u</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.13)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS2.p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">Where <math id="SS2.p5.m1" class="ltx_Math" alttext="c_{1}=log(\lambda)-1+\frac{\Delta}{2}\lambda e^{-\lambda\frac{\Delta}{2}}" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><mrow><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mn>1</mn></mrow><mo>+</mo><mrow><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac><mo>⁢</mo><mi>λ</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>λ</mi><mo>⁢</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></mrow></msup></mrow></mrow></mrow></math>. We see that even with a simple distribution function, the exact expressions quickly get out of hand and are unfortunately not short and elegant as one would have expected.</p>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.1.3 </span>Version History</h2>
+
+<div id="SS3.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 3rd Oct. 2015 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 16th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch2.S2.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

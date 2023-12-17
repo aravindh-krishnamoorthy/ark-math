@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.1 Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch1.S2.html" title="1.2 Complex-valued Durbin Algorithm with MATLAB code ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S2.html" title="1.2 Complex-valued Durbin Algorithm with MATLAB code ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S3.html" title="1.3 Determinant Form for KummerU Function of a Matrix Argument ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S4.html" title="1.4 Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S5.html" title="1.5 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch1.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Linear Algebra</span></a><a href="Ch1.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Linear Algebra</span></a><a href="Ch1.S2.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Complex-valued Durbin Algorithm with MATLAB code</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.1 </span>Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p1.m1" class="ltx_Math" alttext="\boldsymbol{T}\in\mathbb{C}^{n\times n}" display="inline"><mrow><mi>𝑻</mi><mo>∈</mo><msup><mi>ℂ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math> be a positive-definite Hermitian symmetric Toeplitz matrix defined with elements <math id="p1.m2" class="ltx_Math" alttext="t_{ij}=r_{i-j}" display="inline"><mrow><msub><mi>t</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>r</mi><mrow><mi>i</mi><mo>−</mo><mi>j</mi></mrow></msub></mrow></math> for a set of scalars <math id="p1.m3" class="ltx_Math" alttext="r_{-n+1},\cdots,r_{0},\cdots,r_{n-1}" display="inline"><mrow><msub><mi>r</mi><mrow><mrow><mo>−</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>r</mi><mn>0</mn></msub><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>r</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math>, where <math id="p1.m4" class="ltx_Math" alttext="r_{-t}=r_{t}^{*}" display="inline"><mrow><msub><mi>r</mi><mrow><mo>−</mo><mi>t</mi></mrow></msub><mo>=</mo><msubsup><mi>r</mi><mi>t</mi><mo>*</mo></msubsup></mrow></math>. Without loss of generality, assume <math id="p1.m5" class="ltx_Math" alttext="r_{0}=1" display="inline"><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow></math>.</p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">We have the Cholesky factor <math id="p2.m1" class="ltx_Math" alttext="\boldsymbol{R}" display="inline"><mi>𝑹</mi></math> of the matrix <math id="p2.m2" class="ltx_Math" alttext="\boldsymbol{T}" display="inline"><mi>𝑻</mi></math> such that <math id="p2.m3" class="ltx_Math" alttext="\boldsymbol{R}^{\mathrm{H}}\boldsymbol{R}=\boldsymbol{T}" display="inline"><mrow><mrow><msup><mi>𝑹</mi><mi mathvariant="normal">H</mi></msup><mo>⁢</mo><mi>𝑹</mi></mrow><mo>=</mo><mi>𝑻</mi></mrow></math>. The inverse Cholesky factor is then given by <math id="p2.m4" class="ltx_Math" alttext="\boldsymbol{R}^{-1}" display="inline"><msup><mi>𝑹</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math>. A closely related decomposition known as the LDL decomposition is given as follows: <math id="p2.m5" class="ltx_Math" alttext="\boldsymbol{\Lambda}=\text{diag}(\boldsymbol{R})" display="inline"><mrow><mi>𝚲</mi><mo>=</mo><mrow><mtext>diag</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝑹</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="p2.m6" class="ltx_Math" alttext="\boldsymbol{L}=\boldsymbol{R}^{\mathrm{H}}\boldsymbol{\Lambda}^{-1}" display="inline"><mrow><mi>𝑳</mi><mo>=</mo><mrow><msup><mi>𝑹</mi><mi mathvariant="normal">H</mi></msup><mo>⁢</mo><msup><mi>𝚲</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow></math>, and therefore, <math id="p2.m7" class="ltx_Math" alttext="\boldsymbol{T}=\boldsymbol{L}\boldsymbol{\Lambda}^{2}\boldsymbol{L}^{\mathrm{H%
+}}=\boldsymbol{L}\boldsymbol{D}\boldsymbol{L}^{\mathrm{H}}" display="inline"><mrow><mi>𝑻</mi><mo>=</mo><mrow><mi>𝑳</mi><mo>⁢</mo><msup><mi>𝚲</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>𝑳</mi><mi mathvariant="normal">H</mi></msup></mrow><mo>=</mo><mrow><mi>𝑳</mi><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><msup><mi>𝑳</mi><mi mathvariant="normal">H</mi></msup></mrow></mrow></math>. Matrix <math id="p2.m8" class="ltx_Math" alttext="\boldsymbol{L}" display="inline"><mi>𝑳</mi></math> has ones along the principal diagonal. Let <math id="p2.m9" class="ltx_Math" alttext="\boldsymbol{\Sigma}=\boldsymbol{L}\boldsymbol{D}" display="inline"><mrow><mi>𝚺</mi><mo>=</mo><mrow><mi>𝑳</mi><mo>⁢</mo><mi>𝑫</mi></mrow></mrow></math>.</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">We have <math id="p3.m1" class="ltx_Math" alttext="\boldsymbol{T}\boldsymbol{L}^{-\mathrm{H}}=\boldsymbol{\Sigma}" display="inline"><mrow><mrow><mi>𝑻</mi><mo>⁢</mo><msup><mi>𝑳</mi><mrow><mo>−</mo><mi mathvariant="normal">H</mi></mrow></msup></mrow><mo>=</mo><mi>𝚺</mi></mrow></math>, where <math id="p3.m2" class="ltx_Math" alttext="\boldsymbol{L}^{-\mathrm{H}}" display="inline"><msup><mi>𝑳</mi><mrow><mo>−</mo><mi mathvariant="normal">H</mi></mrow></msup></math> is the Hermitian transpose of the inverse with ones along the diagonal. As <math id="p3.m3" class="ltx_Math" alttext="\boldsymbol{\Sigma}" display="inline"><mi>𝚺</mi></math> is lower triangular, we can solve for the strictly upper triangular parts of <math id="p3.m4" class="ltx_Math" alttext="\boldsymbol{L}^{-\mathrm{H}}" display="inline"><msup><mi>𝑳</mi><mrow><mo>−</mo><mi mathvariant="normal">H</mi></mrow></msup></math> as the R.H.S. is known to be zero.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">For the <math id="p4.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-th column of <math id="p4.m2" class="ltx_Math" alttext="\boldsymbol{L}^{-\mathrm{H}}" display="inline"><msup><mi>𝑳</mi><mrow><mo>−</mo><mi mathvariant="normal">H</mi></mrow></msup></math> we have the first <math id="p4.m3" class="ltx_Math" alttext="k-1" display="inline"><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></math> elements <math id="p4.m4" class="ltx_Math" alttext="\boldsymbol{z}_{k-1}" display="inline"><msub><mi>𝒛</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></math>, upon simplification, as:</p>
+<table id="Ch1.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex1.m1" class="ltx_Math" alttext="\boldsymbol{T}_{k-1}\boldsymbol{z}_{k-1}=-\begin{bmatrix}r_{k+1}\\
+\vdots\\
+r_{1}\end{bmatrix}" display="block"><mrow><mrow><msub><mi>𝑻</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><msub><mi>𝒛</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mo>[</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>r</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><msub><mi>r</mi><mn>1</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">For Hermitian symmetric Toeplitz matrix <math id="p5.m1" class="ltx_Math" alttext="\boldsymbol{T}" display="inline"><mi>𝑻</mi></math> we have <math id="p5.m2" class="ltx_Math" alttext="\boldsymbol{T}=\boldsymbol{E}_{n}\boldsymbol{T}^{*}\boldsymbol{E}_{n}" display="inline"><mrow><mi>𝑻</mi><mo>=</mo><mrow><msub><mi>𝑬</mi><mi>n</mi></msub><mo>⁢</mo><msup><mi>𝑻</mi><mo>*</mo></msup><mo>⁢</mo><msub><mi>𝑬</mi><mi>n</mi></msub></mrow></mrow></math>, where <math id="p5.m3" class="ltx_Math" alttext="\boldsymbol{T}^{*}" display="inline"><msup><mi>𝑻</mi><mo>*</mo></msup></math> is complex conjugate of the matrix and <math id="p5.m4" class="ltx_Math" alttext="\boldsymbol{E}_{n}" display="inline"><msub><mi>𝑬</mi><mi>n</mi></msub></math> is the <math id="p5.m5" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> exchange matrix. Using this property, and setting <math id="p5.m6" class="ltx_Math" alttext="\boldsymbol{y}_{k-1}=\boldsymbol{E}_{k}\boldsymbol{z}^{*}_{k-1}" display="inline"><mrow><msub><mi>𝒚</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><msub><mi>𝑬</mi><mi>k</mi></msub><mo>⁢</mo><msubsup><mi>𝒛</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo>*</mo></msubsup></mrow></mrow></math> we have:</p>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<table id="Ch1.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex2.m1" class="ltx_Math" alttext="\boldsymbol{T}_{k-1}\boldsymbol{y}_{k-1}=-\begin{bmatrix}r^{*}_{1}\\
+\vdots\\
+r^{*}_{k+1}\end{bmatrix}" display="block"><mrow><mrow><msub><mi>𝑻</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><msub><mi>𝒚</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mo>[</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><msubsup><mi>r</mi><mn>1</mn><mo>*</mo></msubsup></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><msubsup><mi>r</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo>*</mo></msubsup></mtd></mtr></mtable><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">,</p>
+</div>
+<div id="p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">which may be solved efficiently using the Durbin iterations <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Matrix Computations" class="ltx_ref">7</a>]</cite>. The algorithm for finding <math id="p7.m1" class="ltx_Math" alttext="\boldsymbol{W}=\boldsymbol{R}^{-1}=[w_{i,j}]" display="inline"><mrow><mi>𝑾</mi><mo>=</mo><msup><mi>𝑹</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo stretchy="false">[</mo><msub><mi>w</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false">]</mo></mrow></mrow></math> is given as follows:</p>
+</div>
+<figure id="alg1" class="ltx_float ltx_float_algorithm ltx_framed ltx_framed_top">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float"><span class="ltx_text ltx_font_bold">Algorithm 1</span> </span> Algorithm for finding <math id="alg1.m2" class="ltx_Math" alttext="\boldsymbol{W}." display="inline"><mrow><mi>𝑾</mi><mo lspace="0em">.</mo></mrow></math></figcaption>
+<div class="ltx_listing ltx_listing">
+<div id="alg1.l1" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">1:</span></span><math id="alg1.l1.m1" class="ltx_Math" alttext="y_{1}=-r^{*}_{1};\enspace\alpha=-r^{*}_{1};\enspace\boldsymbol{W}=\boldsymbol{%
+I}_{n}" display="inline"><mrow><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><mrow><mo>−</mo><msubsup><mi>r</mi><mn>1</mn><mo>*</mo></msubsup></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>α</mi><mo>=</mo><mrow><mo>−</mo><msubsup><mi>r</mi><mn>1</mn><mo>*</mo></msubsup></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mi>𝑾</mi><mo>=</mo><msub><mi>𝑰</mi><mi>n</mi></msub></mrow></mrow></mrow></math>
+
+</div>
+<div id="alg1.l2" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">2:</span></span><math id="alg1.l2.m1" class="ltx_Math" alttext="\beta=1-|\alpha|^{2}" display="inline"><mrow><mi>β</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="false">|</mo><mi>α</mi><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></mrow></mrow></math>
+
+</div>
+<div id="alg1.l3" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">3:</span></span><math id="alg1.l3.m1" class="ltx_Math" alttext="w_{1,2}=y^{*}_{1}" display="inline"><mrow><msub><mi>w</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><msubsup><mi>y</mi><mn>1</mn><mo>*</mo></msubsup></mrow></math>
+
+</div>
+<div id="alg1.l4" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">4:</span></span><math id="alg1.l4.m1" class="ltx_Math" alttext="\boldsymbol{w}_{:,2}=\frac{\boldsymbol{w}_{:,2}}{\sqrt{\beta}}" display="inline"><mrow><msub><mi>𝒘</mi><mrow><mo rspace="0em">:</mo><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><mfrac><msub><mi>𝒘</mi><mrow><mo rspace="0em">:</mo><mo>,</mo><mn>2</mn></mrow></msub><msqrt><mi>β</mi></msqrt></mfrac></mrow></math>
+
+</div>
+<div id="alg1.l5" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">5:</span></span><span class="ltx_text ltx_font_bold">for</span> <math id="alg1.l5.m1" class="ltx_Math" alttext="k=1:n-2" display="inline"><mrow><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></mrow></math> <span class="ltx_text ltx_font_bold">do</span>
+
+</div>
+<div id="alg1.l6" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">6:</span></span>     <math id="alg1.l6.m1" class="ltx_Math" alttext="\alpha=-(r^{*}_{k+1}+\frac{1}{\beta}\boldsymbol{r}^{\mathrm{H}}_{k:-1:1}%
+\boldsymbol{y}_{1:k})" display="inline"><mrow><mi>α</mi><mo>=</mo><mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>r</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo>*</mo></msubsup><mo>+</mo><mrow><mfrac><mn>1</mn><mi>β</mi></mfrac><mo>⁢</mo><msubsup><mi>𝒓</mi><mrow><mi>k</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mn>1</mn></mrow><mi mathvariant="normal">H</mi></msubsup><mo>⁢</mo><msub><mi>𝒚</mi><mrow><mn>1</mn><mo lspace="0.278em" rspace="0.278em">:</mo><mi>k</mi></mrow></msub></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>
+
+</div>
+<div id="alg1.l7" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">7:</span></span>     <math id="alg1.l7.m1" class="ltx_Math" alttext="\boldsymbol{y}_{1:k}=\boldsymbol{y}_{1:k}+\alpha\boldsymbol{y}^{*}_{k:-1:1}" display="inline"><mrow><msub><mi>𝒚</mi><mrow><mn>1</mn><mo lspace="0.278em" rspace="0.278em">:</mo><mi>k</mi></mrow></msub><mo>=</mo><mrow><msub><mi>𝒚</mi><mrow><mn>1</mn><mo lspace="0.278em" rspace="0.278em">:</mo><mi>k</mi></mrow></msub><mo>+</mo><mrow><mi>α</mi><mo>⁢</mo><msubsup><mi>𝒚</mi><mrow><mi>k</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mn>1</mn></mrow><mo>*</mo></msubsup></mrow></mrow></mrow></math>
+
+</div>
+<div id="alg1.l8" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">8:</span></span>     <math id="alg1.l8.m1" class="ltx_Math" alttext="y_{k+1}=\alpha" display="inline"><mrow><msub><mi>y</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>α</mi></mrow></math>
+
+</div>
+<div id="alg1.l9" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">9:</span></span>     <math id="alg1.l9.m1" class="ltx_Math" alttext="\beta=(1-|\alpha|^{2})\beta" display="inline"><mrow><mi>β</mi><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="false">|</mo><mi>α</mi><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>β</mi></mrow></mrow></math>
+
+</div>
+<div id="alg1.l10" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">10:</span></span>     <math id="alg1.l10.m1" class="ltx_Math" alttext="\boldsymbol{w}_{1:k+1,k+2}=\boldsymbol{y}^{*}_{k+1:-1:1}" display="inline"><mrow><msub><mi>𝒘</mi><mrow><mn>1</mn><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></mrow></mrow></msub><mo>=</mo><msubsup><mi>𝒚</mi><mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mn>1</mn></mrow><mo>*</mo></msubsup></mrow></math>
+
+</div>
+<div id="alg1.l11" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">11:</span></span>     <math id="alg1.l11.m1" class="ltx_Math" alttext="\boldsymbol{w}_{:,k+2}=\frac{\boldsymbol{w}_{:,k+2}}{\sqrt{\beta}}" display="inline"><mrow><msub><mi>𝒘</mi><mrow><mo rspace="0em">:</mo><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></mrow></msub><mo>=</mo><mfrac><msub><mi>𝒘</mi><mrow><mo rspace="0em">:</mo><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow></mrow></msub><msqrt><mi>β</mi></msqrt></mfrac></mrow></math>
+
+</div>
+<div id="alg1.l12" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline"><span class="ltx_text" style="font-size:80%;">12:</span></span><span class="ltx_text ltx_font_bold">end</span> <span class="ltx_text ltx_font_bold">for</span>
+</div>
+</div>
+</figure>
+<div id="p8" class="ltx_para ltx_noindent">
+<p class="ltx_p">The algorithm requires <math id="p8.m1" class="ltx_Math" alttext="2n^{2}" display="inline"><mrow><mn>2</mn><mo>⁢</mo><msup><mi>n</mi><mn>2</mn></msup></mrow></math> flops <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Matrix Computations" class="ltx_ref">7</a>, Algorithm 4.7.1]</cite> for the Durbin iterations, <math id="p8.m2" class="ltx_Math" alttext="n^{2}/2" display="inline"><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></math> flops for scaling with <math id="p8.m3" class="ltx_Math" alttext="1/\sqrt{\beta}" display="inline"><mrow><mn>1</mn><mo>/</mo><msqrt><mi>β</mi></msqrt></mrow></math> and <math id="p8.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> inverse square root computations; and may be easily adapted to find <math id="p8.m5" class="ltx_Math" alttext="\boldsymbol{L}^{-1}" display="inline"><msup><mi>𝑳</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math> and <math id="p8.m6" class="ltx_Math" alttext="\boldsymbol{D}" display="inline"><mi>𝑫</mi></math> of the LDL decomposition. A MATLAB reference code is available in <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib1" title="MathWorks FileExchange: invchol_durbin(T)" class="ltx_ref">13</a>]</cite> as well as reproduced below.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.1.1 </span>MATLAB Reference Code</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<div class="ltx_listing ltx_lst_language_MATLAB ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnVuY3Rpb24gUiA9IGludmNob2xfZHVyYmluKFQpCiUgUiA9IGludmNob2xfZHVyYmluKFQpCiUgRmluZHMgdGhlIGludmVyc2Ugb2YgdGhlIENob2xlc2t5IGZhY3RvciBvZiB0aGUgcG9zaXRpdmUgZGVmaW5pdGUKJSBIZXJtaXRpYW4gc3ltbWV0cmljIFRvZXBsaXR6IG1hdHJpeCBUIChOPj0yKSB1c2luZyBEdXJiaW4gcmVjdXJzaW9ucyBbMV0uCiUKJSBBcmF2aW5kaCBLcmlzaG5hbW9vcnRoeSwgYXJhdmluZGgua3Jpc2huYW1vb3J0aHlAZmF1LmRlLCAwNC1TZXAtMjAxNS4KJSBSZWxlYXNlZCB1bmRlciB0aGUgMi1jbGF1c2UgQlNEIGxpY2Vuc2UuCiUKJSBbMV0gR2VuZSBILiBHb2x1YiwgQ2hhcmxlcyBGLiBWYW4gTG9hbiwgTWF0cml4IENvbXB1dGF0aW9ucywgVGhpcmQKJSBFZGl0aW9uLCBBbGdvcml0aG0gNC43LjEgKER1cmJpbikuCgolIEV4Y2hhbmdlIG1hdHJpeCBvZiBvcmRlciBrCkUgPSBAKGspIHJvdDkwKGV5ZShrKSkgOwoKJSBOb3JtYWxpc2UgbWF0cml4CnRzID0gVCgxLDEpIDsKVCA9IFQvdHMgOwp0ID0gdHJhbnNwb3NlKFQoMSw6KSkgOwoKJSUgRHVyYmluIHJlY3Vyc2lvbnMgWzFdCiUgU2V0dXAgdmFyaWFibGVzCk4gPSBzaXplKFQsMSkgOwpyID0gdCgyOmVuZCkgOwp5ID0gemVyb3MoTiwxKSA7ClIgPSBleWUoTikgOwoKJSBJbml0aWFsIHZhbHVlcwp5KDEpID0gLWNvbmoocigxKSkgOwpiICAgID0gMSA7CmEgICAgPSAtY29uaihyKDEpKSA7CiUgVXBkYXRlICdiJwpiICAgID0gKDEtYWJzKGEpXjIpKmIgOwoKJSBDb2x1bW4gMgpSKDEsMikgPSBjb25qKHkoMSkpIDsKUig6LDIpID0gUig6LDIpL3NxcnQoYikgOwolIFJlc3Qgb2YgdGhlIGNvbHVtbnMKZm9yIGs9MTpOLTIKCSUgVXBkYXRlICdhJyBhbmQgdGhlIHJlc3VsdAoJYSA9IC0oY29uaihyKGsrMSkpICsgY3RyYW5zcG9zZShyKGs6LTE6MSkpKnkoMTprKSkvYiA7Cgl5KDE6aykgPSB5KDE6aykgKyBhKmNvbmooeShrOi0xOjEpKSA7Cgl5KGsrMSkgPSBhIDsKCSUgVXBkYXRlICdiJwoJYiA9ICgxLWFicyhhKV4yKSpiIDsKCSUgV3JpdGUgb3V0IHRoZSByZXN1bHQKCVIoMTprKzEsaysyKSA9IEUoaysxKSpjb25qKHkoMTprKzEpKSA7CglSKDosaysyKSA9IFIoOixrKzIpL3NxcnQoYikgOwplbmQKCiUgU2NhbGUgYmFjayB0aGUgcmVzdWx0ClIgPSBSL3NxcnQodHMpIDs=" download="">⬇</a></div>
+<div id="lstnumberx1" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">invchol_durbin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx2" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>R<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>invchol_durbin(T)</span></span>
+</div>
+<div id="lstnumberx3" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Finds<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>inverse<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>Cholesky<span class="ltx_text ltx_lst_space"> </span>factor<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>positive<span class="ltx_text ltx_lst_space"> </span>definite</span></span>
+</div>
+<div id="lstnumberx4" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Hermitian<span class="ltx_text ltx_lst_space"> </span>symmetric<span class="ltx_text ltx_lst_space"> </span>Toeplitz<span class="ltx_text ltx_lst_space"> </span>matrix<span class="ltx_text ltx_lst_space"> </span>T<span class="ltx_text ltx_lst_space"> </span>(N&gt;=2)<span class="ltx_text ltx_lst_space"> </span>using<span class="ltx_text ltx_lst_space"> </span>Durbin<span class="ltx_text ltx_lst_space"> </span>recursions<span class="ltx_text ltx_lst_space"> </span>[1].</span></span>
+</div>
+<div id="lstnumberx5" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%</span></span>
+</div>
+<div id="lstnumberx6" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Aravindh<span class="ltx_text ltx_lst_space"> </span>Krishnamoorthy,<span class="ltx_text ltx_lst_space"> </span>aravindh.krishnamoorthy@fau.de,<span class="ltx_text ltx_lst_space"> </span>04-Sep-2015.</span></span>
+</div>
+<div id="lstnumberx7" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Released<span class="ltx_text ltx_lst_space"> </span>under<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>2-clause<span class="ltx_text ltx_lst_space"> </span>BSD<span class="ltx_text ltx_lst_space"> </span>license.</span></span>
+</div>
+<div id="lstnumberx8" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%</span></span>
+</div>
+<div id="lstnumberx9" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>[1]<span class="ltx_text ltx_lst_space"> </span>Gene<span class="ltx_text ltx_lst_space"> </span>H.<span class="ltx_text ltx_lst_space"> </span>Golub,<span class="ltx_text ltx_lst_space"> </span>Charles<span class="ltx_text ltx_lst_space"> </span>F.<span class="ltx_text ltx_lst_space"> </span>Van<span class="ltx_text ltx_lst_space"> </span>Loan,<span class="ltx_text ltx_lst_space"> </span>Matrix<span class="ltx_text ltx_lst_space"> </span>Computations,<span class="ltx_text ltx_lst_space"> </span>Third</span></span>
+</div>
+<div id="lstnumberx10" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Edition,<span class="ltx_text ltx_lst_space"> </span>Algorithm<span class="ltx_text ltx_lst_space"> </span>4.7.1<span class="ltx_text ltx_lst_space"> </span>(Durbin).</span></span>
+</div>
+<div id="lstnumberx11" class="ltx_listingline">
+</div>
+<div id="lstnumberx12" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Exchange<span class="ltx_text ltx_lst_space"> </span>matrix<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>order<span class="ltx_text ltx_lst_space"> </span>k</span></span>
+</div>
+<div id="lstnumberx13" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">@</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">rot90</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">eye</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx14" class="ltx_listingline">
+</div>
+<div id="lstnumberx15" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Normalise<span class="ltx_text ltx_lst_space"> </span>matrix</span></span>
+</div>
+<div id="lstnumberx16" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ts</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1,1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx17" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ts</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx18" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">t</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">transpose</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1,:))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx19" class="ltx_listingline">
+</div>
+<div id="lstnumberx20" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%%<span class="ltx_text ltx_lst_space"> </span>Durbin<span class="ltx_text ltx_lst_space"> </span>recursions<span class="ltx_text ltx_lst_space"> </span>[1]</span></span>
+</div>
+<div id="lstnumberx21" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Setup<span class="ltx_text ltx_lst_space"> </span>variables</span></span>
+</div>
+<div id="lstnumberx22" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">N</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">size</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx23" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">t</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2:</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">end</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx24" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">zeros</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">N</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx25" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">eye</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">N</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx26" class="ltx_listingline">
+</div>
+<div id="lstnumberx27" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Initial<span class="ltx_text ltx_lst_space"> </span>values</span></span>
+</div>
+<div id="lstnumberx28" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">conj</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx29" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx30" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">conj</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx31" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Update<span class="ltx_text ltx_lst_space"> </span>'b'</span></span>
+</div>
+<div id="lstnumberx32" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1-</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">abs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)^2)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx33" class="ltx_listingline">
+</div>
+<div id="lstnumberx34" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Column<span class="ltx_text ltx_lst_space"> </span>2</span></span>
+</div>
+<div id="lstnumberx35" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1,2)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">conj</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx36" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(:,2)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(:,2)/</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx37" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Rest<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>columns</span></span>
+</div>
+<div id="lstnumberx38" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=1:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">N</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span>
+</div>
+<div id="lstnumberx39" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Update<span class="ltx_text ltx_lst_space"> </span>'a'<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>result</span></span>
+</div>
+<div id="lstnumberx40" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">conj</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ctranspose</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:-1:1))*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx41" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">conj</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:-1:1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx42" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx43" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Update<span class="ltx_text ltx_lst_space"> </span>'b'</span></span>
+</div>
+<div id="lstnumberx44" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1-</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">abs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)^2)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx45" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Write<span class="ltx_text ltx_lst_space"> </span>out<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>result</span></span>
+</div>
+<div id="lstnumberx46" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+2)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1)*</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">conj</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx47" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(:,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+2)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(:,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+2)/</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx48" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">end</span>
+</div>
+<div id="lstnumberx49" class="ltx_listingline">
+</div>
+<div id="lstnumberx50" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text" style="color:#808080;">%<span class="ltx_text ltx_lst_space"> </span>Scale<span class="ltx_text ltx_lst_space"> </span>back<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>result</span></span>
+</div>
+<div id="lstnumberx51" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter ltx_font_bold" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ts</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.1.2 </span>Version History</h2>
+
+<div id="SS2.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 4th Sep. 2015 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 16th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch1.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Linear Algebra</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch1.S2.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Complex-valued Durbin Algorithm with MATLAB code</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

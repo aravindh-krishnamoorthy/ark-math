@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.4 Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch1.S3.html" title="1.3 Determinant Form for KummerU Function of a Matrix Argument ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch1.S5.html" title="1.5 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S1.html" title="1.1 Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S2.html" title="1.2 Complex-valued Durbin Algorithm with MATLAB code ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S3.html" title="1.3 Determinant Form for KummerU Function of a Matrix Argument ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch1.S5.html" title="1.5 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch1.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Linear Algebra</span></a><a href="Ch1.S3.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Determinant Form for KummerU Function of a Matrix Argument</span></a><a href="Ch1.S5.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.4 </span>Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Diagonalization of a Toeplitz matrix (or the related Henkel matrix) is well known for about 100 years due to Carathéodory. Recently, the methods and techniques were formalized and were shown to be related to non-uniform discrete Fourier transformation (DFT). In this post, we look at a straightforward extension to non-uniform discrete cosine transformation (DCT) for real-valued Toeplitz matrices.</em></p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p2.m1" class="ltx_Math" alttext="\boldsymbol{T}" display="inline"><mi>𝑻</mi></math> be an <math id="p2.m2" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> real, symmetric, Toeplitz matrix with simple eigenvalues. The matrix admits a Vandermonde decomposition <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib13" title="Vandermonde factorization of a Hankel matrix" class="ltx_ref">4</a>, <a href="bib.html#bib11" title="Vandermonde factorization of Toeplitz matrices and applications in filtering and warping" class="ltx_ref">2</a>]</cite> given by</p>
+<table id="Ch1.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex8.m1" class="ltx_Math" alttext="\boldsymbol{T}=\boldsymbol{V}^{\text{H}}\boldsymbol{D}\boldsymbol{V}" display="block"><mrow><mi>𝑻</mi><mo>=</mo><mrow><msup><mi>𝑽</mi><mtext>H</mtext></msup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><mi>𝑽</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p2.m3" class="ltx_Math" alttext="\boldsymbol{V}" display="inline"><mi>𝑽</mi></math> is an <math id="p2.m4" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> complex-valued Vandermonde matrix with powers of roots of unity, <math id="p2.m5" class="ltx_Math" alttext="\nu_{0},\dots,\nu_{N-1}," display="inline"><mrow><mrow><msub><mi>ν</mi><mn>0</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>ν</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>,</mo></mrow></math> hereafter referred to as modes, along the columns (shown below), and <math id="p2.m6" class="ltx_Math" alttext="\boldsymbol{D}" display="inline"><mi>𝑫</mi></math> is an <math id="p2.m7" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> non-negative diagonal matrix.</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<table id="Ch1.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex9.m1" class="ltx_Math" alttext="\boldsymbol{V}=\begin{bmatrix}1&amp;\nu_{0}&amp;\nu_{0}^{2}&amp;\cdots&amp;\nu_{0}^{N-1}\\
+1&amp;\nu_{1}&amp;\nu_{1}^{2}&amp;\cdots&amp;\nu_{1}^{N-1}\\
+1&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+1&amp;\nu_{N-1}&amp;\nu_{N-1}^{2}&amp;\cdots&amp;\nu_{N-1}^{N-1}\end{bmatrix}" display="block"><mrow><mi>𝑽</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><msub><mi>ν</mi><mn>0</mn></msub></mtd><mtd><msubsup><mi>ν</mi><mn>0</mn><mn>2</mn></msubsup></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msubsup><mi>ν</mi><mn>0</mn><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msubsup></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><msub><mi>ν</mi><mn>1</mn></msub></mtd><mtd><msubsup><mi>ν</mi><mn>1</mn><mn>2</mn></msubsup></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msubsup><mi>ν</mi><mn>1</mn><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msubsup></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><msub><mi>ν</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub></mtd><mtd><msubsup><mi>ν</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></msubsup></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msubsup><mi>ν</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msubsup></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.4.1 </span>Absence of a Non-Uniform Cosine Decomposition</h2>
+
+<div id="Thmtheorem1" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Theorem 1</span></span><span class="ltx_text ltx_font_bold"> </span>(Absence of a general NUCD)<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">There exists no uniform cosine decomposition</span></p>
+<table id="Ch1.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex10.m1" class="ltx_Math" alttext="\boldsymbol{T}=\boldsymbol{C}^{\text{T}}\boldsymbol{D}\boldsymbol{C}" display="block"><mrow><mi>𝑻</mi><mo>=</mo><mrow><msup><mi>𝑪</mi><mtext>𝑇</mtext></msup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><mi>𝑪</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">for the matrix <math id="Thmtheorem1.p1.m1" class="ltx_Math" alttext="\boldsymbol{T}" display="inline"><mi>𝐓</mi></math> for <math id="Thmtheorem1.p1.m2" class="ltx_Math" alttext="N&gt;2." display="inline"><mrow><mrow><mi>N</mi><mo mathvariant="normal">&gt;</mo><mn mathvariant="normal">2</mn></mrow><mo lspace="0em" mathvariant="normal">.</mo></mrow></math></span></p>
+</div>
+</div>
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Note: <math id="SS1.p1.m1" class="ltx_Math" alttext="\boldsymbol{C}" display="inline"><mi>𝑪</mi></math> is an <math id="SS1.p1.m2" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> real, cosine matrix and <math id="SS1.p1.m3" class="ltx_Math" alttext="\boldsymbol{D}" display="inline"><mi>𝑫</mi></math> an <math id="SS1.p1.m4" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> positive diagonal matrix. The elements of <math id="SS1.p1.m5" class="ltx_Math" alttext="\boldsymbol{C}" display="inline"><mi>𝑪</mi></math> are given by</p>
+<table id="Ch1.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex11.m1" class="ltx_Math" alttext="[\boldsymbol{C}]_{mn}=\cos(n\theta_{m})," display="block"><mrow><mrow><msub><mrow><mo stretchy="false">[</mo><mi>𝑪</mi><mo stretchy="false">]</mo></mrow><mrow><mi>m</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><msub><mi>θ</mi><mi>m</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="SS1.p1.m6" class="ltx_Math" alttext="m,n=0,\dots,N-1," display="inline"><mrow><mrow><mrow><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo>,</mo></mrow></math> and <math id="SS1.p1.m7" class="ltx_Math" alttext="\theta_{m}\in(-\pi,\pi]." display="inline"><mrow><mrow><msub><mi>θ</mi><mi>m</mi></msub><mo>∈</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>π</mi></mrow><mo>,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Let <math id="SS1.p2.m1" class="ltx_Math" alttext="\tau_{m,n}" display="inline"><msub><mi>τ</mi><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow></msub></math> and <math id="SS1.p2.m2" class="ltx_Math" alttext="\delta_{m,n}" display="inline"><msub><mi>δ</mi><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow></msub></math> denote the <math id="SS1.p2.m3" class="ltx_Math" alttext="(m,n)" display="inline"><mrow><mo stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></math> terms of the matrices <math id="SS1.p2.m4" class="ltx_Math" alttext="\boldsymbol{T}" display="inline"><mi>𝑻</mi></math> and <math id="SS1.p2.m5" class="ltx_Math" alttext="\boldsymbol{D}," display="inline"><mrow><mi>𝑫</mi><mo>,</mo></mrow></math> respectively. Expanding <math id="SS1.p2.m6" class="ltx_Math" alttext="\boldsymbol{C}^{\text{T}}\boldsymbol{D}\boldsymbol{C}" display="inline"><mrow><msup><mi>𝑪</mi><mtext>T</mtext></msup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><mi>𝑪</mi></mrow></math> and equating the diagonal elements we have</p>
+<table id="Ch1.Ex12" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex12.m1" class="ltx_Math" alttext="\tau_{n,n}=\sum_{m=0}^{N-1}\delta_{m,m}\cos^{2}(n\theta_{m})," display="block"><mrow><mrow><msub><mi>τ</mi><mrow><mi>n</mi><mo>,</mo><mi>n</mi></mrow></msub><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><msub><mi>δ</mi><mrow><mi>m</mi><mo>,</mo><mi>m</mi></mrow></msub><mo lspace="0.167em">⁢</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>⁢</mo><msub><mi>θ</mi><mi>m</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="SS1.p2.m7" class="ltx_Math" alttext="n=0,\dots,N-1." display="inline"><mrow><mrow><mi>n</mi><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math> Therefore, the first element <math id="SS1.p2.m8" class="ltx_Math" alttext="\tau_{0,0}" display="inline"><msub><mi>τ</mi><mrow><mn>0</mn><mo>,</mo><mn>0</mn></mrow></msub></math> is</p>
+<table id="Ch1.Ex13" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex13.m1" class="ltx_Math" alttext="\tau_{0,0}=\sum_{m=0}^{N-1}\delta_{m,m}." display="block"><mrow><mrow><msub><mi>τ</mi><mrow><mn>0</mn><mo>,</mo><mn>0</mn></mrow></msub><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>δ</mi><mrow><mi>m</mi><mo>,</mo><mi>m</mi></mrow></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Due to the Toeplitz structure of <math id="SS1.p2.m9" class="ltx_Math" alttext="\boldsymbol{T}" display="inline"><mi>𝑻</mi></math>, we have equality of the diagonal elements, i.e., <math id="SS1.p2.m10" class="ltx_Math" alttext="\tau_{0,0}=\tau_{1,1}=\cdots=\tau_{N-1,N-1}." display="inline"><mrow><mrow><msub><mi>τ</mi><mrow><mn>0</mn><mo>,</mo><mn>0</mn></mrow></msub><mo>=</mo><msub><mi>τ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msub><mo>=</mo><mi mathvariant="normal">⋯</mi><mo>=</mo><msub><mi>τ</mi><mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub></mrow><mo lspace="0em">.</mo></mrow></math> However, since for any <math id="SS1.p2.m11" class="ltx_Math" alttext="\theta\in(-\pi,\pi]" display="inline"><mrow><mi>θ</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>π</mi></mrow><mo>,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></mrow></math> we have <math id="SS1.p2.m12" class="ltx_Math" alttext="0\leq\cos^{2}(\theta)\leq 1" display="inline"><mrow><mn>0</mn><mo>≤</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mn>1</mn></mrow></math> with upper-bound equality only for <math id="SS1.p2.m13" class="ltx_Math" alttext="\theta=\{0,\pi\}," display="inline"><mrow><mrow><mi>θ</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mi>π</mi><mo stretchy="false">}</mo></mrow></mrow><mo>,</mo></mrow></math> no angles beyond <math id="SS1.p2.m14" class="ltx_Math" alttext="\{0,\pi\}" display="inline"><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mi>π</mi><mo stretchy="false">}</mo></mrow></math> can satisfy the equality of the diagonal elements. Hence, such a decomposition does not exist.
+∎</p>
+</div>
+</div>
+<div id="SS1.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Result of the above theorem motivates us to explore offset non-uniform cosine decomposition where the decomposition is scaled as <math id="SS1.p3.m1" class="ltx_Math" alttext="\boldsymbol{T}=\gamma^{2}\boldsymbol{C}^{\text{T}}\boldsymbol{D}\boldsymbol{C}" display="inline"><mrow><mi>𝑻</mi><mo>=</mo><mrow><msup><mi>γ</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>𝑪</mi><mtext>T</mtext></msup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><mi>𝑪</mi></mrow></mrow></math> for some <math id="SS1.p3.m2" class="ltx_Math" alttext="\gamma&gt;1," display="inline"><mrow><mrow><mi>γ</mi><mo>&gt;</mo><mn>1</mn></mrow><mo>,</mo></mrow></math> wherefore equality of the diagonal elements may be met.</p>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.4.2 </span>Offset Non-Uniform Cosine Decomposition</h2>
+
+<div id="Thmtheorem2" class="ltx_theorem ltx_theorem_lemma">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Lemma 2</span></span><span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The modes <math id="Thmtheorem2.p1.m1" class="ltx_Math" alttext="\nu_{1},\dots,\nu_{N-1}," display="inline"><mrow><mrow><msub><mi>ν</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">,</mo><mi mathvariant="normal">…</mi><mo mathvariant="normal">,</mo><msub><mi>ν</mi><mrow><mi>N</mi><mo mathvariant="normal">−</mo><mn mathvariant="normal">1</mn></mrow></msub></mrow><mo mathvariant="normal">,</mo></mrow></math> are either real or appear in complex conjugate pairs using the algorithm given in <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib11" title="Vandermonde factorization of Toeplitz matrices and applications in filtering and warping" class="ltx_ref">2</a>]</cite> with a real initial value <math id="Thmtheorem2.p1.m2" class="ltx_Math" alttext="\nu_{0}." display="inline"><mrow><msub><mi>ν</mi><mn mathvariant="normal">0</mn></msub><mo lspace="0em" mathvariant="normal">.</mo></mrow></math></span></p>
+</div>
+</div>
+<div id="SS2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Note: The only admissible real initial values are <math id="SS2.p1.m1" class="ltx_Math" alttext="\nu_{0}=\pm 1." display="inline"><mrow><mrow><msub><mi>ν</mi><mn>0</mn></msub><mo>=</mo><mrow><mo>±</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">Modes are the polynomial roots of <math id="SS2.p2.m1" class="ltx_Math" alttext="A(z)=\sum_{k=0}^{N-1}\alpha_{k}z^{k}," display="inline"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><msub><mi>α</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>z</mi><mi>k</mi></msup></mrow></mrow></mrow><mo>,</mo></mrow></math> where <math id="SS2.p2.m2" class="ltx_Math" alttext="\alpha_{k}" display="inline"><msub><mi>α</mi><mi>k</mi></msub></math> is the <math id="SS2.p2.m3" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-th element of the vector <math id="SS2.p2.m4" class="ltx_Math" alttext="\boldsymbol{a}" display="inline"><mi>𝒂</mi></math> given by solving <math id="SS2.p2.m5" class="ltx_Math" alttext="\boldsymbol{Ta}=\boldsymbol{v}" display="inline"><mrow><mrow><mi>𝑻</mi><mo>⁢</mo><mi>𝒂</mi></mrow><mo>=</mo><mi>𝒗</mi></mrow></math> <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib11" title="Vandermonde factorization of Toeplitz matrices and applications in filtering and warping" class="ltx_ref">2</a>]</cite>. Here, <math id="SS2.p2.m6" class="ltx_Math" alttext="\boldsymbol{v}" display="inline"><mi>𝒗</mi></math> is the initial value vector given by <math id="SS2.p2.m7" class="ltx_Math" alttext="\boldsymbol{v}=[1,\nu_{0},\nu_{0}^{2},\dots,\nu_{0}^{N-1}]." display="inline"><mrow><mrow><mi>𝒗</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>,</mo><msub><mi>ν</mi><mn>0</mn></msub><mo>,</mo><msubsup><mi>ν</mi><mn>0</mn><mn>2</mn></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>ν</mi><mn>0</mn><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false">]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math>
+∎</p>
+</div>
+</div>
+<div id="SS2.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">For real initial value vectors, the coeffcients <math id="SS2.p3.m1" class="ltx_Math" alttext="\alpha_{k}" display="inline"><msub><mi>α</mi><mi>k</mi></msub></math> of the polynomial <math id="SS2.p3.m2" class="ltx_Math" alttext="A(z)" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> are real. Therefore, the roots of the polynomial are either real or appear in complex conjugate pairs.</p>
+</div>
+<div id="SS2.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">Now we present the main result of this post.</p>
+</div>
+<div id="Thmtheorem3" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Theorem 3</span></span><span class="ltx_text ltx_font_bold"> </span>(O-NUCD)<span class="ltx_text ltx_font_bold">.</span>
+</h6>
+<div id="Thmtheorem3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">For real initial values, there exists an offset non-uniform cosine decomposition <math id="Thmtheorem3.p1.m1" class="ltx_Math" alttext="\boldsymbol{T}=2\boldsymbol{C}^{\text{T}}\boldsymbol{D}\boldsymbol{C}" display="inline"><mrow><mi>𝐓</mi><mo mathvariant="normal">=</mo><mrow><mn mathvariant="normal">2</mn><mo mathvariant="italic">⁢</mo><msup><mi>𝐂</mi><mtext>𝑇</mtext></msup><mo mathvariant="italic">⁢</mo><mi>𝐃</mi><mo mathvariant="italic">⁢</mo><mi>𝐂</mi></mrow></mrow></math> for the matrix <math id="Thmtheorem3.p1.m2" class="ltx_Math" alttext="\boldsymbol{T}." display="inline"><mrow><mi>𝐓</mi><mo lspace="0em" mathvariant="normal">.</mo></mrow></math></span></p>
+</div>
+</div>
+<div id="SS2.p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">Note: <math id="SS2.p5.m1" class="ltx_Math" alttext="\boldsymbol{C}" display="inline"><mi>𝑪</mi></math> is an <math id="SS2.p5.m2" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> real, cosine matrix and <math id="SS2.p5.m3" class="ltx_Math" alttext="\boldsymbol{D}" display="inline"><mi>𝑫</mi></math> an <math id="SS2.p5.m4" class="ltx_Math" alttext="N\times N" display="inline"><mrow><mi>N</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></math> positive diagonal matrix. The elements of the matrix <math id="SS2.p5.m5" class="ltx_Math" alttext="\boldsymbol{C}" display="inline"><mi>𝑪</mi></math> are given by</p>
+<table id="Ch1.Ex14" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex14.m1" class="ltx_Math" alttext="[\boldsymbol{C}]_{m,n}=\cos\left(\mp\frac{\pi}{4}+n\theta_{m}\right)," display="block"><mrow><mrow><msub><mrow><mo stretchy="false">[</mo><mi>𝑪</mi><mo stretchy="false">]</mo></mrow><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow></msub><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mrow><mo>∓</mo><mfrac><mi>π</mi><mn>4</mn></mfrac></mrow><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><msub><mi>θ</mi><mi>m</mi></msub></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="SS2.p5.m6" class="ltx_Math" alttext="m,n=0,\dots,N-1," display="inline"><mrow><mrow><mrow><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo>,</mo></mrow></math> and <math id="SS2.p5.m7" class="ltx_Math" alttext="\theta_{m}=\angle\nu_{m}." display="inline"><mrow><mrow><msub><mi>θ</mi><mi>m</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">∠</mi><mo>⁢</mo><msub><mi>ν</mi><mi>m</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="SS2.p6" class="ltx_para">
+<p class="ltx_p">Let <math id="SS2.p6.m1" class="ltx_Math" alttext="\boldsymbol{V}_{R}" display="inline"><msub><mi>𝑽</mi><mi>R</mi></msub></math> and <math id="SS2.p6.m2" class="ltx_Math" alttext="\boldsymbol{V}_{I}" display="inline"><msub><mi>𝑽</mi><mi>I</mi></msub></math> denote the real and imaginary parts of the Vandermonde matrix <math id="SS2.p6.m3" class="ltx_Math" alttext="\boldsymbol{V}." display="inline"><mrow><mi>𝑽</mi><mo lspace="0em">.</mo></mrow></math> As the initial values are real, from Lemma <a href="#Thmtheorem2" title="Lemma 2. ‣ 1.4.2 Offset Non-Uniform Cosine Decomposition ‣ 1.4 Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>, the roots are either real or have complex conjugate symmetry. Therefore, we have the following orthogonality properties:</p>
+<table id="Ch1.Ex15" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex15.m1" class="ltx_Math" alttext="\boldsymbol{V}_{R}^{\text{T}}\boldsymbol{V}_{I}=\boldsymbol{V}_{R}^{\text{T}}%
+\boldsymbol{D}\boldsymbol{V}_{I}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{V}_{%
+R}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}=\boldsymbol{0}." display="block"><mrow><mrow><mrow><msubsup><mi>𝑽</mi><mi>R</mi><mtext>T</mtext></msubsup><mo>⁢</mo><msub><mi>𝑽</mi><mi>I</mi></msub></mrow><mo>=</mo><mrow><msubsup><mi>𝑽</mi><mi>R</mi><mtext>T</mtext></msubsup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><msub><mi>𝑽</mi><mi>I</mi></msub></mrow><mo>=</mo><mrow><msubsup><mi>𝑽</mi><mi>I</mi><mtext>T</mtext></msubsup><mo>⁢</mo><msub><mi>𝑽</mi><mi>R</mi></msub></mrow><mo>=</mo><mrow><msubsup><mi>𝑽</mi><mi>I</mi><mtext>T</mtext></msubsup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><msub><mi>𝑽</mi><mi>R</mi></msub></mrow><mo>=</mo><mn>𝟎</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Using these properties (twice), we have</p>
+<table id="Ch1.Ex16" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.Ex16.m1" class="ltx_Math" alttext="\boldsymbol{T}=\boldsymbol{V}_{R}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}+%
+\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{I}=(\boldsymbol{V}_%
+{R}\pm\boldsymbol{V}_{I})^{\text{T}}\boldsymbol{D}(\boldsymbol{V}_{R}\pm%
+\boldsymbol{V}_{I})=2\boldsymbol{C}^{\text{T}}\boldsymbol{D}\boldsymbol{C}," display="block"><mrow><mrow><mi>𝑻</mi><mo>=</mo><mrow><mrow><msubsup><mi>𝑽</mi><mi>R</mi><mtext>T</mtext></msubsup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><msub><mi>𝑽</mi><mi>R</mi></msub></mrow><mo>+</mo><mrow><msubsup><mi>𝑽</mi><mi>I</mi><mtext>T</mtext></msubsup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><msub><mi>𝑽</mi><mi>I</mi></msub></mrow></mrow><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝑽</mi><mi>R</mi></msub><mo>±</mo><msub><mi>𝑽</mi><mi>I</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mtext>T</mtext></msup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>𝑽</mi><mi>R</mi></msub><mo>±</mo><msub><mi>𝑽</mi><mi>I</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>𝑪</mi><mtext>T</mtext></msup><mo>⁢</mo><mi>𝑫</mi><mo>⁢</mo><mi>𝑪</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">with the elements of the matrix <math id="SS2.p6.m4" class="ltx_Math" alttext="\boldsymbol{C}" display="inline"><mi>𝑪</mi></math> as shown above.
+∎</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.4.3 </span>O-NUCD in MATLAB using the Vandermonde Tools</h2>
+
+<div id="SS3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">As an example, O-NUCD (<math id="SS3.p1.m1" class="ltx_Math" alttext="-\frac{\pi}{4}" display="inline"><mrow><mo>−</mo><mfrac><mi>π</mi><mn>4</mn></mfrac></mrow></math>) may be found using the Vandermonde Tools from AudioLabs <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib12" title="Vandermonde tools" class="ltx_ref">3</a>]</cite> as follows:</p>
+</div>
+<div id="SS3.p2" class="ltx_para ltx_noindent">
+<div class="ltx_listing ltx_lst_language_MATLAB ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Pj4gW3YsZF0gPSBmaW5kX3ZhbmQoJ3hjb3JyJywgVCkgOwo+PiBWID0gdmFuZGVybW9uZGVfZmFzdCh2KSA7Cj4+IEQgPSBkaWFnKGQpIDsKPj4gbm9ybShWJypEKlYgLSBUKQphbnMgPSAyLjU0MDNlLTE1Cgo+PiBDID0gY29zKC1waS80ICsgYW5nbGUodikqKDA6Ti0xKSkgOwo+PiBub3JtKDIqQycqRCpDIC0gVCkKYW5zID0gMi4wMzA0ZS0xNQ==" download="">⬇</a></div>
+<div id="lstnumberx83" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">d</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">find_vand</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'xcorr',<span class="ltx_text ltx_lst_space"> </span>T)<span class="ltx_text ltx_lst_space"> </span>;</span>
+</div>
+<div id="lstnumberx84" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">vandermonde_fast(v)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx85" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">diag(d)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx86" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">norm(V'*D*V</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">T)</span>
+</div>
+<div id="lstnumberx87" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">ans</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5403e-15</span>
+</div>
+<div id="lstnumberx88" class="ltx_listingline">
+</div>
+<div id="lstnumberx89" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">cos(-pi/4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">angle(v)*(0:N-1))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx90" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">norm(2*C'*D*C</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">T)</span>
+</div>
+<div id="lstnumberx91" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">ans</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.0304e-15</span>
+</div>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.4.4 </span>Version History</h2>
+
+<div id="SS4.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 14th May 2019 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 16th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch1.S3.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Determinant Form for KummerU Function of a Matrix Argument</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch1.S5.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

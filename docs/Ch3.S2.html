@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3.2 Stochastic Properties of Random Matrix Factors - 2 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch3.S1.html" title="3.1 Stochastic Properties of Random Matrix Factors - 1 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch3.S3.html" title="3.3 Stochastic Properties of Random Matrix Factors - 3 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S1.html" title="3.1 Stochastic Properties of Random Matrix Factors - 1 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S3.html" title="3.3 Stochastic Properties of Random Matrix Factors - 3 ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch3.S4.html" title="3.4 Ordered densities of squared singular values of a Gaussian matrix product ‣ Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch3.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Random Matrix Theory</span></a><a href="Ch3.S1.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Stochastic Properties of Random Matrix Factors - 1</span></a><a href="Ch3.S3.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Stochastic Properties of Random Matrix Factors - 3</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.2 </span>Stochastic Properties of Random Matrix Factors - 2</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">In the second on the series of posts on stochastic properties of factors of random matrices, we look at a yet another simple case involving norm square of elements of QR decomposition of a scaled Rayleigh matrices. More below.</p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">In applications such as Non-Orthogonal Multiple Access (NOMA), the so-called ”path loss” plays an important role whereby a channel matrix <math id="p2.m1" class="ltx_Math" alttext="\mathbf{H}" display="inline"><mi>𝐇</mi></math> at a receiver is better modelled as a scaled Rayleigh matrix given by</p>
+<table id="Ch3.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex3.m1" class="ltx_Math" alttext="\mathbf{H}=\frac{1}{\sqrt{L}}\mathbf{G}" display="block"><mrow><mi>𝐇</mi><mo>=</mo><mrow><mfrac><mn>1</mn><msqrt><mi>L</mi></msqrt></mfrac><mo>⁢</mo><mi>𝐆</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p2.m2" class="ltx_Math" alttext="L&gt;0" display="inline"><mrow><mi>L</mi><mo>&gt;</mo><mn>0</mn></mrow></math> is the path-loss factor and <math id="p2.m3" class="ltx_Math" alttext="\mathbf{G}" display="inline"><mi>𝐆</mi></math> the conventional Rayleigh matrix with real and imaginary parts of the elements each <math id="p2.m4" class="ltx_Math" alttext="\mathcal{N}(0,1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let (by QR decomposition) <math id="p3.m1" class="ltx_Math" alttext="\mathbf{H}=\mathbf{Q}\mathbf{R}" display="inline"><mrow><mi>𝐇</mi><mo>=</mo><mi>𝐐𝐑</mi></mrow></math> where <math id="p3.m2" class="ltx_Math" alttext="\mathbf{Q}\in\mathbb{C}^{M\times M}" display="inline"><mrow><mi>𝐐</mi><mo>∈</mo><msup><mi>ℂ</mi><mrow><mi>M</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>M</mi></mrow></msup></mrow></math> is a Unitary matrix, and <math id="p3.m3" class="ltx_Math" alttext="\mathbf{R}\in\mathbb{C}^{M\times N}" display="inline"><mrow><mi>𝐑</mi><mo>∈</mo><msup><mi>ℂ</mi><mrow><mi>M</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>N</mi></mrow></msup></mrow></math> is upper triangular. The distribution of the norm square of elements, <math id="p3.m4" class="ltx_Math" alttext="|[\mathbf{R}]_{ij}|^{2}" display="inline"><msup><mrow><mo stretchy="false">|</mo><msub><mrow><mo stretchy="false">[</mo><mi>𝐑</mi><mo stretchy="false">]</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></math>, of <math id="p3.m5" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> is given by</p>
+<table id="Ch3.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex4.m1" class="ltx_Math" alttext="|[\mathbf{R}]_{ij}|^{2}\sim\begin{cases}\Gamma(M+1-i,\frac{2}{L})&amp;\text{if $i=%
+j$}\\
+\Gamma(1,\frac{2}{L})&amp;\text{if $i&lt;j$}\\
+0&amp;\text{otherwise,}\end{cases}" display="block"><mrow><msup><mrow><mo stretchy="false">|</mo><msub><mrow><mo stretchy="false">[</mo><mi>𝐑</mi><mo stretchy="false">]</mo></mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><mo>∼</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>M</mi><mo>+</mo><mn>1</mn></mrow><mo>−</mo><mi>i</mi></mrow><mo>,</mo><mstyle displaystyle="false"><mfrac><mn>2</mn><mi>L</mi></mfrac></mstyle><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mi>i</mi><mo>=</mo><mi>j</mi></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mstyle displaystyle="false"><mfrac><mn>2</mn><mi>L</mi></mfrac></mstyle><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>otherwise,</mtext></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p3.m6" class="ltx_Math" alttext="i=1,2,\cdots,M" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><mi>M</mi></mrow></mrow></math>, <math id="p3.m7" class="ltx_Math" alttext="j=1,2,\cdots,N" display="inline"><mrow><mi>j</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><mi>N</mi></mrow></mrow></math>, and <math id="p3.m8" class="ltx_Math" alttext="\Gamma(k,\theta)" display="inline"><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo>,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></math> denotes the Gamma distribution with probability density function</p>
+<table id="Ch3.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex5.m1" class="ltx_Math" alttext="f(x;k,\theta)=\frac{1}{\Gamma(k)\theta^{k}}x^{(k-1)}e^{-\frac{x}{\theta}}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>k</mi><mo>,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>θ</mi><mi>k</mi></msup></mrow></mfrac><mo>⁢</mo><msup><mi>x</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi>x</mi><mi>θ</mi></mfrac></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p3.m9" class="ltx_Math" alttext="\Gamma(k)" display="inline"><mrow><mi mathvariant="normal">Γ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the complete Gamma function.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">The stochastic properties of the diagonal elements of <math id="p4.m1" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> are interesting as they can be used to derive insights, amongst others, about mutual information of ”layers” (i.e. parallel streams of information, one per row) or the determinant of the covariance matrix of <math id="p4.m2" class="ltx_Math" alttext="\mathbf{H}" display="inline"><mi>𝐇</mi></math>.</p>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">Figure below illustrates the distributions of elements of <math id="p5.m1" class="ltx_Math" alttext="\mathbf{R}" display="inline"><mi>𝐑</mi></math> for <math id="p5.m2" class="ltx_Math" alttext="M=4,N=2" display="inline"><mrow><mrow><mi>M</mi><mo>=</mo><mn>4</mn></mrow><mo>,</mo><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow></mrow></math> computed numerically using MATLAB. Normalized numerical quantities obtained over 100000 trials are plotted in the blue bar graph and the theoretical expectation is plotted in red. Numerical results closely match the theoretical expectation.</p>
+</div>
+<figure id="fig1" class="ltx_figure"><img src="figs/008_001_smf-2.png" id="g1" class="ltx_graphics ltx_centering ltx_img_square" width="568" height="486" alt="[Uncaptioned image]">
+</figure>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">ARK</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2.1 </span>Version History</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 25th Aug. 2017 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 17th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch3.S1.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Stochastic Properties of Random Matrix Factors - 1</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch3.S3.html" title="In Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Stochastic Properties of Random Matrix Factors - 3</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

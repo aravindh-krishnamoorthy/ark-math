@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>2.3 Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Sun Dec 17 18:18:06 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="./LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="./ltx-report.css" type="text/css">
+<link rel="stylesheet" href="./ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="up" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="up up" href="./" title="A Blog on Applied Mathematics">
+<link rel="start" href="./" title="A Blog on Applied Mathematics">
+<link rel="prev" href="Ch2.S2.html" title="2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch2.S4.html" title="2.4 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S2.html" title="2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S4.html" title="2.4 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S5.html" title="2.5 Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S6.html" title="2.6 Distribution of A Simple Function of Gamma Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S7.html" title="2.7 Distribution of the Determinant of a Complex-Valued Sample Correlation Matrix ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a><a href="Ch2.S2.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions</span></a><a href="Ch2.S4.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.3 </span>Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">This is the third post in series discussing uniform quantization of Laplacian stochastic variables and is about entropy of separately coding sign and magnitude of uniformly quantized Laplacian variables.</em></p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">We begin by showing that the distribution of the magnitude of uniformly quantized Laplacian variable is the same as the distribution of uniformly quantized magnitude of the Laplacian variable which is shown in Section <a href="Ch2.S2.html" title="2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a> to be equivalent to the distribution of a corresponding uniformly quantized Exponential variable.</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p3.m1" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math> be the uniformly quantized version, with step size <math id="p3.m2" class="ltx_Math" alttext="\Delta" display="inline"><mi mathvariant="normal">Δ</mi></math>, of a Laplacian variable <math id="p3.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> with <math id="p3.m4" class="ltx_Math" alttext="\text{Laplace}(0,b)" display="inline"><mrow><mtext>Laplace</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> distribution and let <math id="p3.m5" class="ltx_Math" alttext="\hat{m}" display="inline"><mover accent="true"><mi>m</mi><mo>^</mo></mover></math> and <math id="p3.m6" class="ltx_Math" alttext="\hat{s}" display="inline"><mover accent="true"><mi>s</mi><mo>^</mo></mover></math> be the variables denoting magnitude and sign of <math id="p3.m7" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math> respectively. We have <math id="p3.m8" class="ltx_Math" alttext="\hat{m}=|\hat{x}|\in\{0,\mathbb{Z}^{+}\}" display="inline"><mrow><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo>=</mo><mrow><mo stretchy="false">|</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">|</mo></mrow><mo>∈</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><msup><mi>ℤ</mi><mo>+</mo></msup><mo stretchy="false">}</mo></mrow></mrow></math> and <math id="p3.m9" class="ltx_Math" alttext="\hat{s}=\text{sign}(\hat{x})\in\{-1,0,+1\}" display="inline"><mrow><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo>=</mo><mrow><mtext>sign</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mrow><mo stretchy="false">{</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mn>0</mn><mo>,</mo><mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p4.m1" class="ltx_Math" alttext="f_{\hat{x}}(\hat{x})" display="inline"><mrow><msub><mi>f</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p4.m2" class="ltx_Math" alttext="\Phi_{\hat{x}}(\hat{x})" display="inline"><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> denote the probability mass function and cumulative distribution function of <math id="p4.m3" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math> respectively. These are given as follows.</p>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E28.m1" class="ltx_Math" alttext="\displaystyle f_{\hat{x}}(\hat{x})" display="inline"><mrow><msub><mi>f</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E28.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}1-e^{-\frac{\Delta}{2b}}&amp;\text{if $\hat{x}=0$}\\
+\frac{1}{2}e^{-\frac{|\hat{x}|}{b}}\left(e^{\frac{\Delta}{2b}}-e^{-\frac{%
+\Delta}{2b}}\right)&amp;\text{otherwise}\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>=</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mo stretchy="false">|</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">|</mo></mrow><mi>b</mi></mfrac></mrow></msup><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>otherwise</mtext></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.28)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E29"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E29.m1" class="ltx_Math" alttext="\displaystyle\Phi_{\hat{x}}(\hat{x})" display="inline"><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E29.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}\frac{1}{2}e^{\frac{\hat{x}}{b}}e^{\frac{\Delta}{2b%
+}}&amp;\text{if $\hat{x}&lt;0$}\\
+1-\frac{1}{2}e^{\frac{\hat{x}}{b}}e^{-\frac{\Delta}{2b}}&amp;\text{if $\hat{x}\geq
+0%
+$}\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mfrac><mover accent="true"><mi>x</mi><mo>^</mo></mover><mi>b</mi></mfrac></msup><mo>⁢</mo><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>&lt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>−</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mfrac><mover accent="true"><mi>x</mi><mo>^</mo></mover><mi>b</mi></mfrac></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>≥</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.29)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">The cumulative distribution function <math id="p6.m1" class="ltx_Math" alttext="\Phi_{\hat{m}}(\hat{m})" display="inline"><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>m</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> of the discrete variable <math id="p6.m2" class="ltx_Math" alttext="\hat{m}" display="inline"><mover accent="true"><mi>m</mi><mo>^</mo></mover></math> is given as follows</p>
+</div>
+<div id="p7" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E30.m1" class="ltx_Math" alttext="\displaystyle\Phi_{\hat{m}}(\hat{m})=\Phi_{\hat{x}}(\hat{m})-\Phi_{\hat{x}}(-%
+\hat{m}_{+1})" display="inline"><mrow><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>m</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><msub><mover accent="true"><mi>m</mi><mo>^</mo></mover><mrow><mo>+</mo><mn>1</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.30)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">,</p>
+</div>
+<div id="p8" class="ltx_para ltx_noindent">
+<p class="ltx_p">where <math id="p8.m1" class="ltx_Math" alttext="\hat{m}_{+1}=\hat{m}+\Delta" display="inline"><mrow><msub><mover accent="true"><mi>m</mi><mo>^</mo></mover><mrow><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow></mrow></math> denotes the quantization point immediately succeeding <math id="p8.m2" class="ltx_Math" alttext="\hat{m}" display="inline"><mover accent="true"><mi>m</mi><mo>^</mo></mover></math>. Substituting the value of <math id="p8.m3" class="ltx_Math" alttext="\Phi_{\hat{x}}(\hat{x})" display="inline"><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> from above we have</p>
+</div>
+<div id="p9" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E31.m1" class="ltx_Math" alttext="\displaystyle\Phi_{\hat{m}}(\hat{m})" display="inline"><mrow><msub><mi mathvariant="normal">Φ</mi><mover accent="true"><mi>m</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E31.m2" class="ltx_Math" alttext="\displaystyle=1-e^{-\frac{\hat{m}}{b}}e^{-\frac{\Delta}{2b}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mover accent="true"><mi>m</mi><mo>^</mo></mover><mi>b</mi></mfrac></mrow></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.31)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">,</p>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p">which can be readily seen as the cumulative distribution function of a uniformly quantized Exponential variable <math id="p10.m1" class="ltx_Math" alttext="\text{Exponential}(1/b)" display="inline"><mrow><mtext>Exponential</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>/</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math> quantized with step size <math id="p10.m2" class="ltx_Math" alttext="\Delta" display="inline"><mi mathvariant="normal">Δ</mi></math>. Therefore, the entropy of <math id="p10.m3" class="ltx_Math" alttext="\hat{m}" display="inline"><mover accent="true"><mi>m</mi><mo>^</mo></mover></math>, denoted by <math id="p10.m4" class="ltx_Math" alttext="H_{\hat{m}}" display="inline"><msub><mi>H</mi><mover accent="true"><mi>m</mi><mo>^</mo></mover></msub></math>, is as given in Section <a href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a> . Note that a generic version of the above equivalence may be proven for distributions symmetric around zero.</p>
+</div>
+<div id="p11" class="ltx_para ltx_noindent">
+<p class="ltx_p">Next, we find the entropy of the stochastic variable denoting the sign <math id="p11.m1" class="ltx_Math" alttext="\hat{s}" display="inline"><mover accent="true"><mi>s</mi><mo>^</mo></mover></math> which takes values from the set <math id="p11.m2" class="ltx_Math" alttext="\hat{S}=\{+1,0,-1\}" display="inline"><mrow><mover accent="true"><mi>S</mi><mo>^</mo></mover><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mn>0</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math>. Let <math id="p11.m3" class="ltx_Math" alttext="f_{\hat{s}}(\hat{s})" display="inline"><mrow><msub><mi>f</mi><mover accent="true"><mi>s</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> denote the probability mass function of the discrete variable <math id="p11.m4" class="ltx_Math" alttext="\hat{s}" display="inline"><mover accent="true"><mi>s</mi><mo>^</mo></mover></math>. It is given as follows.</p>
+</div>
+<div id="p12" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx24" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E32"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E32.m1" class="ltx_Math" alttext="\displaystyle f_{\hat{s}}(\hat{s})=\begin{cases}1-e^{-\frac{\Delta}{2b}}&amp;\text%
+{if $\hat{s}=0$}\\
+\frac{1}{2}e^{-\frac{\Delta}{2b}}&amp;\text{if $\hat{s}=\pm 1.$}\end{cases}" display="inline"><mrow><mrow><msub><mi>f</mi><mover accent="true"><mi>s</mi><mo>^</mo></mover></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo>=</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mrow><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo>=</mo><mrow><mo>±</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.32)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p13" class="ltx_para ltx_noindent">
+<p class="ltx_p">Encoding <math id="p13.m1" class="ltx_Math" alttext="\hat{s}=0" display="inline"><mrow><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo>=</mo><mn>0</mn></mrow></math> carries no more information than what is contained in <math id="p13.m2" class="ltx_Math" alttext="\hat{m}" display="inline"><mover accent="true"><mi>m</mi><mo>^</mo></mover></math> as <math id="p13.m3" class="ltx_Math" alttext="\hat{s}=0" display="inline"><mrow><mover accent="true"><mi>s</mi><mo>^</mo></mover><mo>=</mo><mn>0</mn></mrow></math> if and only if <math id="p13.m4" class="ltx_Math" alttext="\hat{m}=0" display="inline"><mrow><mover accent="true"><mi>m</mi><mo>^</mo></mover><mo>=</mo><mn>0</mn></mrow></math>. Therefore, we only need to encode the non-zero signs. The entropy of the reduced size alphabet may be computed using the theorem for general case given below.</p>
+</div>
+<div id="p14" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p14.m1" class="ltx_Math" alttext="A=\{\chi_{0},\chi_{1},\cdots,\chi_{n}\}" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><msub><mi>χ</mi><mn>0</mn></msub><mo>,</mo><msub><mi>χ</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>χ</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></mrow></math> be a finite size coding alphabet with corresponding probabilities <math id="p14.m2" class="ltx_Math" alttext="P=\{p_{0},p_{1},\cdots,p_{n}\}" display="inline"><mrow><mi>P</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><msub><mi>p</mi><mn>0</mn></msub><mo>,</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>p</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></mrow></math>. Now let <math id="p14.m3" class="ltx_Math" alttext="D=\{d_{0},d_{1},\cdots,d_{n}\}" display="inline"><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><msub><mi>d</mi><mn>0</mn></msub><mo>,</mo><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>d</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></mrow></math> be the probabilities that symbols from <math id="p14.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> are coded. That is, if <math id="p14.m5" class="ltx_Math" alttext="d_{i}=1" display="inline"><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow></math> then the i-th symbol is always coded, if <math id="p14.m6" class="ltx_Math" alttext="d_{i}=0.5" display="inline"><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>=</mo><mn>0.5</mn></mrow></math> then it is coded 50% of the times, and the other 50% of the times it is inferred correctly at the decoder. There are no errors in the decoding process due to the reduced alphabet size. Let</p>
+<table id="Ch3.S4.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E33"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E33.m1" class="ltx_Math" alttext="\displaystyle H_{A^{-}}=-\sum_{i=1}^{n}p_{i}d_{i}\log\left(\frac{p_{i}d_{i}}{%
+\sum_{j}p_{j}d_{j}}\right)" display="inline"><mrow><msub><mi>H</mi><msup><mi>A</mi><mo>−</mo></msup></msub><mo>=</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>⁢</mo><msub><mi>d</mi><mi>i</mi></msub><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>⁢</mo><msub><mi>d</mi><mi>i</mi></msub></mrow><mrow><msub><mo>∑</mo><mi>j</mi></msub><mrow><msub><mi>p</mi><mi>j</mi></msub><mo>⁢</mo><msub><mi>d</mi><mi>j</mi></msub></mrow></mrow></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.33)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">denote the entropy of the reduced size coding alphabet. Then <math id="p14.m7" class="ltx_Math" alttext="H_{A^{-}}" display="inline"><msub><mi>H</mi><msup><mi>A</mi><mo>−</mo></msup></msub></math> may be given by the straightforward result below.</p>
+</div>
+<div id="p15" class="ltx_para ltx_noindent">
+<p class="ltx_p">For the case above for <math id="p15.m1" class="ltx_Math" alttext="\hat{s}" display="inline"><mover accent="true"><mi>s</mi><mo>^</mo></mover></math>, we set <math id="p15.m2" class="ltx_Math" alttext="D=\{1,0,1\}" display="inline"><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow></mrow></math>, that is, we would not encode the symbol ’0’ but infer it correctly based on the value of <math id="p15.m3" class="ltx_Math" alttext="\hat{m}" display="inline"><mover accent="true"><mi>m</mi><mo>^</mo></mover></math>. We have entropy of coding <math id="p15.m4" class="ltx_Math" alttext="\hat{s}" display="inline"><mover accent="true"><mi>s</mi><mo>^</mo></mover></math> using this scheme, denoted by <math id="p15.m5" class="ltx_Math" alttext="H_{\hat{S}^{-}}" display="inline"><msub><mi>H</mi><msup><mover accent="true"><mi>S</mi><mo>^</mo></mover><mo>−</mo></msup></msub></math>, given as follows.</p>
+</div>
+<div id="p16" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx26" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.Ex8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex8.m1" class="ltx_Math" alttext="\displaystyle H_{\hat{S}^{-}}" display="inline"><msub><mi>H</mi><msup><mover accent="true"><mi>S</mi><mo>^</mo></mover><mo>−</mo></msup></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex8.m2" class="ltx_Math" alttext="\displaystyle=-2\frac{1}{2}e^{-\frac{\Delta}{2b}}\log\frac{1}{2}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>−</mo><mrow><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">⁤</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E34"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E34.m1" class="ltx_Math" alttext="\displaystyle=e^{-\frac{\Delta}{2b}}\log 2" display="inline"><mrow><mi></mi><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mn>2</mn></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.34)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p17" class="ltx_para ltx_noindent">
+<p class="ltx_p">Finally, using the values of entropy <math id="p17.m1" class="ltx_Math" alttext="H_{\hat{x}}" display="inline"><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></math> and <math id="p17.m2" class="ltx_Math" alttext="H_{\hat{m}}" display="inline"><msub><mi>H</mi><mover accent="true"><mi>m</mi><mo>^</mo></mover></msub></math> from Sections <a href="Ch2.S2.html" title="2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a> and <a href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a> and <math id="p17.m3" class="ltx_Math" alttext="H_{\hat{S}^{-}}" display="inline"><msub><mi>H</mi><msup><mover accent="true"><mi>S</mi><mo>^</mo></mover><mo>−</mo></msup></msub></math> from above, we have the following upon simplification.</p>
+</div>
+<div id="p18" class="ltx_para ltx_noindent">
+<table id="Ch3.S4.EGx27" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E35"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E35.m1" class="ltx_Math" alttext="\displaystyle H_{\hat{x}}=H_{\hat{m}}+H_{\hat{S}^{-}}" display="inline"><mrow><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub><mo>=</mo><mrow><msub><mi>H</mi><mover accent="true"><mi>m</mi><mo>^</mo></mover></msub><mo>+</mo><msub><mi>H</mi><msup><mover accent="true"><mi>S</mi><mo>^</mo></mover><mo>−</mo></msup></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.35)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p19" class="ltx_para ltx_noindent">
+<p class="ltx_p">Therefore, encoding the magnitude and the reduced sign has the same entropy as encoding the uniformly quantized Laplacian variable.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.3.1 </span>Version History</h2>
+
+<div id="SS1.p1" class="ltx_para ltx_noindent">
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 29th Oct. 2015 on aravindhk-math.blogspot.com</em></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 17th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch2.S2.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch2.S4.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Dec 17 18:18:06 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
