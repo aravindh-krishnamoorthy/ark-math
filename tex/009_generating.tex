@@ -1,14 +1,36 @@
 \section{Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation}
 
-The following first constructs two signed $\{-1, +1\}$ Bernoulli variables $Y_1,$ $Y_2$ such that $p(Y_1 = -1) = p_1,$ $p(Y_2 = -1) = p2,$ and $E[Y_1Y_2] = r.$ Constraints: $0 < p1,p2 < 1, -1 < r < 1.$ 
+The following first constructs two signed $\{-1, +1\}$ Bernoulli variables $Y_1, Y_2$ such that $p(Y_1 = -1) = p_1, p(Y_2 = -1) = p2,$ and $E[Y_1Y_2] = r.$ Constraints: $0 < p1, p2 < 1, -1 < r < 1.$ 
 
 Next, it draws $N$ realizations of the two variables in $Y(m,:), m = 1,2.$ The sample pdf and cross correlation converge as $N \to \infty.$
 
-Example: generate $N$ realizations of variables with mean $0,$ variance $1,$ and correlation $0.3:$ Y = signed\_bernoulli2(N,0.5,0.5,0.3).
+\subsection{MATLAB Reference Code}
 
-DOWNLOAD: The full program can be downloaded at: signed\_bernoulli2(N,p1,p2,r) - File Exchange - MATLAB Central (mathworks.com)
+To generate $N$ realizations of variables with mean $0,$ variance $1,$ and correlation $0.3$ using the code below, use: \texttt{Y = signed\_bernoulli2(N,0.5,0.5,0.3)}.
 
-\begin{verbatim}
+\begin{lstlisting}[language=MATLAB,numbers=none]
+function Y = signed_bernoulli2(N,p1,p2,r)
+% Y = signed_bernoulli2(N,p1,p2,r) 
+% The function first constructs two(2) signed {-1, +1} Bernoulli variables
+% Y_1, Y_2 such that p(Y_1 = -1) = p1, p(Y_2 = -1) = p2, and E[Y_1Y_2] = r.
+% Constraints: 0 < p1,p2 < 1, -1 < r < 1.
+% Next, it draws N realizations of the two variables in Y(m,:), m = 1,2.
+% The sample pdf and cross correlation converge as N -> infinity (obviously).
+%
+% Example: generate N realizations of variables with mean 0, variance 1, and
+% correlation 0.3: Y = signed_bernoulli2(N,0.5,0.5,0.3).
+%
+% Author: aravindh.krishnamoorthy@fau.de, on: 26.10.2017.
+
+% Basic checks and initialization
+assert (0 < p1) ;
+assert (p1 < 1) ;
+assert (0 < p2) ;
+assert (p2 < 1) ;
+assert (-1 < r) ;
+assert (r < 1) ;
+Y = zeros(2,N) ;
+
 % Resolve the joint pdf given by
 %                /  p(1) if (+1, +1)
 % p(Y_1, Y_2) =  |  p(2) if (+1, -1)
@@ -20,12 +42,12 @@ DOWNLOAD: The full program can be downloaded at: signed\_bernoulli2(N,p1,p2,r) -
 % row 2: p(3) + p(4) = p1   -> marginal for Y_1
 % row 3: p(2) + p(4) = p2   -> marginal for Y_2
 % row 4: p(1) - p(2) - p(3) + p(4) = r   -> cross correlation E[Y_1 Y_2]
+
 A = [1,1,1,1;0,0,1,1;0,1,0,1;1,-1,-1,1] ;
 b = [1;p1;p2;r] ;
 p = pinv(A)*b ;
-assert(all(p >= 0), sprintf(['The given p1=%f and p2=%f cannot result in '...
-' a correlation r=%f with the given algorithm.\np1=p2=0.5 is a safe value.'],...
-p1,p2,r)) ;
+assert(all(p >= 0), sprintf('The given p1=%f and p2=%f cannot result in a correlation r=%f with the given algorithm.\np1=p2=0.5 is a safe value.',p1,p2,r)) ;
+
 % Now that we have the joint pdf in "p" we can draw from this distribution
 % as follows (based on conditional pdfs and inverse transform sampling):
 % 1. Draw samples of Y_1 from Signed_Bernoulli(p1) in a standard fashion using
@@ -45,14 +67,24 @@ p1,p2,r)) ;
 
 % Auxiliary variable U
 U = rand(2,N) ;
+
 % Draw samples from p(Y_1)
 Y(1,:) = (-1).^(U(1,:) < p1) ;
+
 % Indices to help choose the conditional pdf
 I1 = Y(1,:) == -1 ;
 I2 = Y(1,:) == +1 ;
+
 % Draw samples from the conditional pdfs
 Y(2,I1) = (-1).^(U(2,I1) < p(4)/p1) ;
 Y(2,I2) = (-1).^(U(2,I2) < p(2)/(1-p1)) ;
-\end{verbatim}
+\end{lstlisting}
 
-\emph{First published: 23rd Nov. 2017 on aravindhk-math.blogspot.com}
+The full program can be downloaded at: \href{https://www.mathworks.com/matlabcentral/fileexchange/65164-signed_bernoulli2-n-p1-p2-r}{signed\_bernoulli2(N,p1,p2,r) - File Exchange - MATLAB Central (mathworks.com)}.
+
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 23rd Nov. 2017 on aravindhk-math.blogspot.com}
+	\item \emph{Modified: 17th Dec. 2023 -- Style updates for \LaTeX}
+\end{enumerate}
+

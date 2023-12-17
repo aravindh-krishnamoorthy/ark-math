@@ -1,19 +1,18 @@
 \section{Distribution of A Simple Function of Gamma Variables}
 
-In this post, we look at a nifty result presented in [Krishnamoorthy2019] where the probability density function (pdf) of the function $\dfrac{r_1}{c+r_2}$ two independent Gamma distributed random variables $r_1 \sim \mathcal{G}(k_1,\theta_1)$ and $r_2 \sim \mathcal{G}(k_2, \theta_2)$ is derived.
+In this post, we look at a nifty result presented in \cite{Krishnamoorthy2019} where the probability density function (pdf) of the function $\dfrac{r_1}{c+r_2}$ two independent Gamma distributed random variables $r_1 \sim \mathcal{G}(k_1,\theta_1)$ and $r_2 \sim \mathcal{G}(k_2, \theta_2)$ is derived.
 
 The derivation is an exercise (for the scalar case) in computing the pdf of functions of variables by constructing the joint pdf and marginalizing based on the Jacobian. A similar approach can also be used for matrix-variate distributions (which will probably be a good topic for another post.)
 
-Theorem
-
+\begin{theorem}
 Let $c > 0,$ and let $r_1 \sim \mathcal{G}(k_1,\theta_1)$ and $r_2 \sim \mathcal{G}(k_2, \theta_2)$ be independent random variables, then, the pdf of $r = \dfrac{r_1}{c+r_2}$, denoted by $p_r(r;k_1,\theta_1,k_2,\theta_2,c),$ is given by
 
 \begin{equation}K_\mathrm{r} r^{k_1-1} \exp\left(-\frac{rc}{\theta_1}\right) U\left(k_2,k_1+k_2+1;c\left(\frac{r}{\theta_1}+\frac{1}{\theta_2}\right)\right),\end{equation}
 
-where $$U(a,b;z) = \frac{1}{\Gamma(a)} \int_{0}^{+\infty} \exp(-zx) x^{a-1} (1+x)^{b-a-1} \mathrm{d}x$$ is the hypergeometric U-function [Olver2010, Chapter 13, Kummer function], and $K_\mathrm{r}$ is a constant ensuring that the integral over the pdf equals one.
+where $$U(a,b;z) = \frac{1}{\Gamma(a)} \int_{0}^{+\infty} \exp(-zx) x^{a-1} (1+x)^{b-a-1} \mathrm{d}x$$ is the hypergeometric U-function \cite[Chapter 13, Kummer function]{Olver2010}, and $K_\mathrm{r}$ is a constant ensuring that the integral over the pdf equals one.
+\end{theorem}
 
-Proof
-
+\begin{proof}
 As $r_1$ and $r_2$ are independent, their joint pdf, denoted by $p_{r_1,r_2}(r_1,r_2;k_1,\theta_1,k_2,\theta_2),$ is given by
 
 \begin{equation}\frac{1}{\Gamma(k_1) \theta_1^{k_1} \Gamma(k_2) \theta_2^{k_2}} r_1^{k_1-1} r_2^{k_2-1} \exp\left(-\frac{r_1}{\theta_1}-\frac{r_2}{\theta_2}\right).\end{equation}
@@ -27,11 +26,11 @@ $p_r(r;k_1,\theta_1,k_2,\theta_2,c)$ is obtained by marginalization as
 
 \begin{equation}p_r(r;k_1,\theta_1,k_2,\theta_2,c) = \int_{0}^{+\infty} \hspace{-0.25cm} p_{r,r_2}(r,r_2;k_1,\theta_1,k_2,\theta_2,c) \mathrm{d} r_2,\end{equation}
 
-where the integration is conducted using the integral representation of the hypergeometric U-function from [Olver2010, Chapter 13, Kummer function] to obtain the expression in the theorem statement.
+where the integration is conducted using the integral representation of the hypergeometric U-function from \cite[Chapter 13, Kummer function]{Olver2010} to obtain the expression in the theorem statement.
+\end{proof}
 
-References
-
-[Krishnamoorthy2019] A. Krishnamoorthy and R. Schober, “Precoder design for two-user uplink MIMO-NOMA with simultaneous triangularization,” in Proc. IEEE Global Commun. Conf., Dec. 2019, pp. 1–6. https://doi.org/10.1109/GLOBECOM38437.2019.9014161
-[Olver2010] F. W. Olver, D. Lozier, R. Boisvert and C. Clark, "NIST digital library of mathematical functions", Release, vol. 1, pp. 14, 2010.
-
-\emph{First published: 19th Oct. 2021 on aravindhk-math.blogspot.com}
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 19th Oct. 2021 on aravindhk-math.blogspot.com}
+	\item \emph{Modified: 17th Dec. 2023 -- Style updates for \LaTeX}
+\end{enumerate}
