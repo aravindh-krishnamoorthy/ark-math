@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics</title>
-<!--Generated on Mon Dec 18 09:47:21 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+<title>2.2 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics</title>
+<!--Generated on Mon Dec 18 10:34:32 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
 
 <link rel="stylesheet" href="./LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="./ltx-report.css" type="text/css">
@@ -12,14 +12,12 @@
 <link rel="up" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
 <link rel="up up" href="./" title="A Blog on Applied Mathematics">
 <link rel="start" href="./" title="A Blog on Applied Mathematics">
-<link rel="prev" href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="next" href="Ch2.S3.html" title="2.3 Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="section" href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="section" href="Ch2.S3.html" title="2.3 Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="section" href="Ch2.S4.html" title="2.4 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="section" href="Ch2.S5.html" title="2.5 Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="section" href="Ch2.S6.html" title="2.6 Distribution of A Simple Function of Gamma Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
-<link rel="section" href="Ch2.S7.html" title="2.7 Distribution of the Determinant of a Complex-Valued Sample Correlation Matrix ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="prev" href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="next" href="Ch2.S3.html" title="2.3 Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S3.html" title="2.3 Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S4.html" title="2.4 Distribution of A Simple Function of Gamma Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
+<link rel="section" href="Ch2.S5.html" title="2.5 Distribution of the Determinant of a Complex-Valued Sample Correlation Matrix ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
 <link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
 <link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
 <link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
@@ -30,253 +28,143 @@
 <div class="ltx_page_main">
 <header class="ltx_page_header">
 <div class="ltx_align_center">
-<a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a><a href="Ch2.S1.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Entropy of Uniformly Quantized Exponential Distribution</span></a><a href="Ch2.S3.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables</span></a>
+<a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a><a href="Ch2.S1.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Entropy of Uniformly Quantized Random Variables</span></a><a href="Ch2.S3.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation</span></a>
 </div></header>
 <div class="ltx_page_content">
 <section class="ltx_section ltx_authors_1line">
 <h1 class="ltx_title ltx_title_section">
-<span class="ltx_tag ltx_tag_section">2.2 </span>Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions</h1>
+<span class="ltx_tag ltx_tag_section">2.2 </span>Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables</h1>
 
 <div id="p1" class="ltx_para ltx_noindent">
-<p class="ltx_p"><em class="ltx_emph ltx_font_italic">This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib16" title="Elements of information theory" class="ltx_ref">5</a>]</cite>. This post is in continuation to the previous post in Section <a href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>.</em></p>
+<p class="ltx_p">It is well known that the distribution of sums of random variables converges to Gaussian. In this post, we look look at the convergence of Fourier transform of uniformly distributed random variables.</p>
 </div>
 <div id="p2" class="ltx_para ltx_noindent">
-<p class="ltx_p">Let <math id="p2.m1" class="ltx_Math" alttext="x\in\mathbb{R}" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math> be a continuous stochastic variable with <math id="p2.m2" class="ltx_Math" alttext="\text{Laplace}(0,b)" display="inline"><mrow><mtext>Laplace</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> distribution and let <math id="p2.m3" class="ltx_Math" alttext="\hat{x}\in\hat{X}" display="inline"><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></math> such that <math id="p2.m4" class="ltx_Math" alttext="\hat{X}\subset\mathbb{R}" display="inline"><mrow><mover accent="true"><mi>X</mi><mo>^</mo></mover><mo>⊂</mo><mi>ℝ</mi></mrow></math> and <math id="p2.m5" class="ltx_Math" alttext="0\in\hat{X}" display="inline"><mrow><mn>0</mn><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></math> be its uniformly quantized version with step size <math id="p2.m6" class="ltx_Math" alttext="\Delta" display="inline"><mi mathvariant="normal">Δ</mi></math>. We would like to find the entropy of the discrete stochastic variable <math id="p2.m7" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math>, denoted by <math id="p2.m8" class="ltx_Math" alttext="H_{\hat{x}}" display="inline"><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></math>, which provides us an estimate of the average number of bits required to encode <math id="p2.m9" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math>.</p>
+<p class="ltx_p">Exact and analytical formulas for convergence are interesting as they help develop an intuition about the asymptotic convergence phenomenon and understand the convergence error for finite number of samples. Under the scanner today is the convergence behaviour of Fourier transform of uniformly distributed random variables (URVs).</p>
+</div>
+<div id="p3" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p3.m1" class="ltx_Math" alttext="u_{1},u_{2},\cdots,u_{N}" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><msub><mi>u</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>u</mi><mi>N</mi></msub></mrow></math> denote complex-valued zero mean i.i.d URVs with finite support <math id="p3.m2" class="ltx_Math" alttext="[-q_{n},q_{n}]\times[-q_{n},q_{n}]" display="inline"><mrow><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><msub><mi>q</mi><mi>n</mi></msub></mrow><mo>,</mo><msub><mi>q</mi><mi>n</mi></msub><mo rspace="0.055em" stretchy="false">]</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><msub><mi>q</mi><mi>n</mi></msub></mrow><mo>,</mo><msub><mi>q</mi><mi>n</mi></msub><mo stretchy="false">]</mo></mrow></mrow></math> for <math id="p3.m3" class="ltx_Math" alttext="n=1\cdots N" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>1</mn><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mi>N</mi></mrow></mrow></math>. Their Fourier transform is given by</p>
+<table id="Ch4.S0.EGx28" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E36.m1" class="ltx_Math" alttext="\displaystyle U_{k}=\frac{1}{\sqrt{N}}\sum_{n=1}^{N}u_{n}W^{kn}=\frac{1}{\sqrt%
+{N}}\sum_{n=1}^{N}v_{n}," display="inline"><mrow><mrow><msub><mi>U</mi><mi>k</mi></msub><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><msub><mi>u</mi><mi>n</mi></msub><mo>⁢</mo><msup><mi>W</mi><mrow><mi>k</mi><mo>⁢</mo><mi>n</mi></mrow></msup></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><msub><mi>v</mi><mi>n</mi></msub></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.36)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p3.m4" class="ltx_Math" alttext="W^{kn}" display="inline"><msup><mi>W</mi><mrow><mi>k</mi><mo>⁢</mo><mi>n</mi></mrow></msup></math> are the roots of unity, and <math id="p3.m5" class="ltx_Math" alttext="v_{n}=u_{n}W^{kn}" display="inline"><mrow><msub><mi>v</mi><mi>n</mi></msub><mo>=</mo><mrow><msub><mi>u</mi><mi>n</mi></msub><mo>⁢</mo><msup><mi>W</mi><mrow><mi>k</mi><mo>⁢</mo><mi>n</mi></mrow></msup></mrow></mrow></math>.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">Let <math id="p4.m1" class="ltx_Math" alttext="U^{r}_{k}=\mathfrak{Re}(U_{k})" display="inline"><mrow><msubsup><mi>U</mi><mi>k</mi><mi>r</mi></msubsup><mo>=</mo><mrow><mi>ℜ</mi><mo>⁢</mo><mi>𝔢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>U</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, and <math id="p4.m2" class="ltx_Math" alttext="v^{r}_{n}=\mathfrak{Re}(v_{n})" display="inline"><mrow><msubsup><mi>v</mi><mi>n</mi><mi>r</mi></msubsup><mo>=</mo><mrow><mi>ℜ</mi><mo>⁢</mo><mi>𝔢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Variable <math id="p4.m3" class="ltx_Math" alttext="v^{r}_{n}" display="inline"><msubsup><mi>v</mi><mi>n</mi><mi>r</mi></msubsup></math> preserves the distribution of <math id="p4.m4" class="ltx_Math" alttext="\mathfrak{Re}(u_{n})" display="inline"><mrow><mi>ℜ</mi><mo>⁢</mo><mi>𝔢</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math>. Therefore, we have the characteristic function of the real part of the Fourier transformed variable as</p>
+<table id="Ch4.S0.EGx29" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.Ex9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex9.m1" class="ltx_Math" alttext="\displaystyle\text{E}(e^{itU_{k}^{r}})" display="inline"><mrow><mtext>E</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msubsup><mi>U</mi><mi>k</mi><mi>r</mi></msubsup></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex9.m2" class="ltx_Math" alttext="\displaystyle=\prod_{n=1}^{N}\text{E}(e^{\frac{1}{\sqrt{N}}itv^{r}_{n}})" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><mtext>E</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msubsup><mi>v</mi><mi>n</mi><mi>r</mi></msubsup></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.Ex10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex10.m1" class="ltx_Math" alttext="\displaystyle=\prod_{n=1}^{N}\int_{-q_{n}}^{q_{n}}\frac{1}{2q_{n}}e^{\frac{1}{%
+\sqrt{N}}itv^{r}_{n}}dv^{r}_{n}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><msub><mi>q</mi><mi>n</mi></msub></mrow><msub><mi>q</mi><mi>n</mi></msub></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mrow><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msubsup><mi>v</mi><mi>n</mi><mi>r</mi></msubsup></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><msubsup><mi>v</mi><mi>n</mi><mi>r</mi></msubsup></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.Ex11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex11.m1" class="ltx_Math" alttext="\displaystyle=\prod_{n=1}^{N}\frac{e^{\frac{1}{\sqrt{N}}itq_{n}}-e^{-\frac{1}{%
+\sqrt{N}}itq_{n}}}{\frac{2}{\sqrt{N}}itq_{n}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∏</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mstyle displaystyle="true"><mfrac><mrow><msup><mi>e</mi><mrow><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></mrow></msup></mrow><mrow><mfrac><mn>2</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E37.m1" class="ltx_Math" alttext="\displaystyle=\exp\left(\sum_{n=1}^{N}\log\frac{\sin\left(\frac{1}{\sqrt{N}}tq%
+_{n}\right)}{\frac{1}{\sqrt{N}}tq_{n}}\right)." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msub><mi>q</mi><mi>n</mi></msub></mrow><mo>)</mo></mrow></mrow><mrow><mfrac><mn>1</mn><msqrt><mi>N</mi></msqrt></mfrac><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msub><mi>q</mi><mi>n</mi></msub></mrow></mfrac></mstyle></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.37)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p5" class="ltx_para ltx_noindent">
+<p class="ltx_p">Interestingly, for <math id="p5.m1" class="ltx_Math" alttext="f(t)=\log\frac{\sin(t\alpha)}{t\alpha}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>⁢</mo><mi>α</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>t</mi><mo>⁢</mo><mi>α</mi></mrow></mfrac></mrow></mrow></math>, the limits of the derivatives <math id="p5.m2" class="ltx_Math" alttext="\lim_{t\to 0}\frac{\text{d}^{n}f(t)}{\text{d}t^{n}}" display="inline"><mrow><msub><mo>lim</mo><mrow><mi>t</mi><mo stretchy="false">→</mo><mn>0</mn></mrow></msub><mfrac><mrow><msup><mtext>d</mtext><mi>n</mi></msup><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mtext>d</mtext><mo>⁢</mo><msup><mi>t</mi><mi>n</mi></msup></mrow></mfrac></mrow></math>, for <math id="p5.m3" class="ltx_Math" alttext="n=1,2,\cdots" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi></mrow></mrow></math>, exist! Therefore, the Taylor expansion of <math id="p5.m4" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> around <math id="p5.m5" class="ltx_Math" alttext="t=0" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow></math> is given by</p>
+<table id="Ch4.S0.EGx30" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E38.m1" class="ltx_Math" alttext="\displaystyle f(t)=-\frac{t^{2}\alpha^{2}}{6}-\frac{t^{4}\alpha^{4}}{180}-%
+\frac{t^{6}\alpha^{6}}{2835}+\cdots." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>α</mi><mn>2</mn></msup></mrow><mn>6</mn></mfrac></mstyle></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>t</mi><mn>4</mn></msup><mo>⁢</mo><msup><mi>α</mi><mn>4</mn></msup></mrow><mn>180</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>t</mi><mn>6</mn></msup><mo>⁢</mo><msup><mi>α</mi><mn>6</mn></msup></mrow><mn>2835</mn></mfrac></mstyle></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.38)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The Taylor series expansion given above may be easily verified using symbolic solvers like Wolfram Alpha Online.</p>
+</div>
+<div id="p6" class="ltx_para ltx_noindent">
+<p class="ltx_p">Substituting the Taylor series expansion in the characteristic function above, we have (only the first two terms of the Taylor series are shown)</p>
+<table id="Ch4.S0.EGx31" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E39.m1" class="ltx_Math" alttext="\displaystyle\text{E}(e^{itU_{k}^{r}})=\exp\left(-\frac{1}{6}\frac{t^{2}\sum_{%
+n=1}^{N}q^{2}_{n}}{N}-\frac{1}{180}\frac{t^{4}\sum_{n=1}^{N}q^{4}_{n}}{N^{2}}+%
+\cdots\right)." display="inline"><mrow><mrow><mrow><mtext>E</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msubsup><mi>U</mi><mi>k</mi><mi>r</mi></msubsup></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mrow><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>⁢</mo><mrow><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><msubsup><mi>q</mi><mi>n</mi><mn>2</mn></msubsup></mrow></mrow><mi>N</mi></mfrac></mstyle></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>180</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>t</mi><mn>4</mn></msup><mo>⁢</mo><mrow><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><msubsup><mi>q</mi><mi>n</mi><mn>4</mn></msubsup></mrow></mrow><msup><mi>N</mi><mn>2</mn></msup></mfrac></mstyle></mrow></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi></mrow><mo>)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.39)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">Therefore, as <math id="p7.m1" class="ltx_Math" alttext="N\to\infty" display="inline"><mrow><mi>N</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></math>,</p>
+<table id="Ch4.S0.EGx32" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E40.m1" class="ltx_Math" alttext="\displaystyle\lim_{N\to\infty}\text{E}(e^{itU_{k}^{r}})=\exp\left(-\frac{t^{2}%
+}{2}\frac{\bar{q}^{2}}{3}\right)," display="inline"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>N</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mrow><mtext>E</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msubsup><mi>U</mi><mi>k</mi><mi>r</mi></msubsup></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo>(</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mi>t</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><msup><mover accent="true"><mi>q</mi><mo>¯</mo></mover><mn>2</mn></msup><mn>3</mn></mfrac></mstyle></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.40)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where</p>
+<table id="Ch4.S0.EGx33" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E41.m1" class="ltx_Math" alttext="\displaystyle\bar{q}^{2}=\lim_{N\to\infty}\frac{1}{N}\sum_{n=1}^{N}q_{n}^{2}." display="inline"><mrow><mrow><msup><mover accent="true"><mi>q</mi><mo>¯</mo></mover><mn>2</mn></msup><mo rspace="0.1389em">=</mo><mrow><munder><mo lspace="0.1389em" movablelimits="false" rspace="0.167em">lim</mo><mrow><mi>N</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>N</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover></mstyle><msubsup><mi>q</mi><mi>n</mi><mn>2</mn></msubsup></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.41)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p8" class="ltx_para ltx_noindent">
+<p class="ltx_p">The right hand side expression in (<a href="#Ch2.E40" title="In 2.2 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.40</span></a>) showing the asymptotic convergence of the characteristic function of <math id="p8.m1" class="ltx_Math" alttext="U^{r}_{k}" display="inline"><msubsup><mi>U</mi><mi>k</mi><mi>r</mi></msubsup></math> is readily identified as the characteristic function of Gaussian distribution with zero mean and variance <math id="p8.m2" class="ltx_Math" alttext="\bar{q}^{2}/3" display="inline"><mrow><msup><mover accent="true"><mi>q</mi><mo>¯</mo></mover><mn>2</mn></msup><mo>/</mo><mn>3</mn></mrow></math>. A similar expression may also be found for <math id="p8.m3" class="ltx_Math" alttext="\lim_{N\to\infty}\text{E}(e^{itU_{k}^{i}})" display="inline"><mrow><msub><mo>lim</mo><mrow><mi>N</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></msub><mrow><mtext>E</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msubsup><mi>U</mi><mi>k</mi><mi>i</mi></msubsup></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></math> in a straightforward manner.</p>
+</div>
+<div id="p9" class="ltx_para ltx_noindent">
+<p class="ltx_p">Therefore, the exact convergence formula for the Fourier transform of URVs is as shown in (<a href="#Ch2.E39" title="In 2.2 Exact Formula for Asymptotic Convergence of Fourier Transform of Uniform Random Variables ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.39</span></a>)!</p>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p">ARK</p>
 </div>
 <section id="SS1" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">
-<span class="ltx_tag ltx_tag_subsection">2.2.1 </span>Half-Laplace Distribution</h2>
+<span class="ltx_tag ltx_tag_subsection">2.2.1 </span>Version History</h2>
 
 <div id="SS1.p1" class="ltx_para ltx_noindent">
-<p class="ltx_p">Half-Laplace distribution refers to the distribution obtained by folding the zero-mean distribution function along the center. The new distribution is equivalent to the distribution of the stochastic variable <math id="SS1.p1.m1" class="ltx_Math" alttext="y=|x|" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow></mrow></math>, i.e. the absolute value of the original Laplace distributed variable.</p>
-</div>
-<div id="SS1.p2" class="ltx_para ltx_noindent">
-<p class="ltx_p">Let <math id="SS1.p2.m1" class="ltx_Math" alttext="\varphi(x)" display="inline"><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="SS1.p2.m2" class="ltx_Math" alttext="\Phi(x)" display="inline"><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> denote the probability distribution function and cumulative distribution function of the Laplace variable <math id="SS1.p2.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>. These are defined as follows.</p>
-</div>
-<div id="SS1.p3" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx13" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E14.m1" class="ltx_Math" alttext="\displaystyle\varphi(x)" display="inline"><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E14.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{2b}e^{-\frac{|x|}{b}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mi>b</mi></mfrac></mrow></msup></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.14)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E15"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E15.m1" class="ltx_Math" alttext="\displaystyle\Phi(x)" display="inline"><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E15.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}\frac{1}{2}e^{\frac{x}{b}}&amp;\text{if $x&lt;0$}\\
-1-\frac{1}{2}e^{-\frac{x}{b}}&amp;\text{if $x\geq 0$}\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mfrac><mi>x</mi><mi>b</mi></mfrac></msup></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn>1</mn><mo>−</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi>x</mi><mi>b</mi></mfrac></mrow></msup></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.15)</span></td>
-</tr></tbody>
-</table>
-</div>
-<div id="SS1.p4" class="ltx_para ltx_noindent">
-<p class="ltx_p">The half-Laplace cumulative distribution function of <math id="SS1.p4.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, denoted by <math id="SS1.p4.m2" class="ltx_Math" alttext="\breve{\Phi}(y)" display="inline"><mrow><mover accent="true"><mi mathvariant="normal">Φ</mi><mo>˘</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math>, is then given as follows.</p>
-</div>
-<div id="SS1.p5" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E16.m1" class="ltx_Math" alttext="\displaystyle\breve{\Phi}(y)" display="inline"><mrow><mover accent="true"><mi mathvariant="normal">Φ</mi><mo>˘</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E16.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}0&amp;\text{if $y=0$}\\
-\Phi(y)-\Phi(-y)&amp;\text{if $y&gt;0$}\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mtext>if </mtext><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.16)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_eqn_cell"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E17.m1" class="ltx_Math" alttext="\displaystyle=1-e^{-\frac{y}{b}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi>y</mi><mi>b</mi></mfrac></mrow></msup></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.17)</span></td>
-</tr></tbody>
-</table>
-</div>
-<div id="SS1.p6" class="ltx_para ltx_noindent">
-<p class="ltx_p">The expression in equation (<a href="#Ch2.E17" title="In 2.2.1 Half-Laplace Distribution ‣ 2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.17</span></a>) may be directly recognized as the cumulative distribution function of <math id="SS1.p6.m1" class="ltx_Math" alttext="\text{Exponential}(1/b)" display="inline"><mrow><mtext>Exponential</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>/</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Therefore, the entropy of half-Laplace distribution may be found according to the expressions in Section <a href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a> with <math id="SS1.p6.m2" class="ltx_Math" alttext="\lambda=1/b" display="inline"><mrow><mi>λ</mi><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>b</mi></mrow></mrow></math>.</p>
-</div>
-</section>
-<section id="SS2" class="ltx_subsection">
-<h2 class="ltx_title ltx_title_subsection">
-<span class="ltx_tag ltx_tag_subsection">2.2.2 </span>Laplace Distribution</h2>
-
-<div id="SS2.p1" class="ltx_para ltx_noindent">
-<p class="ltx_p">Let <math id="SS2.p1.m1" class="ltx_Math" alttext="f(\hat{x})" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> denote the probability mass function of the quantized variable <math id="SS2.p1.m2" class="ltx_Math" alttext="\hat{x}" display="inline"><mover accent="true"><mi>x</mi><mo>^</mo></mover></math>. It is related to the probability density function <math id="SS2.p1.m3" class="ltx_Math" alttext="\varphi(x)" display="inline"><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> as follows.</p>
-<table id="Ch4.S0.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E18.m1" class="ltx_Math" alttext="\displaystyle f(\hat{x})=\int_{\hat{x}-\frac{\Delta}{2}}^{\hat{x}-\frac{\Delta%
-}{2}}\varphi(x)dx" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.18)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Further, let <math id="SS2.p1.m4" class="ltx_math_unparsed" alttext="\hat{X}{}^{+}\subset\hat{X}" display="inline"><mrow><mover accent="true"><mi>X</mi><mo>^</mo></mover><mmultiscripts><mo>⊂</mo><mprescripts></mprescripts><mrow></mrow><mo>+</mo></mmultiscripts><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></math> such that it contains the positive quantized values. The negative entropy <math id="SS2.p1.m5" class="ltx_Math" alttext="-H_{\hat{x}}" display="inline"><mrow><mo>−</mo><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></mrow></math> is given (by definition) as follows. Note that the simplification is possible due to the symmetry of Laplace distribution.</p>
-</div>
-<div id="SS2.p2" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E19.m1" class="ltx_Math" alttext="\displaystyle-H_{\hat{x}}" display="inline"><mrow><mo>−</mo><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E19.m2" class="ltx_Math" alttext="\displaystyle=\sum_{\hat{x}\in\hat{X}}f(\hat{x})\log f(\hat{x})" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover></mrow></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.19)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_eqn_cell"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E20.m1" class="ltx_math_unparsed" alttext="\displaystyle=f(0)\log f(0)+2\sum_{\hat{x}\in\hat{X}{}^{+}}f(\hat{x})\log f(%
-\hat{x})" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover><msup><mi></mi><mo>+</mo></msup></mrow></munder></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.20)</span></td>
-</tr></tbody>
-</table>
-</div>
-<div id="SS2.p3" class="ltx_para ltx_noindent">
-<p class="ltx_p">By using the definition from equation (<a href="#Ch2.E18" title="In 2.2.2 Laplace Distribution ‣ 2.2 Entropy of Uniformly Quantized Laplace and Half-Laplace Distributions ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.18</span></a>) we have the following:</p>
-</div>
-<div id="SS2.p4" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.Ex5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex5.m1" class="ltx_Math" alttext="\displaystyle-H_{\hat{x}}" display="inline"><mrow><mo>−</mo><msub><mi>H</mi><mover accent="true"><mi>x</mi><mo>^</mo></mover></msub></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex5.m2" class="ltx_Math" alttext="\displaystyle=\left(1-e^{-\frac{\Delta}{2b}}\right)\log\left[1-e^{-\frac{%
-\Delta}{2b}}\right]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>[</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>]</mo></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-</tr></tbody>
-<tbody id="Ch2.Ex6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_eqn_cell"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex6.m1" class="ltx_Math" alttext="\displaystyle\quad+\left(e^{\frac{\Delta}{2b}}-e^{-\frac{\Delta}{2b}}\right)%
-\log\left[\frac{1}{2}\left(e^{\frac{\Delta}{2b}}-e^{-\frac{\Delta}{2b}}\right)%
-\right]v_{1}(b)" display="inline"><mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>)</mo></mrow></mrow><mo>]</mo></mrow></mrow><mo>⁢</mo><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-</tr></tbody>
-<tbody id="Ch2.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_eqn_cell"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E21.m1" class="ltx_Math" alttext="\displaystyle\quad+\left(e^{\frac{\Delta}{2b}}-e^{-\frac{\Delta}{2b}}\right)v_%
-{2}(b)" display="inline"><mrow><mo>+</mo><mrow><mrow><mo>(</mo><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>)</mo></mrow><mo>⁢</mo><msub><mi>v</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.21)</span></td>
-</tr></tbody>
-</table>
-</div>
-<div id="SS2.p5" class="ltx_para ltx_noindent">
-<p class="ltx_p">With the functions <math id="SS2.p5.m1" class="ltx_Math" alttext="v_{1,2}(b)" display="inline"><mrow><msub><mi>v</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> given by:</p>
-</div>
-<div id="SS2.p6" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E22"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E22.m1" class="ltx_Math" alttext="\displaystyle v_{1}(b)" display="inline"><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E22.m2" class="ltx_math_unparsed" alttext="\displaystyle=\sum_{\hat{x}\in\hat{X}{}^{+}}e^{-\frac{\hat{x}}{b}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover><msup><mi></mi><mo>+</mo></msup></mrow></munder></mstyle><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mover accent="true"><mi>x</mi><mo>^</mo></mover><mi>b</mi></mfrac></mrow></msup></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.22)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E23"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E23.m1" class="ltx_Math" alttext="\displaystyle v_{2}(b)" display="inline"><mrow><msub><mi>v</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E23.m2" class="ltx_math_unparsed" alttext="\displaystyle=\sum_{\hat{x}\in\hat{X}{}^{+}}e^{-\frac{\hat{x}}{b}}\log e^{-%
-\frac{\hat{x}}{b}}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover><msup><mi></mi><mo>+</mo></msup></mrow></munder></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mover accent="true"><mi>x</mi><mo>^</mo></mover><mi>b</mi></mfrac></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mover accent="true"><mi>x</mi><mo>^</mo></mover><mi>b</mi></mfrac></mrow></msup></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.23)</span></td>
-</tr></tbody>
-</table>
-</div>
-</section>
-<section id="SS3" class="ltx_subsection">
-<h2 class="ltx_title ltx_title_subsection">
-<span class="ltx_tag ltx_tag_subsection">2.2.3 </span>Exact Result</h2>
-
-<div id="SS3.p1" class="ltx_para ltx_noindent">
-<p class="ltx_p">The analytical expressions for <math id="SS3.p1.m1" class="ltx_Math" alttext="v_{1,2}(b)" display="inline"><mrow><msub><mi>v</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> may be computed starting from the following identities.</p>
-</div>
-<div id="SS3.p2" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E24"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E24.m1" class="ltx_Math" alttext="\displaystyle 1" display="inline"><mn>1</mn></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E24.m2" class="ltx_math_unparsed" alttext="\displaystyle=\int_{-\infty}^{\infty}\varphi(x)dx=2\int_{0}^{\frac{\Delta}{2}}%
-\varphi(x)dx+2\sum_{\hat{x}\in\hat{X}{}^{+}}\int_{\hat{x}-\frac{\Delta}{2}}^{%
-\hat{x}+\frac{\Delta}{2}}\varphi(x)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover><msup><mi></mi><mo>+</mo></msup></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.24)</span></td>
-</tr></tbody>
-<tbody id="Ch2.Ex7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex7.m1" class="ltx_Math" alttext="\displaystyle-h_{x}" display="inline"><mrow><mo>−</mo><msub><mi>h</mi><mi>x</mi></msub></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex7.m2" class="ltx_Math" alttext="\displaystyle=\int_{-\infty}^{\infty}\varphi(x)\log\varphi(x)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>φ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-</tr></tbody>
-<tbody id="Ch2.E25"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_eqn_cell"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E25.m1" class="ltx_math_unparsed" alttext="\displaystyle=2\int_{0}^{\frac{\Delta}{2}}\varphi(x)\log\varphi(x)dx+2\sum_{%
-\hat{x}\in\hat{X}{}^{+}}\int_{\hat{x}-\frac{\Delta}{2}}^{\hat{x}+\frac{\Delta}%
-{2}}\varphi(x)\log\varphi(x)dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>φ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>∈</mo><mover accent="true"><mi>X</mi><mo>^</mo></mover><msup><mi></mi><mo>+</mo></msup></mrow></munder></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>+</mo><mfrac><mi mathvariant="normal">Δ</mi><mn>2</mn></mfrac></mrow></msubsup></mstyle><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>φ</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.25)</span></td>
-</tr></tbody>
-</table>
-</div>
-<div id="SS3.p3" class="ltx_para ltx_noindent">
-<p class="ltx_p">Where <math id="SS3.p3.m1" class="ltx_Math" alttext="h_{x}" display="inline"><msub><mi>h</mi><mi>x</mi></msub></math> is the differential entropy. Upon simplification, we obtain the following results.</p>
-</div>
-<div id="SS3.p4" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E26"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E26.m1" class="ltx_Math" alttext="\displaystyle v_{1}(b)" display="inline"><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E26.m2" class="ltx_Math" alttext="\displaystyle=\frac{e^{-\frac{\Delta}{2b}}}{e^{\frac{\Delta}{2b}}-e^{-\frac{%
-\Delta}{2b}}}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mfrac></mstyle></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.26)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E27.m1" class="ltx_Math" alttext="\displaystyle v_{2}(b)" display="inline"><mrow><msub><mi>v</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E27.m2" class="ltx_Math" alttext="\displaystyle=\frac{-h_{x}-c_{1}-\frac{\Delta}{2b}\left[e^{\frac{\Delta}{2b}}+%
-e^{-\frac{\Delta}{2b}}\right]v_{1}(b)}{e^{\frac{\Delta}{2b}}-e^{-\frac{\Delta}%
-{2b}}}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo>−</mo><msub><mi>h</mi><mi>x</mi></msub></mrow><mo>−</mo><msub><mi>c</mi><mn>1</mn></msub><mo>−</mo><mrow><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow><mo>]</mo></mrow><mo>⁢</mo><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msup><mi>e</mi><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mfrac></mstyle></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.27)</span></td>
-</tr></tbody>
-</table>
-</div>
-<div id="SS3.p5" class="ltx_para ltx_noindent">
-<p class="ltx_p">Where <math id="SS3.p5.m1" class="ltx_Math" alttext="c_{1}=log\left(\frac{1}{2b}\right)-1+\frac{\Delta}{2b}e^{-\frac{\Delta}{2b}}" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><mrow><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac><mo>)</mo></mrow></mrow><mo>−</mo><mn>1</mn></mrow><mo>+</mo><mrow><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mi mathvariant="normal">Δ</mi><mrow><mn>2</mn><mo>⁢</mo><mi>b</mi></mrow></mfrac></mrow></msup></mrow></mrow></mrow></math>.</p>
-</div>
-<div id="SS3.p6" class="ltx_para ltx_noindent">
-<p class="ltx_p">We see that the expressions are quite similar to the ones obtained for Exponential distribution in Section <a href="Ch2.S1.html" title="2.1 Entropy of Uniformly Quantized Exponential Distribution ‣ Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>. This is expected as Laplace and Exponential distributions are very closely related.</p>
-</div>
-</section>
-<section id="SS4" class="ltx_subsection">
-<h2 class="ltx_title ltx_title_subsection">
-<span class="ltx_tag ltx_tag_subsection">2.2.4 </span>Version History</h2>
-
-<div id="SS4.p1" class="ltx_para ltx_noindent">
 <ol id="I1" class="ltx_enumerate">
 <li id="I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">1.</span> 
 <div id="I1.i1.p1" class="ltx_para">
-<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 5th Oct. 2015 on aravindhk-math.blogspot.com</em></p>
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">First published: 25th Jun. 2016 on aravindhk-math.blogspot.com</em></p>
 </div>
 </li>
 <li id="I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">2.</span> 
 <div id="I1.i2.p1" class="ltx_para ltx_noindent">
-<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 16th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Modified: 17th Dec. 2023 – Style updates for <span class="ltx_text ltx_LaTeX_logo" style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_text" style="position:relative; bottom:0.4ex;font-variant:small-caps;;">a</span>T<span class="ltx_text" style="position:relative; bottom:-0.2ex;font-variant:small-caps;font-size:120%;">e</span>X</span></em></p>
 </div>
 </li>
 </ol>
@@ -286,9 +174,9 @@ e^{-\frac{\Delta}{2b}}\right]v_{1}(b)}{e^{\frac{\Delta}{2b}}-e^{-\frac{\Delta}%
 </div>
 <footer class="ltx_page_footer">
 <div class="ltx_align_center">
-<a href="Ch2.S1.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Entropy of Uniformly Quantized Exponential Distribution</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch2.S3.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Entropy of Sign-Magnitude Coding of Uniformly Quantized Laplacian Variables</span></a>
+<a href="Ch2.S1.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Entropy of Uniformly Quantized Random Variables</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch2.S3.html" title="In Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Generating and Sampling Two Signed Bernoulli Random Variables with Given Correlation</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Mon Dec 18 09:47:21 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Mon Dec 18 10:34:32 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

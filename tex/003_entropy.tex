@@ -1,4 +1,4 @@
-\section{Entropy of Uniformly Quantized Exponential Distribution}
+\subsection{Entropy of Uniformly Quantized Exponential Distribution}
 \label{sec:003_entropy}
 
 \emph{This post is about entropy of discrete stochastic variables that are derived by quantizing continuous stochastic variables. A good introduction to the concept of entropy in Information Theory is in \cite{Cover2012}.}
@@ -27,7 +27,7 @@ Using the definition of the continuous distribution function for Exponential dis
 With the functions $u_{1,2}(\lambda)$ given by:
 \begin{align} u_1(\lambda) &= \sum_{\hat{x} \in \hat{X}} e^{-\lambda\hat{x}} \\ u_2(\lambda) &= \sum_{\hat{x} \in \hat{X}} e^{-\lambda\hat{x}} \log e^{-\lambda\hat{x}} \end{align}
 
-\subsection{Approximate Result}
+\subsubsection{Approximate Result}
 
 The exact values of $u_{1,2}(\lambda)$, as we shall see below, are cumbersome. Therefore, we first obtain an approximate result by plugging in the the approximations for $u_{1,2}(\lambda)$ given below into equation (\ref{eqn:hh}).
 
@@ -40,7 +40,7 @@ The performance of the above approximation may be verified numerically. In the g
 	\includegraphics[width=0.95\textwidth,keepaspectratio]{003_001_approx1.png}
 \end{figure}
 
-\subsection{Exact Result}
+\subsubsection{Exact Result}
 
 The exact result, from the graph above, may be obtained by plugging in the exact values for $u_{1,2}(\lambda)$ into equation (\ref{eqn:hh}). The exact values may be computed starting from the following identities.
 
@@ -52,7 +52,7 @@ As the derivation is lengthy, we directly present the simplified result below.
 
 Where $c_1 = log(\lambda) - 1 + \frac{\Delta}{2}\lambda e^{-\lambda\frac{\Delta}{2}}$. We see that even with a simple distribution function, the exact expressions quickly get out of hand and are unfortunately not short and elegant as one would have expected.
 
-\subsection{Version History}
+\subsubsection{Version History}
 \begin{enumerate}
 	\item \emph{First published: 3rd Oct. 2015 on aravindhk-math.blogspot.com}
 	\item \emph{Modified: 16th Dec. 2023 -- Style updates for \LaTeX}
