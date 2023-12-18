@@ -1,4 +1,4 @@
-\section{Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions}
+\subsection{Inverse Cholesky Factor of a positive definite Hermitian symmetric Toeplitz matrix using Durbin recursions}
 \label{sec:001_inverse}
 
 Let $\boldsymbol{T} \in \mathbb{C}^{n \times n}$ be a positive-definite Hermitian symmetric Toeplitz matrix defined with elements $t_{ij} = r_{i-j}$ for a set of scalars $r_{-n+1}, \cdots, r_0, \cdots, r_{n-1}$, where $r_{-t} = r_t^*$. Without loss of generality, assume $r_0 = 1$.
@@ -36,7 +36,7 @@ which may be solved efficiently using the Durbin iterations \cite{Golub2012}. Th
 
 The algorithm requires $2n^2$ flops \cite[Algorithm 4.7.1]{Golub2012} for the Durbin iterations, $n^2/2$ flops for scaling with $1/\sqrt\beta$ and $n$ inverse square root computations; and may be easily adapted to find $\boldsymbol{L}^{-1}$ and $\boldsymbol{D}$ of the LDL decomposition. A MATLAB reference code is available in \cite{KrishnamoorthyMathWorks2015} as well as reproduced below.
 
-\subsection{MATLAB Reference Code}
+\subsubsection{MATLAB Reference Code}
 
 \begin{lstlisting}[language=MATLAB,numbers=none]
 function R = invchol_durbin(T)
@@ -92,7 +92,7 @@ end
 R = R/sqrt(ts) ;
 \end{lstlisting}
 
-\subsection{Version History}
+\subsubsection{Version History}
 \begin{enumerate}
 	\item \emph{First published: 4th Sep. 2015 on aravindhk-math.blogspot.com}
 	\item \emph{Modified: 16th Dec. 2023 -- Style updates for \LaTeX}

@@ -1,4 +1,4 @@
-\section{Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices}
+\subsection{Offset Non-Uniform Discrete Cosine Decomposition of Toeplitz Matrices}
 
 \emph{Diagonalization of a Toeplitz matrix (or the related Henkel matrix) is well known for about 100 years due to Carathéodory. Recently, the methods and techniques were formalized and were shown to be related to non-uniform discrete Fourier transformation (DFT). In this post, we look at a straightforward extension to non-uniform discrete cosine transformation (DCT) for real-valued Toeplitz matrices.}
 
@@ -12,7 +12,7 @@ Let $\boldsymbol{T}$ be an $N\times N$ real, symmetric, Toeplitz matrix with sim
 \end{bmatrix}
 \]
 
-\subsection{Absence of a Non-Uniform Cosine Decomposition}
+\subsubsection{Absence of a Non-Uniform Cosine Decomposition}
 
 \begin{theorem}[Absence of a general NUCD]
 There exists no uniform cosine decomposition \[\boldsymbol{T} = \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C}\] for the matrix $\boldsymbol{T}$ for $N > 2.$
@@ -28,7 +28,7 @@ where $n = 0,\dots,N-1.$ Therefore, the first element $\tau_{0,0}$ is \[\tau_{0,
 
 Result of the above theorem motivates us to explore offset non-uniform cosine decomposition where the decomposition is scaled as $\boldsymbol{T} = \gamma^2 \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C}$ for some  $\gamma > 1,$ wherefore equality of the diagonal elements may be met.
 
-\subsection{Offset Non-Uniform Cosine Decomposition}
+\subsubsection{Offset Non-Uniform Cosine Decomposition}
 
 \begin{lemma}
 \label{lem:012_modes}
@@ -56,7 +56,7 @@ Note: $\boldsymbol{C}$ is an $N\times N$ real, cosine matrix and $\boldsymbol{D}
 Let $\boldsymbol{V}_R$ and $\boldsymbol{V}_I$ denote the real and imaginary parts of the Vandermonde matrix $\boldsymbol{V}.$ As the initial values are real, from Lemma \ref{lem:012_modes}, the roots are either real or have complex conjugate symmetry. Therefore, we have the following orthogonality properties: \[\boldsymbol{V}_R^\text{T} \boldsymbol{V}_I = \boldsymbol{V}_R^\text{T} \boldsymbol{D} \boldsymbol{V}_I = \boldsymbol{V}_I^\text{T} \boldsymbol{V}_R = \boldsymbol{V}_I^\text{T} \boldsymbol{D} \boldsymbol{V}_R =\boldsymbol{0}.\] Using these properties (twice), we have \[\boldsymbol{T} =  \boldsymbol{V}_R^\text{T} \boldsymbol{D} \boldsymbol{V}_R +  \boldsymbol{V}_I^\text{T} \boldsymbol{D} \boldsymbol{V}_I = (\boldsymbol{V}_R \pm \boldsymbol{V}_I)^\text{T} \boldsymbol{D} (\boldsymbol{V}_R \pm \boldsymbol{V}_I) = 2 \boldsymbol{C}^\text{T} \boldsymbol{D} \boldsymbol{C},\] with the elements of the matrix $\boldsymbol{C}$ as shown above.
 \end{proof}
 
-\subsection{O-NUCD in MATLAB using the Vandermonde Tools}
+\subsubsection{O-NUCD in MATLAB using the Vandermonde Tools}
 As an example, O-NUCD ($-\frac{\pi}{4}$) may be found using the Vandermonde Tools from AudioLabs \cite{Backstrom2015} as follows:
 
 \begin{lstlisting}[language=MATLAB,numbers=none]
@@ -71,7 +71,7 @@ ans = 2.5403e-15
 ans = 2.0304e-15
 \end{lstlisting}
 
-\subsection{Version History}
+\subsubsection{Version History}
 \begin{enumerate}
 	\item \emph{First published: 14th May 2019 on aravindhk-math.blogspot.com}
 	\item \emph{Modified: 16th Dec. 2023 -- Style updates for \LaTeX}

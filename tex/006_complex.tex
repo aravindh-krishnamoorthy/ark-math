@@ -1,4 +1,4 @@
-\section{Complex-valued Durbin Algorithm with MATLAB code}
+\subsection{Complex-valued Durbin Algorithm with MATLAB code}
 
 \emph{This post is a rehash of my earlier post in Section \ref{sec:001_inverse} where the complex-valued Durbin's algorithm was used indirectly for matrix inversion. Here, the algorithm is written down separately as it may be useful for some to have it ``out of the box.''}
 
@@ -20,7 +20,7 @@ Let $r_0 = 1, r_1, r_2, \cdots, r_n \in \mathbb{C}$ and $\boldsymbol{T} \in \mat
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{MATLAB Reference Code}
+\subsubsection{MATLAB Reference Code}
 \begin{lstlisting}[language=MATLAB,numbers=none]
 function Y = durbin(R)
 % Y = durbin(R)
@@ -48,7 +48,7 @@ end
 Y = conj(Z) ;
 \end{lstlisting}
 
-\subsection{MATLAB Test Code}
+\subsubsection{MATLAB Test Code}
 \begin{lstlisting}[language=MATLAB,numbers=none]
 >> r = complex(rand(10,1),rand(10,1)) ;
 >> r(1) = 1 ;
@@ -59,7 +59,7 @@ Y = conj(Z) ;
 ans = 1.0709e-10
 \end{lstlisting}
 
-\subsection{Version History}
+\subsubsection{Version History}
 \begin{enumerate}
 	\item \emph{First published: 30th Jan. 2016 on aravindhk-math.blogspot.com}
 	\item \emph{Modified: 17th Dec. 2023 -- Style updates for \LaTeX}
