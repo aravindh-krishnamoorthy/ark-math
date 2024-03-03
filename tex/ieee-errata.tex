@@ -1,0 +1,15 @@
+In this section, a compilation of errata for publications by Aravindh Krishnamoorthy is provided.
+
+\section{Uplink and Downlink MIMO-NOMA with Simultaneous Triangularization}
+This errata is for the publication \cite{Krishnamoorthy2021}, which is also available on arXiv here: \url{https://arxiv.org/abs/2006.06471}. In the proof of Theorem $2$ in Appendix A.2, the second sentence must read ``Let $\boldsymbol{K} \in \mathbb{C}^{N\times M}$ denote the matrix containing a basis for the null space of $\textcolor{blue}{\begin{bmatrix} \bar{\boldsymbol{H}}_1 & \bar{\boldsymbol{H}}_2\end{bmatrix}^\mathrm{H}}.$'' That is, the Hermitian transpose is required for the augmented matrix rather than the individual matrices with null-space bases.
+
+See Section \ref{ssec:st} for the complete theorem and proof along with MATLAB reference code.
+
+\section{Downlink MIMO-RSMA with Successive Null-Space Precoding}
+
+This errata is for the publication \cite{Krishnamoorthy2022}, which is also available on arXiv here: \url{https://arxiv.org/abs/2107.08294}. In the first-order expansion of equation (14), which is given in equation (21), the loop over $k'$ must be between $1$ and $\textcolor{blue}{k}$ (instead of $k-1$). The correct equation is given below.
+
+\begin{align}
+\tilde{R}_{k,\mathrm{c}} &= \mathrm{logdet}\left(\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k}\boldsymbol{Q}_{\mathrm{c}}\boldsymbol{H}_{k}^\mathrm{H} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k} \Big(\sum_{k'=1}^{k}\boldsymbol{Q}_{k'}\Big)\boldsymbol{H}_{k}^\mathrm{H}\right) - \mathrm{logdet}\left(\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k} \breve{\boldsymbol{Q}}_{k+1}^{(l-1)} \boldsymbol{H}_{k}^\mathrm{H}\right) - \frac{1}{L_k\sigma^2\log_{\mathrm{e}}(2)}\sum_{k'=1}^{\textcolor{blue}{k}}\mathrm{tr}\left(\boldsymbol{\Psi}_{k'}^\mathrm{H} \boldsymbol{H}_k^\mathrm{H} \Big[\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_k \breve{\boldsymbol{Q}}_{k+1}^{(l-1)} \boldsymbol{H}_k^\mathrm{H}\Big]^{-1} \boldsymbol{H}_k \boldsymbol{\Psi}_{k'}\Big(\boldsymbol{X}_{k'}-\breve{\boldsymbol{X}}_{k'}^{(l-1)}\Big)\right) \tag{21}.
+\end{align}
+

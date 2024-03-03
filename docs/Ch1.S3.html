@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>1.3 Novel Matrix Decompositions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics</title>
-<!--Generated on Sun Dec 31 00:21:51 2023 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Sun Mar  3 17:06:53 2024 by LaTeXML (version 0.8.7) http://dlmf.nist.gov/LaTeXML/.-->
 
 <link rel="stylesheet" href="./LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="./ltx-report.css" type="text/css">
@@ -19,7 +19,8 @@
 <link rel="chapter" href="Ch1.html" title="Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics">
 <link rel="chapter" href="Ch2.html" title="Chapter 2 Probability Theory ‣ A Blog on Applied Mathematics">
 <link rel="chapter" href="Ch3.html" title="Chapter 3 Random Matrix Theory ‣ A Blog on Applied Mathematics">
-<link rel="chapter" href="Ch4.html" title="Chapter 4 License ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch4.html" title="Chapter 4 Errata for Publications ‣ A Blog on Applied Mathematics">
+<link rel="chapter" href="Ch5.html" title="Chapter 5 License ‣ A Blog on Applied Mathematics">
 <link rel="bibliography" href="bib.html" title="Bibliography ‣ A Blog on Applied Mathematics">
 </head>
 <body>
@@ -271,7 +272,7 @@ R}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}=\boldsymbol{0}.
 <span class="ltx_tag ltx_tag_subsection">1.3.2 </span>Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition</h2>
 
 <div id="SS2.p1" class="ltx_para ltx_noindent">
-<p class="ltx_p">Simultaneous triangularization (ST) of an arbitrary number of matrices that satisfy certain algebraic properties is well known, see, e.g., <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib15" title="Simultaneous triangularization" class="ltx_ref">16</a>]</cite>. However, for arbitrary wide matrices with the same number of columns, directly applying QR decomposition leads to a ”pseudo-triangular” structure, i.e., there are more non-zero columns than the number of rows. However, for just two arbitrary wide matrices, a ”true” ST scheme can be obtained exploiting their null spaces. In <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib14" title="Uplink and downlink MIMO-NOMA with simultaneous triangularization" class="ltx_ref">12</a>]</cite>, this technique was presented and used in non-orthogonal multiple access (NOMA) downlink communication systems for interference mitigation. In the following post, an overview of the ST scheme is presented. A MATLAB example is provided.</p>
+<p class="ltx_p">Simultaneous triangularization (ST) of an arbitrary number of matrices that satisfy certain algebraic properties is well known, see, e.g., <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib15" title="Simultaneous triangularization" class="ltx_ref">17</a>]</cite>. However, for arbitrary wide matrices with the same number of columns, directly applying QR decomposition leads to a ”pseudo-triangular” structure, i.e., there are more non-zero columns than the number of rows. However, for just two arbitrary wide matrices, a ”true” ST scheme can be obtained exploiting their null spaces. In <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib14" title="Uplink and downlink MIMO-NOMA with simultaneous triangularization" class="ltx_ref">12</a>]</cite>, this technique was presented and used in non-orthogonal multiple access (NOMA) downlink communication systems for interference mitigation. In the following post, an overview of the ST scheme is presented. A MATLAB example is provided.</p>
 </div>
 <div id="SS2.p2" class="ltx_para ltx_noindent">
 <p class="ltx_p">The statement of the theorem is as follows.</p>
@@ -285,7 +286,7 @@ R}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}=\boldsymbol{0}.
 \mathbb{C}^{m_{2}\times m_{2}}," display="inline"><mrow><mrow><mrow><msub><mi>𝐔</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">∈</mo><msup><mi>ℂ</mi><mrow><msub><mi>m</mi><mn mathvariant="normal">1</mn></msub><mo lspace="0.222em" mathvariant="normal" rspace="0.222em">×</mo><msub><mi>m</mi><mn mathvariant="normal">1</mn></msub></mrow></msup></mrow><mo mathvariant="normal">,</mo><mrow><msub><mi>𝐔</mi><mn mathvariant="normal">2</mn></msub><mo mathvariant="normal">∈</mo><msup><mi>ℂ</mi><mrow><msub><mi>m</mi><mn mathvariant="normal">2</mn></msub><mo lspace="0.222em" mathvariant="normal" rspace="0.222em">×</mo><msub><mi>m</mi><mn mathvariant="normal">2</mn></msub></mrow></msup></mrow></mrow><mo mathvariant="normal">,</mo></mrow></math> and an invertible matrix <math id="Thmtheorem4.p1.m7" class="ltx_Math" alttext="\boldsymbol{X}\in\mathbb{C}^{n\times n}" display="inline"><mrow><mi>𝐗</mi><mo mathvariant="normal">∈</mo><msup><mi>ℂ</mi><mrow><mi>n</mi><mo lspace="0.222em" mathvariant="normal" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math> such that</span></p>
 </div>
 <div id="Thmtheorem4.p2" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -322,7 +323,7 @@ R}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}=\boldsymbol{0}.
 {H}}." display="inline"><mrow><msup><mrow><mo>[</mo><mtable columnspacing="5pt"><mtr><mtd><mover accent="true"><mi>𝑨</mi><mo>¯</mo></mover></mtd><mtd><mover accent="true"><mi>𝑩</mi><mo>¯</mo></mover></mtd></mtr></mtable><mo>]</mo></mrow><mi mathvariant="normal">H</mi></msup><mo lspace="0em">.</mo></mrow></math> Let, by QR decomposition,</p>
 </div>
 <div id="SS2.p6" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -346,7 +347,7 @@ R}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}=\boldsymbol{0}.
 <p class="ltx_p">Then, (<a href="#Ch1.E1" title="In Theorem 4 ([12, Theorem 2]). ‣ 1.3.2 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ 1.3 Novel Matrix Decompositions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.1</span></a>) and (<a href="#Ch1.E2" title="In Theorem 4 ([12, Theorem 2]). ‣ 1.3.2 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ 1.3 Novel Matrix Decompositions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2</span></a>) are satisfied by setting <math id="SS2.p7.m1" class="ltx_Math" alttext="\boldsymbol{X}" display="inline"><mi>𝑿</mi></math> to</p>
 </div>
 <div id="SS2.p8" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S0.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -361,7 +362,7 @@ R}=\boldsymbol{V}_{I}^{\text{T}}\boldsymbol{D}\boldsymbol{V}_{R}=\boldsymbol{0}.
 <p class="ltx_p">and choosing <math id="SS2.p9.m1" class="ltx_Math" alttext="\boldsymbol{U}_{1}=\boldsymbol{\mathcal{U}}_{1}^{\mathrm{H}}" display="inline"><mrow><msub><mi>𝑼</mi><mn>1</mn></msub><mo>=</mo><msubsup><mi class="ltx_font_mathcaligraphic">𝓤</mi><mn>1</mn><mi mathvariant="normal">H</mi></msubsup></mrow></math> and <math id="SS2.p9.m2" class="ltx_Math" alttext="\boldsymbol{U}_{2}=\boldsymbol{\mathcal{U}}_{2}^{\mathrm{H}}" display="inline"><mrow><msub><mi>𝑼</mi><mn>2</mn></msub><mo>=</mo><msubsup><mi class="ltx_font_mathcaligraphic">𝓤</mi><mn>2</mn><mi mathvariant="normal">H</mi></msubsup></mrow></math> from (<a href="#Ch1.E3" title="In 1.3.2 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ 1.3 Novel Matrix Decompositions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.3</span></a>) and (<a href="#Ch1.E4" title="In 1.3.2 Simultaneous Triangularization of Two Arbitrary Wide Matrices via the QR Decomposition ‣ 1.3 Novel Matrix Decompositions ‣ Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.4</span></a>) above, to obtain</p>
 </div>
 <div id="SS2.p10" class="ltx_para ltx_noindent">
-<table id="Ch4.S0.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S0.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -514,7 +515,7 @@ bmatrix}," display="inline"><mrow><mrow><mo>[</mo><mtable columnspacing="5pt"><m
 <div class="ltx_align_center">
 <a href="Ch1.S2.html" title="In Chapter 1 Linear Algebra ‣ A Blog on Applied Mathematics" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Determinant Form for KummerU Function of a Matrix Argument</span></a><a href="bib.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="Ch2.html" title="In A Blog on Applied Mathematics" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Probability Theory</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Sun Dec 31 00:21:51 2023 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Sun Mar  3 17:06:53 2024 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>
