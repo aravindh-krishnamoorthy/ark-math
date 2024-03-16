@@ -5,11 +5,23 @@ This errata is for the publication \cite{Krishnamoorthy2021}, which is also avai
 
 See Section \ref{ssec:st} for the complete theorem and proof along with MATLAB reference code.
 
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 3rd Mar. 2024.}
+\end{enumerate}
+
 \section{Downlink MIMO-RSMA with Successive Null-Space Precoding}
 
 This errata is for the publication \cite{Krishnamoorthy2022}, which is also available on arXiv here: \url{https://arxiv.org/abs/2107.08294}. In the first-order expansion of equation (14), which is given in equation (21), the loop over $k'$ must be between $1$ and $\textcolor{blue}{k}$ (instead of $k-1$). The correct equation is given below.
 
 \begin{align}
-\tilde{R}_{k,\mathrm{c}} &= \mathrm{logdet}\left(\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k}\boldsymbol{Q}_{\mathrm{c}}\boldsymbol{H}_{k}^\mathrm{H} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k} \Big(\sum_{k'=1}^{k}\boldsymbol{Q}_{k'}\Big)\boldsymbol{H}_{k}^\mathrm{H}\right) - \mathrm{logdet}\left(\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k} \breve{\boldsymbol{Q}}_{k+1}^{(l-1)} \boldsymbol{H}_{k}^\mathrm{H}\right) - \frac{1}{L_k\sigma^2\log_{\mathrm{e}}(2)}\sum_{k'=1}^{\textcolor{blue}{k}}\mathrm{tr}\left(\boldsymbol{\Psi}_{k'}^\mathrm{H} \boldsymbol{H}_k^\mathrm{H} \Big[\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_k \breve{\boldsymbol{Q}}_{k+1}^{(l-1)} \boldsymbol{H}_k^\mathrm{H}\Big]^{-1} \boldsymbol{H}_k \boldsymbol{\Psi}_{k'}\Big(\boldsymbol{X}_{k'}-\breve{\boldsymbol{X}}_{k'}^{(l-1)}\Big)\right) \tag{21}.
+\tilde{R}_{k,\mathrm{c}} &= \mathrm{logdet}\left(\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k}\boldsymbol{Q}_{\mathrm{c}}\boldsymbol{H}_{k}^\mathrm{H} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k} \Big(\sum_{k'=1}^{k}\boldsymbol{Q}_{k'}\Big)\boldsymbol{H}_{k}^\mathrm{H}\right) - \mathrm{logdet}\left(\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_{k} \breve{\boldsymbol{Q}}_{k+1}^{(l-1)} \boldsymbol{H}_{k}^\mathrm{H}\right) - \frac{1}{L_k\sigma^2\log_{\mathrm{e}}(2)}\sum_{k'=1}^{\textcolor{blue}{k}}\mathrm{tr}\left(\boldsymbol{\Psi}_{k'}^\mathrm{H} \boldsymbol{H}_k^\mathrm{H} \Big[\boldsymbol{I}_{M_k} + \frac{1}{L_k\sigma^2}\boldsymbol{H}_k \breve{\boldsymbol{Q}}_{k+1}^{(l-1)} \boldsymbol{H}_k^\mathrm{H}\Big]^{-1} \boldsymbol{H}_k \boldsymbol{\Psi}_{k'}\Big(\boldsymbol{X}_{k'}-\breve{\boldsymbol{X}}_{k'}^{(l-1)}\Big)\right) \tag{21}
 \end{align}
+
+\emph{Thanks to Rajashekhar from Indian Institute of Science, Bangalore, for bringing this error to my attention.}
+
+\subsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 3rd Mar. 2024.}
+\end{enumerate}
 
