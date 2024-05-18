@@ -1,0 +1,34 @@
+\section{Novel Matrix Identities}
+
+\emph{This is a consolidated post containing two former posts on novel matrix identities.}
+
+\subsection{Cyclic Shifts Property of Trace with Hadamard Products}
+
+\emph{The circular shift property of trace, i.e., 
+\begin{equation*}
+	\operatorname{trace}\left(\boldsymbol{W}_1\boldsymbol{W}_2\boldsymbol{W}_3\right) = \operatorname{trace}\left(\boldsymbol{W}_3\boldsymbol{W}_1\boldsymbol{W}_2\right) = \operatorname{trace}\left(\boldsymbol{W}_2\boldsymbol{W}_3\boldsymbol{W}_1\right),
+\end{equation*}
+holds for conventional matrix products of matrices $\boldsymbol{W}_1,$ $\boldsymbol{W}_2,$ and $\boldsymbol{W}_3.$ In the following theorem, we consider circular shifts of matrices involving Hadamard products, e.g., $\operatorname{trace}\left(\boldsymbol{W}_1\big(\boldsymbol{W}_2 \circ \boldsymbol{W}_3\big) \boldsymbol{W}_4\right).$}
+
+\begin{theorem}
+	\label{lemma:htoc}
+	Let $m_1, m_2, m_3 > 0$ and let $\boldsymbol{W}_1 \in \mathbb{C}^{m_1\times m_2},$ $\boldsymbol{W}_2, \boldsymbol{W}_3 \in \mathbb{C}^{m_2\times m_3},$ and $\boldsymbol{W}_4 \in \mathbb{C}^{m_3\times m_1}$ be arbitrary matrices. Then,
+	\begin{align}
+		\operatorname{trace}\left(\boldsymbol{W}_1\big(\boldsymbol{W}_2 \circ \boldsymbol{W}_3\big) \boldsymbol{W}_4\right) = \operatorname{trace}\left(\big(\boldsymbol{W}_2^{\mathrm{T}} \circ (\boldsymbol{W}_4\boldsymbol{W}_1)\big) \boldsymbol{W}_3\right). \label{eqn:trh}
+	\end{align}
+\end{theorem}
+\begin{proof}
+	We have
+	\begin{align}
+		\operatorname{trace}\left(\boldsymbol{W}_1(\boldsymbol{W}_2 \circ \boldsymbol{W}_3) \boldsymbol{W}_4\right) &= \operatorname{trace}\left((\boldsymbol{W}_2 \circ \boldsymbol{W}_3) \boldsymbol{W}_4\boldsymbol{W}_1\right) \nonumber\\ &= \sum_{i=1}^{m_2} \sum_{j=1}^{m_3} [\boldsymbol{W}_2]_{i,j}[\boldsymbol{W}_3]_{i,j} [\boldsymbol{W}_4\boldsymbol{W}_1]_{j,i} \nonumber\\
+		&= \sum_{j=1}^{m_3} \sum_{i=1}^{m_2}  [\boldsymbol{W}_2^{\mathrm{T}}]_{j,i} [\boldsymbol{W}_4\boldsymbol{W}_1]_{j,i} [\boldsymbol{W}_3]_{i,j} \nonumber\\&= \operatorname{trace}\left(\big(\boldsymbol{W}_2^{\mathrm{T}} \circ (\boldsymbol{W}_4\boldsymbol{W}_1)\big) \boldsymbol{W}_3\right).
+	\end{align}
+\end{proof}
+
+\subsubsection{Version History}
+\begin{enumerate}
+	\item \emph{First published: 18th May 2024}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
